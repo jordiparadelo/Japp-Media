@@ -79,7 +79,7 @@ export function AccordionItem({
         )}
       ></div>
       <div className="flex flex-col place-items-start">
-        <button className={cn(`text-xl font-semibold text-left ${isOpen ? "opacity-100" : "opacity-50"}`)}>{title}</button>
+        <button className={cn(`text-xl font-medium text-left ${isOpen ? "opacity-100" : "opacity-50"}`)}>{title}</button>
         <motion.div
           initial="closed"
           animate={isOpen ? "open" : "closed"}

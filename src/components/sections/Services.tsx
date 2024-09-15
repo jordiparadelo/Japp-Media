@@ -42,7 +42,7 @@ const ServiceCard = ({ title, description, image }: Props) => {
 		<div className='flex flex-col place-items-start lg:grid lg:grid-cols-2 rounded-2xl backdrop-blur-sm bg-white/20 overflow-hidden border-2 border-gray-50/10'>
 			<div className="flex flex-col gap-4 place-items-start text-left px-5 py-12">
 				<h3 className="text-3xl">{title}</h3>
-				<p className="text-xl sm:max-w-[40ch] ">{description}</p>
+				<p className="text-xl font-medium sm:max-w-[40ch] ">{description}</p>
 			</div>
 			<Image
 				src={image}

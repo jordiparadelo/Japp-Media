@@ -3,7 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --background: #153036
+  --background: #153036;
+  /* Fonts */
+  --headingFont: 'Archivo';
+  --bodyFont: 'Roboto Flex';
+}
+
+@layer base {
+  body {
+    @apply font-body font-thin;
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    @apply font-heading;
+  }
 }
 
 /* @layer components {
