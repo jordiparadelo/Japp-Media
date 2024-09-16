@@ -8,28 +8,28 @@ import ImageClients from "@/assets/images/clientes_potenciales.webp";
 
 export const SERVICES = [
 	{
-		title: "Diseño Web",
+		title: "Precencia Digital",
 		description:
-			"Crea o mejora tu sitio web: aumenta tu presencia, cierra mas reservas y atrae más clientes de forma organica.",
-		image: "",
+			"Crea o mejora tu sitio web: aumenta tu presencia, cierra mas reservas y atrae más clientes potenciales.",
+		image: "/images/services_automated-responses.webp",
 	},
 	{
-		title: "DR Campaign",
+		title: "Respuestas Automatizadas",
 		description:
-			"Automatiza respuestas y gestiona la comunicación de manera más efectiva para no perder clientes.",
-		image: "",
+			"No pierdas mas clientes, gestionamos las respuestas y comunicación de manera automatica.",
+		image: "/images/services_automated-responses.webp",
 	},
 	{
 		title: "Gestión de reputación",
 		description:
 			"Ayudamos a tu negocio a destacar mejor en Google, para que nuevos clientes contacten contigo.",
-		image: "",
+		image: "/images/services_reputation.webp",
 	},
 	{
-		title: "Eventos y recordatorios",
+		title: "Citas agendadas y recordatorios",
 		description:
-			"Gestiona reservas de forma automatizada, crea recordatorios y mantente notificado",
-		image: "",
+			"Gestiona tus agenda desde tu movil, crea recordatorios y mantente notificado.",
+		image: "/images/services_calendar.webp",
 	},
 ];
 

@@ -11,15 +11,6 @@ export type StepGuidedProps = {
 	}>;
 	image?: StaticImageData | string;
 };
-function StepGuidedSection({ children }: { children: React.ReactNode }) {
-	return (
-		<section className='py-11 px-5 md:px-16 md:py-20'>
-			<div className='container flex flex-col gap-16'>{children}</div>
-		</section>
-	);
-}
-
-export default StepGuidedSection;
 
 export function StepGuidedBlocks({ blocks }: { blocks: StepGuidedProps[] }) {
 	return (
@@ -64,10 +55,3 @@ function StepGuided({ title, description, details, image }: StepGuidedProps) {
 		</>
 	);
 }
-
-function StepGuidedHeader({ children }: { children: React.ReactNode }) {
-	return <div className='flex flex-col'>{children}</div>;
-}
-
-StepGuidedSection.Header = StepGuidedHeader;
-StepGuidedSection.Body = StepGuidedBlocks;
