@@ -85,22 +85,49 @@ function Hero() {
 							<Button variant='secondary'>Agenda una llamada</Button>
 						</div>
 					</div>
-					<InfiniteScroll>
-						<div className='flex flex-row gap-4'>
-							{IMAGES.map((image, index) => (
-								<div
-									className='flex flex-col bg-gray-300 rounded-xl min-w-[256px] h-[300px] overflow-hidden'
-									key={index}
-								>
-									<Image
-										className='grow-1 self-stretch h-0 min-h-full w-full object-cover'
-										src={image.src}
-										alt={image.alt}
-										width={200}
-										height={300}
-									/>
-								</div>
-							))}
+					<InfiniteScroll velocity={0.05}>
+						<div
+							className='grid gap-6 min-h-[320px]'
+							style={{
+								gridTemplateColumns: `repeat(auto-fill, 1fr)`,
+								gridTemplateRows: "1fr 1fr",
+							}}
+						>
+							{IMAGES.map((image, index) => {
+								const condition = (index + 3) % 3 === 0;
+								const gridDisplay =
+									(index + 3) % 3 === 0
+										? {
+												gridRow: `1/3`,
+										  }
+										: (index + 3) % 3 === 1
+										? {
+												gridRow: `1/2`,
+										  }
+										: {
+												gridRow: `2/3`,
+										  };
+
+								console.log({ condition });
+
+								return (
+									<div
+										className='flex flex-col bg-gray-300 rounded-xl min-w-[256px] overflow-hidden'
+										key={index}
+										data-condition={condition}
+										data-index={index}
+										style={gridDisplay}
+									>
+										<Image
+											className='grow-1 self-stretch h-0 min-h-full w-full object-cover child:'
+											src={image.src}
+											alt={image.alt}
+											width={200}
+											height={300}
+										/>
+									</div>
+								);
+							})}
 						</div>
 					</InfiniteScroll>
 				</div>
@@ -110,33 +137,3 @@ function Hero() {
 }
 
 export default Hero;
-
-// function Marquee({ children }: { children: React.ReactNode[] }) {
-// 	const marqueeVariants = {
-// 		animate: {
-// 			x: [0, -100, 0],
-// 			transition: {
-// 				duration: 10,
-// 				ease: "linear",
-// 				repeat: Infinity,
-// 			},
-// 		},
-// 		hover: {
-// 			x: 0,
-// 			transition: {
-// 				duration: 0,
-// 			},
-// 		},
-// 	};
-
-// 	return (
-// 		<motion.div
-// 			className='flex flex-row gap-4 items-center justify-center overflow-hidden'
-// 			variants={marqueeVariants}
-// 			animate='animate'
-// 			whileHover='hover'
-// 		>
-// 			{children}
-// 		</motion.div>
-// 	);
-// }

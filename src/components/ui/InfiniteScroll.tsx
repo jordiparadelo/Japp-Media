@@ -4,14 +4,18 @@ import React from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-function InfiniteScroll({ children }: { children: React.ReactNode }) {
+function InfiniteScroll({ children, velocity }: { children: React.ReactNode, velocity?: number }) {
 	const sliderRef = React.useRef<React.ReactNode | any>(null);
 	const firstLineRef = React.useRef<React.ReactNode | any>(null);
 	const secondLineRef = React.useRef<React.ReactNode | any>(null);
 
 	let xPercentage = 0;
 	let direction = -1;
-	const velocity = 0.002;
+	const velocityVal = () => {
+        const width = window.innerWidth / sliderRef.current.clientWidth;
+		// return width * 0;
+		return width * (velocity || 0.025);
+	};
 
 	const animation = () => {
 		gsap.set(firstLineRef.current, {
@@ -21,7 +25,7 @@ function InfiniteScroll({ children }: { children: React.ReactNode }) {
 			xPercent: xPercentage,
 		});
 
-		xPercentage += direction * velocity;
+		xPercentage += direction * velocityVal();
 
 		if (xPercentage <= -100) {
 			xPercentage = 0;
@@ -51,7 +55,7 @@ function InfiniteScroll({ children }: { children: React.ReactNode }) {
 			},
 			xPercent: `-=5`,
 		});
-	}, []);
+	}, [velocity]);
 
 	return (
 		<div className='flex w-[100vw] overflow-x-hidden place-self-center'>
@@ -60,14 +64,15 @@ function InfiniteScroll({ children }: { children: React.ReactNode }) {
 				ref={sliderRef}
 			>
 				<span
-					className='pr-[1rem]'
+					className='pr-[1.5rem]'
 					ref={firstLineRef}
 				>
 					{children}
 				</span>
-				<span ref={secondLineRef}>{children}</span>
+				<span className='pr-[1.5rem]' ref={secondLineRef}>{children}</span>
 			</div>
 		</div>
 	);
 }
 export default InfiniteScroll;
+
