@@ -22,7 +22,6 @@ function CtaBanner() {
             </div>
           </div>
         </div>
-        {/* <div className="btn-primary">Agenda tu llamada</div> */}
       </div>
     </section>
   );

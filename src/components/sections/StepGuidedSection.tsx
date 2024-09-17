@@ -14,7 +14,7 @@ export type StepGuidedProps = {
 
 export function StepGuidedBlocks({ blocks }: { blocks: StepGuidedProps[] }) {
 	return (
-		<ul className='container mx-auto flex max-w-screen-md flex-col gap-20'>
+		<ul className=' flex flex-col gap-8  md:gap-20'>
 			{blocks?.map((item) => (
 				<li
 					key={item.title}
@@ -31,13 +31,15 @@ function StepGuided({ title, description, details, image }: StepGuidedProps) {
 	return (
 		<>
 			{image && (
-				<Image
-					src={image}
-					alt='process'
-					width={500}
-					height={500}
-					className='object-contain md:group-odd:order-1'
-				/>
+				<div className='flex flex-col place-content-stretch place-items-center md:group-odd:order-1'>
+					<Image
+						src={image}
+						alt='process'
+						width={500}
+						height={500}
+						className='object-contain min-w-full min-h-full h-0'
+					/>
+				</div>
 			)}
 			<div className='flex flex-col gap-5'>
 				<h2 className='text-3xl '>{title}</h2>

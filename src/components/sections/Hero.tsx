@@ -72,16 +72,18 @@ function Hero() {
 		<section className='px-6 pt-24 pb-16'>
 			<div className='container max-w-3xl mx-auto'>
 				<div className='flex flex-col gap-20'>
-					<div className='flex flex-col gap-4 items-center text-center'>
-						<h1 className='  text-5xl md:text-6xl lg:text-7xl '>
-							Haz crecer tu negocio con mas clientes sin esfuerzo
-						</h1>
-						<p>
-							Ayudamos a negocios locales a incrementar sus ventas mensuales,
-							nos encargamos de encontrarte clientes y dejarte el resto a ti.
-						</p>
-						<div className='flex gap-4 flex-row pt-2'>
-							<Button variant='primary'>Contáctenos</Button>
+					<div className='flex flex-col max-w-screen-md mx-auto gap-6 md:gap-8 text-center'>
+						<div className='flex flex-col place-items-center gap-4'>
+							<h1 className='heading-h1'>
+								Haz crecer tu negocio con mas clientes sin esfuerzo
+							</h1>
+							<p className='text-xl max-w-screen-md mx-auto text-pretty'>
+								Ayudamos a negocios locales a incrementar sus ventas mensuales,
+								nos encargamos de encontrarte clientes y dejarte el resto a ti.
+							</p>
+						</div>
+						<div className='flex flex-col w-full max-w-[320px] sm:w-auto sm:max-w-none sm:grid sm:grid-cols-2 gap-4 place-self-center pt-4'>
+							<Button>Comienza Ya</Button>
 							<Button variant='secondary'>Agenda una llamada</Button>
 						</div>
 					</div>

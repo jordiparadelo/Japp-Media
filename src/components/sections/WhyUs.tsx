@@ -1,57 +1,47 @@
-import Image from "next/image";
 import React from "react";
-
-import { SERVICES } from "../../data";
+import SwipeCarousel from "../ui/SwipeCarrousel";
+import { SectionTag } from "../ui";
+import { WHY_US } from "@/data";
+import Image from "next/image";
 
 function WhyUs() {
 	return (
 		<section className='py-11 px-5 md:px-16 md:py-20'>
-			<div className='container max-w-screen-xl mx-auto flex flex-col gap-20'>
-				<div className='flex flex-col gap-8 text-center md:max-w-2xl mx-auto'>
-					<h2 className='text-4xl md:text-5xl'>
-						Clientes nuevos, más citas, más ingresos.
+			<div className='container mx-auto flex flex-col place-items-center gap-20 text-center'>
+				<div className='flex flex-col place-items-center gap-6 max-w-screen-md mx-auto'>
+					<SectionTag rotation={3}>¿Por que elegirnos?</SectionTag>
+					<h2 className='heading-h2'>
+						Buscamos en que te centres en lo tuyo mientras atraemos a nuevos
+						clientes
 					</h2>
-					<p>
-						Nos enfocamos en negocios locales como el tuyo. Simplifica la
-						gestión de citas y aumenta tu visibilidad sin esfuerzo.
+					<p className='text-xl max-w-screen-md mx-auto text-pretty'>
+						Necesitas una presencia digital efectiva que atraiga nuevos clientes
+						y mantenga a tus actuales. Japp Media ofrece una gama de servicios
+						para ayudarte a alcanzar tus metas, que incluyen:
 					</p>
 				</div>
-				<div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-					{SERVICES.map((card) => (
-						<ServiceCard
-							key={card.title}
-							{...card}
-						/>
+				<SwipeCarousel dots={true}>
+					{WHY_US.map((item, index) => (
+						<div
+							key={index}
+							className='flex flex-col gap-4 min-w-[clamp(240px,80vw,40ch)]  justify-start text-left p-4 rounded-2xl bg-white/10 min-h-full backdrop-blur-sm md:min-w-[40ch] flex-grow'
+						>
+							<Image
+								src={item?.image}
+								alt={item.title}
+								width={300}
+								height={200}
+								className='object-contain drag-none'
+								// style={{ WebkitUserDrag: "none" } as CustomStyle}
+							/>
+							<h2 className='text-2xl font-heading'>{item.title}</h2>
+							<p className='text-sm font-thin'>{item.description}</p>
+						</div>
 					))}
-				</div>
+				</SwipeCarousel>
 			</div>
 		</section>
 	);
 }
 
 export default WhyUs;
-
-type Props = {
-	title: string;
-	description: string;
-	image: string;
-};
-
-const ServiceCard = ({ title, description, image }: Props) => {
-	return (
-		<div className='flex flex-col place-items-start lg:grid lg:grid-cols-2 rounded-2xl backdrop-blur-sm bg-white/20 overflow-hidden border-2 border-gray-50/10'>
-			<div className='flex flex-col gap-4 place-items-start text-left px-5 py-12'>
-				<h3 className='text-3xl'>{title}</h3>
-				<p className='text-xl font-medium sm:max-w-[40ch] '>{description}</p>
-			</div>
-			<div className='flex flex-col place-content-center flex-grow self-stretch'>
-				<Image
-					src={image}
-					alt={title}
-					width={500}
-					height={500}
-				/>
-			</div>
-		</div>
-	);
-};

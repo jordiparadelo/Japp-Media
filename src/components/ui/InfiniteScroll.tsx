@@ -12,7 +12,7 @@ function InfiniteScroll({ children, velocity }: { children: React.ReactNode, vel
 	let xPercentage = 0;
 	let direction = -1;
 	const velocityVal = () => {
-        const width = window.innerWidth / sliderRef.current.clientWidth;
+        const width = window.innerWidth / sliderRef.current?.clientWidth;
 		// return width * 0;
 		return width * (velocity || 0.025);
 	};

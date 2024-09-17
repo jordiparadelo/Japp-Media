@@ -75,7 +75,7 @@ export function AccordionItem({
     >
       <div
         className={cn(
-          `flex min-w-1 flex-grow rounded-full ${isOpen ? "bg-green-500" : "bg-gray-500/50"}`,
+          `min-h-full min-w-[4px] w-[4px] rounded-full ${isOpen ? "bg-green-500" : "bg-gray-500/50"}`,
         )}
       ></div>
       <div className="flex flex-col place-items-start">

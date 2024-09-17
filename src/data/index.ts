@@ -1,5 +1,3 @@
-// Servicios
-import ImageMoreLeads from "@/assets/images/image_more-leads.webp";
 import ImageDesignDevelopment from "@/assets/images/diseño_desarrollo.webp";
 import ImageMarketing from "@/assets/images/campaña_marketing.webp";
 import ImageCommunication from "@/assets/images/gestion_comunicacion.webp";
@@ -55,7 +53,7 @@ export const FEATURES = [
 					"Capture datos valiosos de clientes potenciales con formularios optimizados y fáciles de usar focalizados en generar mas ventas.",
 			},
 		],
-		image: ImageMoreLeads,
+		image: '/images/about-us_hero.webp',
 	},
 	{
 		title: "Aumente su reputation y su visualización.",
@@ -73,7 +71,7 @@ export const FEATURES = [
 					"Recibe notificaciones inmediatas cuando se publiquen nuevas reseñas y responde rápidamente para gestionar la satisfacción del cliente.",
 			},
 		],
-		image: ImageMoreLeads,
+		image: '/images/about-us_hero.webp',
 	},
 	{
 		title: "Campañas de Respuesta Directa (DR)",
@@ -96,7 +94,7 @@ export const FEATURES = [
 					"Accede a informes detallados en tiempo real para medir la efectividad de las campañas y realizar ajustes que maximicen las conversiones.",
 			},
 		],
-		image: ImageMoreLeads,
+		image: '/images/about-us_hero.webp',
 	},
 	{
 		title: "Respuestas Automáticas de Texto y Email",
@@ -119,7 +117,7 @@ export const FEATURES = [
 					"Mantén a tus clientes informados y satisfechos al responder de manera rápida y consistente, fomentando su lealtad y confianza en tu negocio.",
 			},
 		],
-		image: ImageMoreLeads,
+		image: '/images/about-us_hero.webp',
 	},
 ];
 
@@ -145,7 +143,7 @@ export const HOW_HELP = [
 					"Tú sigues enfocado en tu negocio, mientras nosotros nos ocupamos de hacerte crecer.",
 			},
 		],
-		image: ImageMoreLeads,
+		image: '/images/about-us_hero.webp',
 	},
 	{
 		title: "Tengo algo de presencia digital, pero no estoy viendo resultados",
@@ -168,7 +166,7 @@ export const HOW_HELP = [
 					" Te explicamos lo que está fallando de manera sencilla y te ofrecemos soluciones claras que funcionan.",
 			},
 		],
-		image: ImageMoreLeads,
+		image: '/images/about-us_hero.webp',
 	},
 	{
 		title: "Ya tengo una estructura, pero quiero maximizar mis resultados",
@@ -191,7 +189,7 @@ export const HOW_HELP = [
 					"Nosotros nos encargamos de la parte técnica y estratégica, mientras tú disfrutas de un flujo constante de nuevos clientes.",
 			},
 		],
-		image: ImageMoreLeads,
+		image: '/images/about-us_hero.webp',
 	},
 ];
 

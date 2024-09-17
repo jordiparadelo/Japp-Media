@@ -1,10 +1,15 @@
+"use client";
+
 import { LINKS, PERSONAL_INFO } from "@/libs/constants";
 import Link from "next/link";
 import React from "react";
 import { Button } from "@/components/ui";
 import PhoneIcon from '@/assets/icons/phone.svg'
+import { usePathname } from "next/navigation";
+
 
 export default function Navbar() {
+	const pathname = usePathname()
 	return (
 		<nav className='bg-white/10 backdrop-blur-sm sticky top-0 py-3'>
 			<div className='container flex flex-row place-content-between place-items-center mx-auto'>
@@ -13,7 +18,7 @@ export default function Navbar() {
 					<ul className='flex flex-row gap-4'>
 						{LINKS.map((link) => (
 							<li key={link.label}>
-								<Link href={link.href}>{link.label}</Link>
+								<Link href={link.href} className={pathname === link.href ? 'color-primary' : ''}>{link.label}</Link>
 							</li>
 						))}
 					</ul>
