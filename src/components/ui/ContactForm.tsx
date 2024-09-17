@@ -1,9 +1,12 @@
 "use client";
+import React from "react";
 import {
 	SubmitHandler,
 	useForm,
 	FormProvider,
 	useFormContext,
+	RegisterOptions,
+	UseFormRegister,
 } from "react-hook-form";
 import styles from "@/styles/form.module.css";
 
@@ -17,28 +20,32 @@ type FormFields = {
 	termsAccepted: boolean;
 };
 
-const validationRules = {
+// Base validation rules
+const baseValidationRules: Record<keyof FormFields, RegisterOptions> = {
 	name: {
-		required: "El nombre es requerido",
 		minLength: {
 			value: 2,
 			message: "El nombre debe tener al menos 2 caracteres",
 		},
 	},
 	phone: {
-		required: "El teléfono es requerido",
-		validate: (value: string, required: boolean) => {
+		validate: (value: string) => {
 			const phoneRegex = /^(\+34|0034|34)?[6789]\d{8}$/;
 			return (
-				phoneRegex.test(value) || "Ingrese un número de teléfono español válido"
+				!value ||
+				phoneRegex.test(value) ||
+				"Ingrese un número de teléfono español válido"
 			);
 		},
 	},
 	email: {
-		required: "El correo electrónico es requerido",
-		validate: (value: string, required: boolean) => {
+		validate: (value: string) => {
 			const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-			return emailRegex.test(value) || "Ingrese un correo electrónico válido";
+			return (
+				!value ||
+				emailRegex.test(value) ||
+				"Ingrese un correo electrónico válido"
+			);
 		},
 	},
 	nameBusiness: {
@@ -47,11 +54,8 @@ const validationRules = {
 			message: "El nombre del negocio debe tener al menos 2 caracteres",
 		},
 	},
-	selectBusiness: {
-		required: "Por favor seleccione un tipo de negocio",
-	},
+	selectBusiness: {},
 	message: {
-		required: "El mensaje es requerido",
 		minLength: {
 			value: 10,
 			message: "El mensaje debe tener al menos 10 caracteres",
@@ -61,10 +65,38 @@ const validationRules = {
 			message: "El mensaje no debe exceder los 500 caracteres",
 		},
 	},
-	termsAccepted: {
-		required: "Debe aceptar los términos y condiciones",
-	},
+	termsAccepted: {},
 };
+
+// Custom hook for field registration and validation
+function useFieldValidation() {
+	const {
+		register,
+		formState: { errors },
+	} = useFormContext<FormFields>();
+
+	const getValidationRules = (
+		registerType: keyof FormFields,
+		required: boolean
+	): RegisterOptions => {
+		const rules: RegisterOptions = { ...baseValidationRules[registerType] };
+
+		if (required) {
+			rules.required = "Este campo es requerido";
+		}
+
+		return rules;
+	};
+
+	const registerField = (
+		registerType: keyof FormFields,
+		required: boolean
+	): ReturnType<UseFormRegister<FormFields>> => {
+		return register(registerType, getValidationRules(registerType, required));
+	};
+
+	return { registerField, errors };
+}
 
 function ContactForm() {
 	const methods = useForm<FormFields>();
@@ -85,14 +117,14 @@ function ContactForm() {
 						label='Nombre Completo'
 						placeholder='Nombre'
 						type='text'
-						// required={true}
+						required={true}
 						registerType='name'
 					/>
 					<InputField
 						label='Teléfono'
 						placeholder='Ejemplo: 612345678'
 						type='tel'
-						required={true}
+						// required={true}
 						registerType='phone'
 					/>
 				</div>
@@ -100,7 +132,7 @@ function ContactForm() {
 					label='Correo Electrónico'
 					placeholder='correo@ejemplo.com'
 					type='email'
-					required={true}
+					// required={true}
 					registerType='email'
 				/>
 				<div className={styles["form_group"]}>
@@ -113,6 +145,7 @@ function ContactForm() {
 					<SelectField
 						label='Tipo de Negocio'
 						registerType='selectBusiness'
+						// required={true}
 						options={[
 							{ value: "", label: "Seleccione un tipo de negocio" },
 							{ value: "retail", label: "Venta al por menor" },
@@ -126,17 +159,16 @@ function ContactForm() {
 					label='Mensaje'
 					placeholder='Escriba su mensaje aquí...'
 					registerType='message'
+					// required={true}
 				/>
-
 				<CheckboxField
 					label='Acepto los términos y condiciones proporcionados por la empresa. Al facilitar mi número de teléfono, acepto recibir mensajes de texto de la empresa.'
 					registerType='termsAccepted'
 					required={true}
 				/>
-
-				<div className={styles["form_actions"]}>
+				<div className='form_actions'>
 					<button
-						className='button accent'
+						className='button button--primary'
 						type='submit'
 						disabled={methods.formState.isSubmitting}
 					>
@@ -167,10 +199,7 @@ function InputField({
 	required,
 	registerType,
 }: InputFieldProps) {
-	const {
-		register,
-		formState: { errors },
-	} = useFormContext<FormFields>();
+	const { registerField, errors } = useFieldValidation();
 
 	return (
 		<label className={styles["form_field"]}>
@@ -178,13 +207,12 @@ function InputField({
 				{label} <span className='text-red-500'>{required && "*"}</span>
 			</span>
 			<input
-				required={required}
 				type={type}
 				placeholder={placeholder}
 				className={styles["form_input"]}
-				{...register(registerType, validationRules[registerType])}
+				{...registerField(registerType, !!required)}
 			/>
-			{required && errors[registerType] && (
+			{errors[registerType] && (
 				<span className='text-red-500'>{errors[registerType]?.message}</span>
 			)}
 		</label>
@@ -204,10 +232,7 @@ function SelectField({
 	required,
 	options,
 }: SelectFieldProps) {
-	const {
-		register,
-		formState: { errors },
-	} = useFormContext<FormFields>();
+	const { registerField, errors } = useFieldValidation();
 
 	return (
 		<label className={styles["form_field"]}>
@@ -216,8 +241,7 @@ function SelectField({
 			</span>
 			<select
 				className={styles["form_input"]}
-				required={required}
-				{...register(registerType, validationRules[registerType])}
+				{...registerField(registerType, !!required)}
 			>
 				{options.map((option) => (
 					<option
@@ -228,7 +252,7 @@ function SelectField({
 					</option>
 				))}
 			</select>
-			{ required && errors[registerType] && (
+			{errors[registerType] && (
 				<span className='text-red-500'>{errors[registerType]?.message}</span>
 			)}
 		</label>
@@ -248,10 +272,7 @@ function TextareaField({
 	required,
 	registerType,
 }: TextareaFieldProps) {
-	const {
-		register,
-		formState: { errors },
-	} = useFormContext<FormFields>();
+	const { registerField, errors } = useFieldValidation();
 
 	return (
 		<label className={styles["form_field"]}>
@@ -259,12 +280,11 @@ function TextareaField({
 				{label} <span className='text-red-500'>{required && "*"}</span>
 			</span>
 			<textarea
-				required={required}
 				placeholder={placeholder}
 				className={styles["form_textarea"]}
-				{...register(registerType, validationRules[registerType])}
+				{...registerField(registerType, !!required)}
 			/>
-			{required && errors[registerType] && (
+			{errors[registerType] && (
 				<span className='text-red-500'>{errors[registerType]?.message}</span>
 			)}
 		</label>
@@ -278,10 +298,7 @@ type CheckboxFieldProps = {
 };
 
 function CheckboxField({ label, registerType, required }: CheckboxFieldProps) {
-	const {
-		register,
-		formState: { errors },
-	} = useFormContext<FormFields>();
+	const { registerField, errors } = useFieldValidation();
 
 	return (
 		<label className={styles["form_field_checkbox"]}>
@@ -289,7 +306,7 @@ function CheckboxField({ label, registerType, required }: CheckboxFieldProps) {
 				<input
 					type='checkbox'
 					className={styles["form_checkbox"]}
-					{...register(registerType, validationRules[registerType])}
+					{...registerField(registerType, !!required)}
 				/>
 				<span className={styles["form_label_checkbox"]}>
 					{label} <span className='text-red-500'>{required && "*"}</span>

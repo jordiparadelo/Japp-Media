@@ -61,3 +61,7 @@
   .form_actions {
     padding-top: 1rem;
   }
+
+  .form_actions button {
+    --size: 56px;
+  }

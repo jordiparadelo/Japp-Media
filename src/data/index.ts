@@ -1,9 +1,3 @@
-import ImageDesignDevelopment from "@/assets/images/diseño_desarrollo.webp";
-import ImageMarketing from "@/assets/images/campaña_marketing.webp";
-import ImageCommunication from "@/assets/images/gestion_comunicacion.webp";
-import ImageReputation from "@/assets/images/gestion_reputacion.webp";
-import ImageClients from "@/assets/images/clientes_potenciales.webp";
-
 export const SERVICES = [
 	{
 		title: "Precencia Digital",
@@ -199,31 +193,31 @@ export const WHY_US = [
 		description:
 			"Muestra tu negocio en línea con un sitio web atractivo y funcional que cautive a los visitantes.",
 
-		image: ImageDesignDevelopment,
+		image: "/images/design-development.webp",
 	},
 	{
 		title: "Generación de Clientes Potenciales:",
 		description:
 			"Atrae nuevos prospectos a tu negocio y conviértelos en citas de valor.",
 
-		image: ImageMarketing,
+		image: "/images/image_more-leads.webp",
 	},
 	{
 		title: "Campañas de Marketing Digital:",
 		description:
 			"Ejecuta campañas publicitarias dirigidas que ofrezcan resultados reales.",
-		image: ImageCommunication,
+		image: "/images/gestion_comunicacion.webp",
 	},
 	{
 		title: "Gestión de la Reputación:",
 		description:
 			"Mejora la imagen de tu marca con estrategias que aumentan las reseñas en Google y generan confianza.",
-		image: ImageReputation,
+		image: "/images/gestion_reputacion.webp",
 	},
 	{
 		title: "Gestión de la Comunicación:",
 		description:
 			"Mantén relaciones continuas con tus clientes a través de esfuerzos de marketing multicanal, incluidos correo electrónico, SMS y redes sociales.",
-		image: ImageClients,
+		image: "/images/image_more-leads.webp",
 	},
 ];

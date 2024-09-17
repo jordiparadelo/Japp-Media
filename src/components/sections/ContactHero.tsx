@@ -1,5 +1,6 @@
 import { Button, ContactForm } from "@/components/ui";
 import React from "react";
+import CheckIcon from '@/assets/icons/check.svg';
 
 function Hero() {
 	return (
@@ -15,13 +16,13 @@ function Hero() {
 
 						<ul className='flex flex-col gap-2'>
 							<li className='flex flex-row gap-2'>
-								Learn how to increase team productivity
+							<CheckIcon /> <span>Get pricing information</span>
 							</li>
 							<li className='flex flex-row gap-2'>
-								Learn how to increase team productivity
+							<CheckIcon /> <span>Get pricing information</span>
 							</li>
 							<li className='flex flex-row gap-2'>
-								Learn how to increase team productivity
+							<CheckIcon /> <span>Get pricing information</span>
 							</li>
 						</ul>
 						<div className='flex flex-col w-full max-w-[320px] sm:w-auto sm:max-w-none sm:grid sm:grid-cols-2 gap-4 pt-4'>
