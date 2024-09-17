@@ -2,6 +2,7 @@
   .form {
     display: flex;
     flex-direction: column;
+    place-items: stretch;
     gap: 1rem;
   }
 
@@ -19,6 +20,32 @@
     color: var(--color-font);
   }
 
+  .form_textarea {
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+    border-radius: 0.25rem;
+    padding-inline: 1rem;
+    padding-block: 1rem;
+    color: var(--color-font);
+  }
+
+  .form_field_checkbox {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+  }
+
+  .form_field_checkbox input {
+    margin-top: 0.25rem;
+  }
+
+  .form_label_checkbox {
+    font-size: 0.875rem;
+    color: var(--color-gray-700);
+  }
+
   .form_label {
     font-size: 0.875rem;
     font-weight: 500;
@@ -29,4 +56,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.25rem;
+  }
+
+  .form_actions {
+    padding-top: 1rem;
   }
