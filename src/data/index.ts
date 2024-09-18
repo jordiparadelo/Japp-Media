@@ -193,7 +193,7 @@ export const WHY_US = [
 		description:
 			"Muestra tu negocio en línea con un sitio web atractivo y funcional que cautive a los visitantes.",
 
-		image: "/images/design-development.webp",
+		image: "/images/image_more-leads.webp",
 	},
 	{
 		title: "Generación de Clientes Potenciales:",
@@ -219,5 +219,68 @@ export const WHY_US = [
 		description:
 			"Mantén relaciones continuas con tus clientes a través de esfuerzos de marketing multicanal, incluidos correo electrónico, SMS y redes sociales.",
 		image: "/images/image_more-leads.webp",
+	},
+];
+
+export const HERO_IMAGES = [
+	{
+		src: "/images/image_hero-1.webp",
+		alt: "Trabajador en una tienda de ropa",
+	},
+	{
+		src: "/images/image_hero-2.webp",
+		alt: "Trabajador en una tienda de ropa",
+	},
+	{
+		src: "/images/image_hero-3.webp",
+		alt: "Trabajador en una tienda de ropa",
+	},
+	{
+		src: "/images/image_hero-4.webp",
+		alt: "Trabajador en una tienda de ropa",
+	},
+	{
+		src: "/images/image_hero-5.webp",
+		alt: "Trabajador en una tienda de ropa",
+	},
+	{
+		src: "/images/image_hero-6.webp",
+		alt: "Trabajador en una tienda de ropa",
+	},
+	{
+		src: "/images/image_hero-7.webp",
+		alt: "Trabajador en una tienda de ropa",
+	},
+	{
+		src: "/images/image_hero-8.webp",
+		alt: "Trabajador en una tienda de ropa",
+	},
+	{
+		src: "/images/image_hero-9.webp",
+		alt: "Trabajador en una tienda de ropa",
+	},
+	{
+		src: "/images/image_hero-10.webp",
+		alt: "Trabajador en una tienda de ropa",
+	},
+	{
+		src: "/images/image_hero-11.webp",
+		alt: "Trabajador en una tienda de ropa",
+	},
+	{
+		src: "/images/image_hero-12.webp",
+		alt: "Trabajador en una tienda de ropa",
+	},
+	{
+		src: "/images/image_hero-13.webp",
+		alt: "Trabajador en una tienda de ropa",
+	},
+	{
+		src: "/images/image_hero-14.webp",
+		alt: "Trabajador en una tienda de ropa",
+	},
+	{
+		src: "/images/image_hero-15.webp",
+		alt: "Trabajador en una tienda de ropa",
 	},
 ];

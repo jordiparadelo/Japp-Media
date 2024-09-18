@@ -1,81 +1,44 @@
 import React from "react";
-import { Button } from "@/components/ui";
+import { Button, SectionTag } from "@/components/ui";
 
 import Image from "next/image";
 import InfiniteScroll from "../ui/InfiniteScroll";
 
-const IMAGES = [
-	{
-		src: "/images/image_hero-1.webp",
-		alt: "Trabajador en una tienda de ropa",
-	},
-	{
-		src: "/images/image_hero-2.webp",
-		alt: "Trabajador en una tienda de ropa",
-	},
-	{
-		src: "/images/image_hero-3.webp",
-		alt: "Trabajador en una tienda de ropa",
-	},
-	{
-		src: "/images/image_hero-4.webp",
-		alt: "Trabajador en una tienda de ropa",
-	},
-	{
-		src: "/images/image_hero-5.webp",
-		alt: "Trabajador en una tienda de ropa",
-	},
-	{
-		src: "/images/image_hero-6.webp",
-		alt: "Trabajador en una tienda de ropa",
-	},
-	{
-		src: "/images/image_hero-7.webp",
-		alt: "Trabajador en una tienda de ropa",
-	},
-	{
-		src: "/images/image_hero-8.webp",
-		alt: "Trabajador en una tienda de ropa",
-	},
-	{
-		src: "/images/image_hero-9.webp",
-		alt: "Trabajador en una tienda de ropa",
-	},
-	{
-		src: "/images/image_hero-10.webp",
-		alt: "Trabajador en una tienda de ropa",
-	},
-	{
-		src: "/images/image_hero-11.webp",
-		alt: "Trabajador en una tienda de ropa",
-	},
-	{
-		src: "/images/image_hero-12.webp",
-		alt: "Trabajador en una tienda de ropa",
-	},
-	{
-		src: "/images/image_hero-13.webp",
-		alt: "Trabajador en una tienda de ropa",
-	},
-	{
-		src: "/images/image_hero-14.webp",
-		alt: "Trabajador en una tienda de ropa",
-	},
-	{
-		src: "/images/image_hero-15.webp",
-		alt: "Trabajador en una tienda de ropa",
-	},
-];
+import styles from "@/styles/hero.module.css";
+import { cn } from "@/libs/utils";
+import { HERO_IMAGES } from "@/data";
 
 function Hero() {
 	return (
-		<section className='px-6 pt-24 pb-16'>
+		<section
+			className={cn(`px-6 pt-24 pb-16 bkg-dot-pattern ${styles["hero"]}`)}
+		>
 			<div className='container max-w-3xl mx-auto'>
 				<div className='flex flex-col gap-20'>
 					<div className='flex flex-col max-w-screen-md mx-auto gap-6 md:gap-8 text-center'>
 						<div className='flex flex-col place-items-center gap-4'>
-							<h1 className='heading-h1'>
-								Haz crecer tu negocio con mas clientes sin esfuerzo
+							<h1 className={styles["hero_heading"]}>
+								Haz crecer
+								<br />
+								tu negocio con mas
+								<span className={styles["hero_heading-wrap"]}>
+									{" "}
+									<span>
+										<SectionTag
+											rotation={-3}
+											color='#0DDEAC'
+										>
+											Clientes
+										</SectionTag>{" "}
+										<span>sin</span>
+									</span>{" "}
+									<SectionTag
+										rotation={3}
+										color='#C5FD01'
+									>
+										esfuerzo
+									</SectionTag>
+								</span>
 							</h1>
 							<p className='text-xl max-w-screen-md mx-auto text-pretty'>
 								Ayudamos a negocios locales a incrementar sus ventas mensuales,
@@ -89,13 +52,13 @@ function Hero() {
 					</div>
 					<InfiniteScroll velocity={0.05}>
 						<div
-							className='grid gap-6 min-h-[320px]'
+							className='grid gap-6 min-h-[420px]'
 							style={{
 								gridTemplateColumns: `repeat(auto-fill, 1fr)`,
 								gridTemplateRows: "1fr 1fr",
 							}}
 						>
-							{IMAGES.map((image, index) => {
+							{HERO_IMAGES.map((image, index) => {
 								const condition = (index + 3) % 3 === 0;
 								const gridDisplay =
 									(index + 3) % 3 === 0
@@ -114,7 +77,7 @@ function Hero() {
 
 								return (
 									<div
-										className='flex flex-col bg-gray-300 rounded-xl min-w-[256px] overflow-hidden'
+										className='flex flex-col bg-gray-300 rounded-xl min-w-[356px] min-h-[480] overflow-hidden'
 										key={index}
 										data-condition={condition}
 										data-index={index}
@@ -125,7 +88,7 @@ function Hero() {
 											src={image.src}
 											alt={image.alt}
 											width={200}
-											height={300}
+											height={400}
 										/>
 									</div>
 								);

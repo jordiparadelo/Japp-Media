@@ -32,7 +32,6 @@ function WhyUs() {
 								width={300}
 								height={200}
 								className='object-contain drag-none'
-								// style={{ WebkitUserDrag: "none" } as CustomStyle}
 							/>
 							<h2 className='text-2xl font-heading'>{item.title}</h2>
 							<p className='text-sm font-thin'>{item.description}</p>

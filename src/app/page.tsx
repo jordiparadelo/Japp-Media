@@ -2,16 +2,16 @@ import {
 	// Imaginary,
 	Hero,
 	Services,
-	WhyUs,
 	CtaBanner,
+	Benefits,
 } from "@/components/sections";
 export default function Home() {
 	return (
 		<>
 			<Hero />
 			{/* <Imaginary /> */}
-			<WhyUs />
 			<Services />
+			<Benefits />
 			<CtaBanner />
 		</>
 	);
