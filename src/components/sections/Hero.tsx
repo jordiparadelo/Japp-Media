@@ -4,7 +4,7 @@ import { Button, SectionTag } from "@/components/ui";
 import Image from "next/image";
 import InfiniteScroll from "../ui/InfiniteScroll";
 
-import styles from "@/styles/hero.module.scss";
+import styles from "@/styles/Hero.module.scss";
 import { cn } from "@/libs/utils";
 import { HERO_IMAGES } from "@/data";
 
@@ -58,7 +58,7 @@ function Hero() {
 					</div>
 					<InfiniteScroll velocity={0.05}>
 						<div
-							className='grid gap-6 min-h-[420px]'
+							className='grid gap-6 min-h-[500px]'
 							style={{
 								gridTemplateColumns: `repeat(auto-fill, 1fr)`,
 								gridTemplateRows: "1fr 1fr",
@@ -83,7 +83,7 @@ function Hero() {
 
 								return (
 									<div
-										className='flex flex-col bg-gray-300 rounded-xl min-w-[356px] min-h-[480] overflow-hidden'
+										className='flex flex-col bg-gray-300 rounded-xl min-w-[256px] md:min-w-[400px] overflow-hidden'
 										key={index}
 										data-condition={condition}
 										data-index={index}

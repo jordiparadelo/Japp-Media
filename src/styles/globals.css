@@ -19,7 +19,7 @@
 	/* Background */
 	--bkg-dark: #00252E;
 	--bkg-light-dark: #00303C;
-	--bkgDotPattern: radial-gradient(hsla(0, 0%, 100%, 0.1) 1px, transparent 0);
+	--bkgDotPattern: radial-gradient(hsla(0, 0%, 100%, 0.1) var(--line-size), transparent 0);
 
 	/* Corners */
 	--rounded-btn: 0.5rem;
@@ -143,6 +143,8 @@
 	top: 10%;
 	transform: translateY(-50%);
 	width: 100%;
+	max-width: 100vw;
+	overflow-x: hidden;
 	height: 100%;
 	opacity: 0.6;
 	background-image: radial-gradient(#0ddeac 50%, #00252e 50%);
@@ -152,30 +154,36 @@
 }
 
 .bkg-dot-pattern > *,
-.bkg-grid-pattern > *, {
+.bkg-grid-pattern > * {
 	position: relative;
 	z-index: 1;
 }
 
 .bkg-grid-pattern {
-	.background-color: #e5e5f7;
-	opacity: 0.8;
-	background-image: linear-gradient(#444cf7 1px, transparent 1px),
-		linear-gradient(to right, #444cf7 1px, #e5e5f7 1px);
-	background-size: 20px 20px;
+	--line-size: 1px;
+	--line-color: var(--color-primary);
+	--line-spacing: 100px;
+
+	position: relative;
+	background-image: linear-gradient(var(--line-color) var(--line-size), transparent var(--line-size)),
+		linear-gradient(to right, var(--line-color) var(--line-size), transparent var(--line-size));
+	background-size: var(--line-spacing) var(--line-spacing);
+	background-position: center;
+	max-width: 100vw;
+	overflow-x: hidden;
 }
 
 .bkg-grid-pattern::before {
 	content: "";
 	position: absolute;
-	top: 10%;
-	transform: translateY(-50%);
-	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	width: 150%;
 	height: 100%;
-	opacity: 0.6;
-	background-image: radial-gradient(#0ddeac 50%, #00252e 50%);
-	filter: blur(200px);
-	opacity: 0.35;
+	background-image: radial-gradient(var(--color-font-dark) 50%, transparent);
+	filter: blur(100px);
+	opacity: 1;
 	z-index: 0;
 }
 

@@ -17,12 +17,12 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		max-width: 75%;
+        padding-inline: 0.75em;
 		width: 100%;
 
 		&_line {
 			display: flex;
-			flex-flow: row wrap;
+			flex-flow: row;
 			place-content: center;
 			place-items: center;
 
@@ -50,28 +50,13 @@
 
                 > *:nth-child(1) {
                     margin-top: -10%;
+                    width: 1.3em;
+                    height: 1.3em;
                     transform: rotate(12deg);   
                 }
             }
 			
-		}
-
-		// > *:nth-child(1) {
-		//     display: flex;
-		//     flex-flow: row wrap;
-		//     place-content: center;
-		//     place-items: center;
-		//     row-gap: 1rem;
-		//     column-gap: 0.5rem;
-
-		//     > *:nth-child(2) {
-		//         background: linear-gradient(135deg, var(--color-primary) 25%, var(--color-secondary) 75%);
-		//         -webkit-background-clip: text;
-		//         -webkit-text-fill-color: transparent;
-		//         transform: rotate(5deg);
-		//         font-size: 1.1em;
-		//     }
-		// }
+        }
 
 		> *:nth-child(2) {
 			align-self: flex-end;
