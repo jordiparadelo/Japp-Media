@@ -4,9 +4,11 @@ import { Button, SectionTag } from "@/components/ui";
 import Image from "next/image";
 import InfiniteScroll from "../ui/InfiniteScroll";
 
-import styles from "@/styles/hero.module.css";
+import styles from "@/styles/hero.module.scss";
 import { cn } from "@/libs/utils";
 import { HERO_IMAGES } from "@/data";
+
+import DoodleArrow from '@/assets/icons/doodle-arrow.svg'
 
 function Hero() {
 	return (
@@ -23,7 +25,7 @@ function Hero() {
 								tu negocio con mas
 								<span className={styles["hero_heading-wrap"]}>
 									{" "}
-									<span>
+									<span className={styles["hero_heading-wrap_line"]}>
 										<SectionTag
 											rotation={-3}
 											color='#0DDEAC'
@@ -32,12 +34,16 @@ function Hero() {
 										</SectionTag>{" "}
 										<span>sin</span>
 									</span>{" "}
-									<SectionTag
-										rotation={3}
-										color='#C5FD01'
-									>
-										esfuerzo
-									</SectionTag>
+									<span className={styles["hero_heading-wrap_line"]}>
+									<DoodleArrow/>
+
+										<SectionTag
+											rotation={3}
+											color='#C5FD01'
+										>
+											esfuerzo
+										</SectionTag>
+									</span>
 								</span>
 							</h1>
 							<p className='text-xl max-w-screen-md mx-auto text-pretty'>
