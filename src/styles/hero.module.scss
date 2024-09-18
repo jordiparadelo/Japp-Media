@@ -1,5 +1,17 @@
 .hero {
-	position: relative;
+    position: relative;
+	padding-block: 2.5rem;
+	padding-inline: 1.25rem;
+	// background-color: var(--bkg-dark);
+
+	@media screen and (min-width: 768px) {
+		padding-block: 4rem;
+		padding-inline: 4rem;
+	}
+
+	@media screen and (min-width: 1024px) {
+		padding-block: 7.5rem;
+	}
 
 	&_heading {
 		display: flex;

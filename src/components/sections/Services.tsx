@@ -10,16 +10,16 @@ import ServiceCard from "@/components/ui/ServiceCard";
 function Services() {
 	return (
 		<section
-			className={styles["services"]}
+			className={styles["services"] + " bkg-grid-pattern"}
 			// className={cn(`py-11 px-5 md:px-16 md:py-20 ${"bkg-grid-pattern"}`)}
 		>
 			<div className='container mx-auto'>
 				<div className={styles["services_layout"]}>
 					<div className={styles["services_heading"]}>
 						<h2 className='heading-h2'>
-							Un servicio que te ahorra tiempo y trae nuevos clientes
+							Un servicio que te <span className="text-gray-400">ahorra tiempo</span> y trae <span className="text-gray-400">2nuevos clientes</span>
 						</h2>
-						<p className='text-2xl text-pretty'>
+						<p className='text-xl text-pretty'>
 							Nos enfocamos en negocios locales como el tuyo. Simplifica la
 							gestión de citas y aumenta tu visibilidad sin esfuerzo.
 						</p>

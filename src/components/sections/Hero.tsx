@@ -13,7 +13,7 @@ import DoodleArrow from '@/assets/icons/doodle-arrow.svg'
 function Hero() {
 	return (
 		<section
-			className={cn(`px-6 pt-24 pb-16 bkg-dot-pattern ${styles["hero"]}`)}
+			className={styles["hero"] + ' bkg-dot-pattern'}
 		>
 			<div className='container max-w-3xl mx-auto'>
 				<div className='flex flex-col gap-20'>

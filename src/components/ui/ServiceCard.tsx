@@ -13,7 +13,9 @@ type Props = {
 const ServiceCard = ({ service, title, description, image }: Props) => {
 	const [isHovered, setIsHovered] = React.useState(false);
 	const cardRef = React.useRef<null | HTMLDivElement>(null);
-	const cardHeigth = React.useRef<number>(0);
+	const cardHeight = React.useRef<number>(0);
+
+	const TRANSITION_DURATION = 0.25;
 
 	const cardVariants = {
 		initial: { scale: 1 },
@@ -21,8 +23,8 @@ const ServiceCard = ({ service, title, description, image }: Props) => {
 	};
 
 	const titleVariants = {
-		initial: { scale: 1, opacity: 1 },
-		hover: { scale: 0, opacity: 0 },
+        hover: { height: 0, scale: 0.8, opacity: 0 },
+		initial: { height: "auto", scale: 1, opacity: 1 },
 	};
 
 	const descriptionVariants = {
@@ -32,10 +34,10 @@ const ServiceCard = ({ service, title, description, image }: Props) => {
 
 	React.useEffect(() => {
 		if (cardRef.current) {
-			cardHeigth.current = cardRef.current.clientHeight;
-			cardRef.current.style.minHeight = `${cardHeigth.current}px`;
+			cardHeight.current = cardRef.current.clientHeight;
+			cardRef.current.style.minHeight = `${cardHeight.current}px`;
 		}
-	}, [cardRef]);
+	}, [cardHeight]);
 
 	return (
 		<motion.div
@@ -53,14 +55,20 @@ const ServiceCard = ({ service, title, description, image }: Props) => {
 			<div className={styles["service-card_content"]}>
 				<div className={styles["service-card_heading"]}>
 					<p className={styles["service-card_service"]}>{service}</p>
-					{!isHovered && (
-						<motion.h3
-							variants={titleVariants}
-							className={styles["service-card_title"]}
-						>
-							{title}
-						</motion.h3>
-					)}
+					<AnimatePresence>
+						{!isHovered && (
+							<motion.h3
+								initial='initial'
+								animate={isHovered ? "hover" : "initial"}
+								exit='hover'
+								variants={titleVariants}
+								transition={{ duration: TRANSITION_DURATION }}
+								className={styles["service-card_title"]}
+							>
+								{title}
+							</motion.h3>
+						)}
+					</AnimatePresence>
 				</div>
 				<AnimatePresence>
 					{isHovered && (
@@ -70,7 +78,7 @@ const ServiceCard = ({ service, title, description, image }: Props) => {
 							initial='initial'
 							animate='hover'
 							exit='initial'
-							transition={{ duration: 0.2 }}
+							transition={{ duration: TRANSITION_DURATION }}
 						>
 							{description}
 						</motion.p>

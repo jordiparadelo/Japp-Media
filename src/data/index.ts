@@ -4,7 +4,7 @@ export const SERVICES = [
 		title: "Mejora tu presencia digital",
 		description:
 			"Crea o mejora tu sitio web: aumenta tu presencia, cierra mas reservas y atrae más clientes potenciales.",
-		image: "/images/service_card_01.webp",
+		image: "/images/service_card_05.webp",
 	},
 	{
 		service: "Respuestas automáticas",
@@ -18,14 +18,14 @@ export const SERVICES = [
 		title: "Aumenta tu reputación en Google",
 		description:
 			"Ayudamos a tu negocio a destacar mejor en Google, para que nuevos clientes contacten contigo.",
-		image: "/images/service_card_03.webp",
+		image: "/images/service_card_04.webp",
 	},
 	{
 		service: "Calendario de citas",
 		title: "Agenda a tus clientes y no pierdas tiempo",
 		description:
 			"Gestiona tus agenda desde tu movil, crea recordatorios y mantente notificado.",
-		image: "/images/service_card_04.webp",
+		image: "/images/service_card_01.webp",
 	},
 ];
 
