@@ -2,15 +2,10 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "@/styles/Services.module.scss";
+import {ServiceCardType} from "@/types";
 
-type Props = {
-	service: string;
-	title: string;
-	description: string;
-	image: string;
-};
 
-const ServiceCard = ({ service, title, description, image }: Props) => {
+const ServiceCard = ({ service, title, description, image }: ServiceCardType) => {
 	const [isHovered, setIsHovered] = React.useState(false);
 	const cardRef = React.useRef<null | HTMLDivElement>(null);
 	const cardHeight = React.useRef<number>(0);
