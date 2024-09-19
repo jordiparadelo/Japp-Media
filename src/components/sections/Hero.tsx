@@ -5,7 +5,6 @@ import Image from "next/image";
 import InfiniteScroll from "../ui/InfiniteScroll";
 
 import styles from "@/styles/Hero.module.scss";
-import { cn } from "@/libs/utils";
 import { HERO_IMAGES } from "@/data";
 
 import DoodleArrow from '@/assets/icons/doodle-arrow.svg'
@@ -56,7 +55,7 @@ function Hero() {
 							<Button variant='secondary'>Agenda una llamada</Button>
 						</div>
 					</div>
-					<InfiniteScroll velocity={0.05}>
+					<InfiniteScroll velocity={0.25}>
 						<div
 							className='grid gap-6 min-h-[500px]'
 							style={{
