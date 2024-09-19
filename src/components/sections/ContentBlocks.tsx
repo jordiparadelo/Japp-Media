@@ -2,6 +2,8 @@ import React from "react";
 import { Accordion, AccordionItem } from "../ui/Accordion";
 import Image, { StaticImageData } from "next/image";
 
+import styles from '@/styles/ContentBlocks.module.scss'
+
 export type StepGuidedProps = {
 	title?: string;
 	description?: string;
@@ -12,26 +14,25 @@ export type StepGuidedProps = {
 	image?: StaticImageData | string;
 };
 
-export function StepGuidedBlocks({ blocks }: { blocks: StepGuidedProps[] }) {
+export function ContentBlocks({ blocks }: { blocks: StepGuidedProps[] }) {
 	return (
-		<ul className=' flex flex-col gap-8  md:gap-20'>
+		<ul className={styles['grid']}>
 			{blocks?.map((item) => (
 				<li
 					key={item.title}
-					className='group flex flex-col gap-10 md:grid md:grid-cols-2 md:flex-wrap'
 				>
-					<StepGuided {...item} />
+					<BlocksCard {...item} />
 				</li>
 			))}
 		</ul>
 	);
 }
 
-function StepGuided({ title, description, details, image }: StepGuidedProps) {
+function BlocksCard({ title, description, details, image }: StepGuidedProps) {
 	return (
-		<>
+		<div className={styles['card']}>
 			{image && (
-				<div className='flex flex-col place-content-stretch place-items-center md:group-odd:order-1'>
+				<div className={styles['card_image']}>
 					<Image
 						src={image}
 						alt='process'
@@ -41,9 +42,11 @@ function StepGuided({ title, description, details, image }: StepGuidedProps) {
 					/>
 				</div>
 			)}
-			<div className='flex flex-col gap-5'>
+			<div className={styles['card_content']}>
+			<div className={styles['card_content_heading']}>
 				<h2 className='text-3xl '>{title}</h2>
-				<p className='text-lg'>{description}</p>
+				<p className='text-rg'>{description}</p>
+				</div>
 				<Accordion>
 					{details?.map((detail) => (
 						<AccordionItem
@@ -54,6 +57,6 @@ function StepGuided({ title, description, details, image }: StepGuidedProps) {
 					))}
 				</Accordion>
 			</div>
-		</>
+		</div>
 	);
 }

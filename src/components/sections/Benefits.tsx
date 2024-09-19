@@ -1,31 +1,43 @@
 import React from "react";
 
 import { FEATURES } from "@/data";
-import { StepGuidedBlocks } from "./StepGuidedSection";
+import { ContentBlocks } from "./ContentBlocks";
 import { Button, SectionTag } from "@/components/ui";
+
+import styles from "@/styles/Benefits.module.scss";
 
 function Benefits() {
 	return (
-			<section className='py-11 px-5 md:px-16 md:py-20'>
-				<div className='container flex flex-col gap-16'>
-					<div className='container mx-auto flex max-w-screen-md flex-col place-items-center gap-8 text-center'>
-						<div className='flex flex-col place-items-center gap-4'>
-							<SectionTag rotation={-5}>Lo más importante</SectionTag>
+		<section className={styles["section"] + " bkg-dot-pattern"}>
+			<div className='container mx-auto'>
+				<div className={styles["section_layout"]}>
+					<div className={styles["section_heading"]}>
+						<div className={styles["section_heading_title-wrapper"]}>
+							<SectionTag
+								rotation={3}
+								color='var(--color-primary)'
+							>
+								<span className='font-semibold'>¿Lo necesitas?</span>
+							</SectionTag>
 							<h2 className='text-4xl md:text-5xl font-heading'>
-								Mientras otros servicios ofrecén obtener mas clientes nosotros
-								optimizamos en función de lo que genera más ventas.
+								Se <span className='text-gray-300'>ajusta a tu negocio</span> y
+								reduce complicaciones.
 							</h2>
 						</div>
 						<p className='text-lg'>
-							Ayudamos a negocios locales a incrementar sus ventas mensuales,
-							nos encargamos de encontrarte clientes y dejarte el resto a ti.
+							No todos los negocios necesitan un servicio integral. Quizás solo
+							necesites automatizar la comunicación, gestionar citas de clientes
+							o mejorar reputación. Te ofrecemos claridad y una estrategia
+							diseñada para lo que realmente te hace falta.
 						</p>
-						<Button>Agenda una llamada</Button>
+						<div className={styles["section_heading_actions"]}>
+							<Button>Agenda una llamada</Button>
+						</div>
 					</div>
-				<StepGuidedBlocks blocks={FEATURES} />
-
+					<ContentBlocks blocks={FEATURES} />
 				</div>
-			</section>
+			</div>
+		</section>
 	);
 }
 

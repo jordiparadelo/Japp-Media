@@ -9,7 +9,7 @@ type Props = {
     className?: string
 }
 
-function SectionTag({ children = 'Tag', rotation, color = 'bg-green-400' , className}: Props) {
+function SectionTag({ children = 'Tag', rotation, color = '--color-primary' , className}: Props) {
     const cornerClass = "after:content-[''] after:h-[40%] after:aspect-square after:absolute  after:rounded-sm after:bg-white after:top-0 after:right-[0] after:left-auto";
     return (
       <div style={{clipPath: 'polygon(90% 0px, 100% 40%, 100% 100%, 0px 100%, 0px 0px)', transform: `rotateZ(${rotation}deg)`, backgroundColor: color,

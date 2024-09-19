@@ -1,0 +1,43 @@
+.section {
+    padding-block: 2.5rem;
+	padding-inline: 1.25rem;
+
+	@media screen and (min-width: 768px) {
+		padding-block: 4rem;
+		padding-inline: 4rem;
+	}
+
+	@media screen and (min-width: 1024px) {
+		padding-block: 7.5rem;
+	}
+
+    &_heading {
+        display: flex;
+        flex-direction: column;
+        place-content: center;
+        gap: 1.5rem;
+        max-width: 80ch;
+        margin-inline: auto;
+        text-align: center;
+        transform-origin: top;
+
+        &_title-wrapper {
+            display: flex;
+            place-items: center;
+            flex-direction: column;
+            gap: .5rem;  
+            text-wrap: pretty;
+        }
+
+        &_actions {
+            justify-self: center;
+            margin-inline: auto;
+        }
+    }
+
+    &_layout {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;  
+    }
+}

@@ -12,33 +12,33 @@ import DoodleArrow from '@/assets/icons/doodle-arrow.svg'
 function Hero() {
 	return (
 		<section
-			className={styles["hero"] + ' bkg-dot-pattern'}
+			className={styles["section"] + ' bkg-dot-pattern'}
 		>
 			<div className='container max-w-3xl mx-auto'>
 				<div className='flex flex-col gap-20'>
 					<div className='flex flex-col max-w-screen-md mx-auto gap-6 md:gap-8 text-center'>
 						<div className='flex flex-col place-items-center gap-4'>
-							<h1 className={styles["hero_heading"]}>
+							<h1 className={styles["section_heading"]}>
 								Haz crecer
 								<br />
 								tu negocio con mas
-								<span className={styles["hero_heading-wrap"]}>
+								<span className={styles["section_heading-wrap"]}>
 									{" "}
-									<span className={styles["hero_heading-wrap_line"]}>
+									<span className={styles["section_heading-wrap_line"]}>
 										<SectionTag
 											rotation={-3}
-											color='#0DDEAC'
+											color='var(--color-primary)'
 										>
 											Clientes
 										</SectionTag>{" "}
 										<span>sin</span>
 									</span>{" "}
-									<span className={styles["hero_heading-wrap_line"]}>
+									<span className={styles["section_heading-wrap_line"]}>
 									<DoodleArrow/>
 
 										<SectionTag
 											rotation={3}
-											color='#C5FD01'
+											color='var(--color-secondary)'
 										>
 											esfuerzo
 										</SectionTag>

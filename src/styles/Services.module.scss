@@ -1,4 +1,4 @@
-.services {
+.section {
 	position: relative;
 	padding-block: 2.5rem;
 	padding-inline: 1.25rem;
@@ -20,15 +20,23 @@
 	}
 
 	&_heading {
-		display: flex;
-		flex-direction: column;
-		place-content: center;
-		gap: 1.5rem;
-		max-width: 80ch;
-		margin-inline: auto;
-		text-align: center;
-		transform-origin: top;
-	}
+        display: flex;
+        flex-direction: column;
+        place-content: center;
+        gap: 1.5rem;
+        max-width: 80ch;
+        margin-inline: auto;
+        text-align: center;
+        transform-origin: top;
+
+        &_title-wrapper {
+            display: flex;
+            place-items: center;
+            flex-direction: column;
+            gap: .5rem;  
+            text-wrap: pretty;
+        }
+    }
 
 	&_grid {
 		display: flex;

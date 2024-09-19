@@ -23,6 +23,7 @@
 
 	/* Corners */
 	--rounded-btn: 0.5rem;
+	--rounded-md: 0.75rem;
 	--rounded: 999px;
 }
 
@@ -132,9 +133,10 @@
 	--dot-color: var(--color-font-dark);
 	--dot-spacing: 50px;
 
+	position: relative;
+    overflow: clip;
 	background-image: radial-gradient(var(--dot-color) var(--dot-size), transparent var(--dot-size));
 	background-size: var(--dot-spacing) var(--dot-spacing);
-	/* background-position: 0 0, 10px 10px; */
 }
 
 .bkg-dot-pattern::before {
@@ -165,6 +167,7 @@
 	--line-spacing: 100px;
 
 	position: relative;
+	overflow: clip;
 	background-image: linear-gradient(var(--line-color) var(--line-size), transparent var(--line-size)),
 		linear-gradient(to right, var(--line-color) var(--line-size), transparent var(--line-size));
 	background-size: var(--line-spacing) var(--line-spacing);

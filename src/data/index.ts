@@ -4,7 +4,7 @@ export const SERVICES = [
 		title: "Mejora tu presencia digital",
 		description:
 			"Crea o mejora tu sitio web: aumenta tu presencia, cierra mas reservas y atrae más clientes potenciales.",
-		image: "/images/service_card_05.webp",
+		image: "/images/benefits_card_01.webp",
 	},
 	{
 		service: "Respuestas automáticas",
@@ -51,7 +51,7 @@ export const FEATURES = [
 					"Capture datos valiosos de clientes potenciales con formularios optimizados y fáciles de usar focalizados en generar mas ventas.",
 			},
 		],
-		image: '/images/about-us_hero.webp',
+		image: '/images/benefits_card_01.webp',
 	},
 	{
 		title: "Aumente su reputation y su visualización.",
@@ -69,7 +69,7 @@ export const FEATURES = [
 					"Recibe notificaciones inmediatas cuando se publiquen nuevas reseñas y responde rápidamente para gestionar la satisfacción del cliente.",
 			},
 		],
-		image: '/images/about-us_hero.webp',
+		image: '/images/benefits_card_02.webp',
 	},
 	{
 		title: "Campañas de Respuesta Directa (DR)",
@@ -92,7 +92,7 @@ export const FEATURES = [
 					"Accede a informes detallados en tiempo real para medir la efectividad de las campañas y realizar ajustes que maximicen las conversiones.",
 			},
 		],
-		image: '/images/about-us_hero.webp',
+		image: '/images/benefits_card_03.webp',
 	},
 	{
 		title: "Respuestas Automáticas de Texto y Email",
@@ -115,7 +115,7 @@ export const FEATURES = [
 					"Mantén a tus clientes informados y satisfechos al responder de manera rápida y consistente, fomentando su lealtad y confianza en tu negocio.",
 			},
 		],
-		image: '/images/about-us_hero.webp',
+		image: '/images/benefits_card_04.webp',
 	},
 ];
 

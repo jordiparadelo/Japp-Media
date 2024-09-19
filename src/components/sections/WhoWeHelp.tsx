@@ -1,7 +1,7 @@
 import React from "react";
 
 import { HOW_HELP } from "@/data";
-import { StepGuidedBlocks } from "./StepGuidedSection";
+import { ContentBlocks } from "./ContentBlocks";
 import { SectionTag } from "@/components/ui";
 
 function WhoWeHelp() {
@@ -21,7 +21,7 @@ function WhoWeHelp() {
 					</p>
 				</div>
 				<div className='max-w-screen-lg mx-auto'>
-					<StepGuidedBlocks blocks={HOW_HELP} />
+					<ContentBlocks blocks={HOW_HELP} />
 				</div>
 			</div>
 		</section>
