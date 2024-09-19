@@ -197,20 +197,20 @@ export const WHY_US = [
 		description:
 			"Muestra tu negocio en línea con un sitio web atractivo y funcional que cautive a los visitantes.",
 
-		image: "/images/image_more-leads.webp",
+		image: "/images/diseño_desarrollo.webp",
 	},
 	{
 		title: "Generación de Clientes Potenciales:",
 		description:
-			"Atrae nuevos prospectos a tu negocio y conviértelos en citas de valor.",
+			"Atrae nuevos prospecto a tu negocio y conviértelos en citas de valor.",
 
-		image: "/images/image_more-leads.webp",
+		image: "/images/clientes_potenciales.webp",
 	},
 	{
 		title: "Campañas de Marketing Digital:",
 		description:
 			"Ejecuta campañas publicitarias dirigidas que ofrezcan resultados reales.",
-		image: "/images/gestion_comunicacion.webp",
+		image: "/images/campaña_marketing.webp",
 	},
 	{
 		title: "Gestión de la Reputación:",
@@ -222,7 +222,7 @@ export const WHY_US = [
 		title: "Gestión de la Comunicación:",
 		description:
 			"Mantén relaciones continuas con tus clientes a través de esfuerzos de marketing multicanal, incluidos correo electrónico, SMS y redes sociales.",
-		image: "/images/image_more-leads.webp",
+		image: "/images/gestion_comunicacion.webp",
 	},
 ];
 
