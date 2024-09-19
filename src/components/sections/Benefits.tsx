@@ -34,7 +34,9 @@ function Benefits() {
 							<Button>Agenda una llamada</Button>
 						</div>
 					</div>
-					<ContentBlocks blocks={FEATURES} />
+					<div className='max-w-screen-lg mx-auto'>
+						<ContentBlocks blocks={FEATURES} />
+					</div>
 				</div>
 			</div>
 		</section>

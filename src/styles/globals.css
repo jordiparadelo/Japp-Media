@@ -182,7 +182,7 @@
 	top: 50%;
 	left: 50%;
 	transform: translateX(-50%) translateY(-50%);
-	width: 150%;
+	width: 200%;
 	height: 100%;
 	background-image: radial-gradient(var(--color-font-dark) 50%, transparent);
 	filter: blur(100px);

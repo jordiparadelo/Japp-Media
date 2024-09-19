@@ -1,9 +1,10 @@
 .grid {
 	display: flex;
 	flex-direction: column;
-	gap: 3rem;
+	gap: 2rem;
 
 	@media screen and (min-width: 768px) {
+		gap: 6rem;
 		li:nth-child(even) {
 			.card_content {
 				grid-column: 1;
@@ -61,7 +62,6 @@
 
         @media screen and (max-width: 425px) {
 			padding: 1.25rem;
-			// background-color: white;
 		}
 	}
 

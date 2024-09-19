@@ -1,30 +1,59 @@
-import { SectionTag } from "@/components/ui";
+import { Button, SectionTag } from "@/components/ui";
 
 import React from "react";
+import styles from "@/styles/CtaBanner.module.scss";
+import DoodleArrow from "@/assets/icons/doodle-arrow.svg";
 
 function CtaBanner() {
-  return (
-    <section className="px-5 py-11 md:px-16 md:py-20">
-      <div className="container mx-auto flex max-w-screen-xl flex-col gap-8">
-        <div className="flex flex-col place-items-center gap-2">
-          <h2 className="sr-only">Agenda una llamada gratuita</h2>
-          <div className="flex min-w-[10ch] flex-col gap-1 place-items-center text-7xl text-white">
-            <div className="rotate-[5deg] text-inherit">Agenda</div>
-            <div className="place-self-start">
-              <SectionTag rotation={-5} color="bg-red-400">
-                <div className="text-white">llamada</div>
-              </SectionTag>
-            </div>
-            <div className="place-self-end">
-              <SectionTag rotation={5}>
-                <div className="text-white">gratuita</div>
-              </SectionTag>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+	return (
+		<section className={styles["section"] + " bkg-grid-pattern"}>
+			<div className='container mx-auto'>
+				<div className={styles["section_layout"]}>
+					<div className={styles["section_heading"]}>
+						<SectionTag
+							rotation={3}
+							color='var(--color-primary)'
+						>
+							<span className='font-semibold'>Comencemos Ya!</span>
+						</SectionTag>
+						<h2 className='sr-only'>Agenda una llamada gratuita</h2>
+
+						<div className={styles["section_heading_title-wrap"]}>
+							<div className={styles["section_heading_line"]}>
+								<div className='rotate-[-5deg] text-white'>Agenda</div>
+							</div>
+							<div className={styles["section_heading_line"]}>
+								<SectionTag
+									rotation={-3}
+									color='var(--color-primary)'
+								>
+									<span>llamada</span>
+								</SectionTag>
+							</div>
+							<div className={styles["section_heading_line"]}>
+								<SectionTag
+									rotation={3}
+									color='var(--color-secondary)'
+								>
+									<span>gratuita</span>
+								</SectionTag>
+								<DoodleArrow />
+							</div>
+						</div>
+					</div>
+					<p className='text-md text-center'>
+						Al final de esta llamada de auditoría, tendrá una comprensión clara
+						de los próximos pasos que puede tomar para que su negocio comience a
+						generar clientes potenciales consistentes y predecibles en línea.
+					</p>
+
+					<div className={styles["section_actions"]}>
+						<Button variant='accent'>Agenda una llamada</Button>
+					</div>
+				</div>
+			</div>
+		</section>
+	);
 }
 
 export default CtaBanner;

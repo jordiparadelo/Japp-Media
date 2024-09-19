@@ -3,7 +3,7 @@ import { cn } from "../../libs/utils";
 type Props = {
 	className?: string;
 	type?: 'submit' | 'reset' | 'button';
-    variant?: 'primary' | 'secondary'
+    variant?: 'primary' | 'secondary' | 'accent';
 	href?: string;
 	children?: React.ReactNode;
 };
@@ -13,7 +13,8 @@ function Button({ className, type = 'button', href, children, variant= 'primary'
 
     const VARIANT_CLASSES = {
         'primary': cn(`${BTN_BASE_CLASS} bg-white text-[#00252E] hover:bg-blue-600 focus:ring-blue-300 min-h-10 `),
-        'secondary': cn(`${BTN_BASE_CLASS} bg-gray-500 hover:bg-gray-600 focus:ring-gray-300`)
+        'secondary': cn(`${BTN_BASE_CLASS} bg-gray-500 hover:bg-gray-600 focus:ring-gray-300`),
+		'accent': cn(`${BTN_BASE_CLASS} bg-[--color-secondary] text-[--color-font] focus:ring-gray-300`),
     }
 
 	return href ? (

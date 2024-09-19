@@ -7,13 +7,11 @@ import InfiniteScroll from "../ui/InfiniteScroll";
 import styles from "@/styles/Hero.module.scss";
 import { HERO_IMAGES } from "@/data";
 
-import DoodleArrow from '@/assets/icons/doodle-arrow.svg'
+import DoodleArrow from "@/assets/icons/doodle-arrow.svg";
 
 function Hero() {
 	return (
-		<section
-			className={styles["section"] + ' bkg-dot-pattern'}
-		>
+		<section className={styles["section"] + " bkg-dot-pattern"}>
 			<div className='container max-w-3xl mx-auto'>
 				<div className='flex flex-col gap-20'>
 					<div className='flex flex-col max-w-screen-md mx-auto gap-6 md:gap-8 text-center'>
@@ -23,18 +21,17 @@ function Hero() {
 								<br />
 								tu negocio con mas
 								<span className={styles["section_heading-wrap"]}>
-									{" "}
 									<span className={styles["section_heading-wrap_line"]}>
 										<SectionTag
 											rotation={-3}
 											color='var(--color-primary)'
 										>
 											Clientes
-										</SectionTag>{" "}
+										</SectionTag>
 										<span>sin</span>
-									</span>{" "}
+									</span>
 									<span className={styles["section_heading-wrap_line"]}>
-									<DoodleArrow/>
+										<DoodleArrow />
 
 										<SectionTag
 											rotation={3}
