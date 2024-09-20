@@ -1,33 +1,51 @@
 import { Button, ContactForm } from "@/components/ui";
 import React from "react";
-import CheckIcon from '@/assets/icons/check.svg';
+import CheckIcon from "@/assets/icons/check.svg";
+
+import styles from "@/styles/ContactHero.module.scss";
+import { PERSONAL_INFO } from "@/libs/constants";
+
+import PhoneIcon from '@/assets/icons/phone-fill.svg'
+import CalendarIcon from '@/assets/icons/calendar.svg'
 
 function Hero() {
 	return (
-		<section className='px-6 pt-24 pb-16 bg-primary'>
-			<div className='container max-w-screen-xl mx-auto'>
-				<div className='container mx-auto flex flex-col md:grid md:grid-cols-2 md:gap-40'>
-					<div className='flex flex-col gap-4'>
-						<h1 className='  heading-h1'>Pongámonos en contacto</h1>
-						<p className='text-xl max-w-screen-md mx-auto text-pretty'>
-							Estaremos encantados de hablar contigo y poder ayudar a tu
-							negocio.
-						</p>
+		<section className={styles["section"] + " bkg-dot-pattern"}>
+			<div className='container mx-auto'>
+				<div className={styles["section_layout"]}>
+					<div className={styles["section_content"]}>
+						<div className={styles["section_heading"]}>
+							<h1 className='  heading-h1'>Pongámonos en contacto</h1>
+							<p className='text-xl'>
+								Estaremos encantados de hablar contigo y poder ayudar a tu
+								negocio.
+							</p>
+						</div>
 
-						<ul className='flex flex-col gap-2'>
-							<li className='flex flex-row gap-2'>
-							<CheckIcon /> <span>Get pricing information</span>
+						<ul className={styles["section_content_list"]}>
+							<li className={styles["section_content_list_item"]}>
+								<CheckIcon />{" "}
+								<span>Descubrir como puedes aumentar clientes</span>
 							</li>
-							<li className='flex flex-row gap-2'>
-							<CheckIcon /> <span>Get pricing information</span>
+							<li className={styles["section_content_list_item"]}>
+								<CheckIcon /> <span>Obtener información de precios</span>
 							</li>
-							<li className='flex flex-row gap-2'>
-							<CheckIcon /> <span>Get pricing information</span>
+							<li className={styles["section_content_list_item"]}>
+								<CheckIcon />{" "}
+								<span>Explorar nuestros servicios para tu negocio</span>
 							</li>
 						</ul>
-						<div className='flex flex-col w-full max-w-[320px] sm:w-auto sm:max-w-none sm:grid sm:grid-cols-2 gap-4 pt-4'>
+						<div className={styles["section_content_actions"]}>
+						<div className={styles["section_content_card"]}>
+							<PhoneIcon/>
+						<p className="text-xl font-medium">LLámanos</p>
+							<a className="text-xl font-medium hover:text-[var(--color-secondary)]" href={`tel:${PERSONAL_INFO.phone}`}>{PERSONAL_INFO.phone}</a>
+						</div>
+						<div className={styles["section_content_card"]}>
+						<CalendarIcon/>
+							<p className="text-xl font-medium">Agenda una llamada</p>
 							<Button>Comienza Ya</Button>
-							<Button variant='secondary'>Agenda una llamada</Button>
+						</div>
 						</div>
 					</div>
 					<ContactForm />

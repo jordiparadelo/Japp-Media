@@ -1,26 +1,35 @@
-  
-  .form {
-    display: flex;
-    flex-direction: column;
-    place-items: stretch;
-    gap: 1rem;
-  }
+.form {
+	display: flex;
+	flex-direction: column;
+	place-items: stretch;
+	gap: 1rem;
+	padding: 1.25rem;
+  border-radius: var(--rounded-lg);
+  background-color: rgba($color: #ffffff, $alpha: 0.08);
+  backdrop-filter: blur(3px);
 
-  .form_field {
+	@media screen and (min-width: 425px) {
+		padding: 3rem 2rem;
+	}
+	@media screen and (min-width: 769px) {
+		padding: 3rem;
+	}
+
+  &_field {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
   }
-
-  .form_input {
+  
+  &_input {
     min-height: 2.5rem;
     max-width: 100%;
     border-radius: 0.25rem;
     padding-inline: 1rem;
     color: var(--color-font);
   }
-
-  .form_textarea {
+  
+  &_textarea {
     min-height: 100px;
     max-height: 200px;
     max-width: 100%;
@@ -29,39 +38,48 @@
     padding-block: 1rem;
     color: var(--color-font);
   }
-
-  .form_field_checkbox {
+  
+  &_field_checkbox {
     display: flex;
     flex-direction: column;
     align-items: start;
     gap: 0.5rem;
   }
-
-  .form_field_checkbox input {
+  
+  &_field_checkbox input {
     margin-top: 0.25rem;
   }
-
-  .form_label_checkbox {
+  
+  &_label_checkbox {
     font-size: 0.875rem;
     color: var(--color-gray-700);
   }
-
-  .form_label {
+  
+  &_label {
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--color-gray-700);
   }
-
-  .form_group {
-    display: grid;
+  
+  &_group {
+    display: flex;
+    flex-wrap: wrap;
     grid-template-columns: 1fr 1fr;
     gap: 1.25rem;
+  
+    > * {
+      flex-grow: 1;
+      flex-basis: 25ch;
+      width: 100%;
+    }
   }
-
-  .form_actions {
+  
+  &_actions {
     padding-top: 1rem;
   }
-
-  .form_actions button {
+  
+  &_actions button {
     --size: 56px;
   }
+}
+

@@ -1,0 +1,99 @@
+.section {
+	padding-block: 2.5rem;
+	padding-inline: 1.25rem;
+
+	@media screen and (min-width: 768px) {
+		padding-block: 4rem;
+		padding-inline: 4rem;
+	}
+
+	@media screen and (min-width: 1024px) {
+		padding-block: 7.5rem 3.25rem;
+	}
+	.section_layout {
+		display: flex;
+		flex-direction: column;
+		gap: 4rem;
+
+		@media screen and (min-width: 425px) {
+			flex-wrap: wrap;
+
+			> * {
+				width: 100%;
+				flex-grow: 1;
+				flex-basis: min(min-content, 400px);
+			}
+		}
+		@media screen and (min-width: 768px) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	.section_heading {
+		max-width: 65ch;
+	}
+
+	.section_content {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		place-items: flex-start;
+		text-align: left;
+		text-wrap: pretty;
+
+		@media screen and (min-width: 425px) {
+			gap: 2.5rem;
+		}
+
+		&_list {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+			align-self: stretch;
+
+			&_item {
+				display: flex;
+				flex-direction: row;
+				gap: 0.75rem;
+
+				> svg {
+					flex-shrink: 0;
+					width: 1.5em;
+					height: 1.5em;
+				}
+			}
+		}
+
+		&_actions {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+			align-self: stretch;
+
+			@media screen and (min-width: 425px) {
+				max-width: max-content;
+				display: grid;
+				grid-auto-columns: 1fr;
+				grid-template-columns: 1fr 1fr;
+			}
+		}
+
+		&_card {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+			padding: 0.875rem;
+			background-color: rgba($color: #ffffff, $alpha: 0.08);
+			border-radius: var(--rounded-md);
+			overflow: hidden;
+            backdrop-filter: blur(3px);
+
+			@media screen and (min-width: 425px) {
+				padding: 1.5rem;
+			}
+		}
+	}
+	.section_form {
+	}
+}

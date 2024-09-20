@@ -8,7 +8,7 @@ import {
 	RegisterOptions,
 	UseFormRegister,
 } from "react-hook-form";
-import styles from "@/styles/form.module.css";
+import styles from "@/styles/ContactForm.module.scss";
 
 type FormFields = {
 	name: string;

@@ -1,7 +1,8 @@
-import { Archivo, Roboto_Flex } from 'next/font/google'
+import { Archivo, Roboto_Flex } from "next/font/google";
 import { Footer, Navbar } from "@/components/sections";
 import { cn } from "@/libs/utils";
 import "@/styles/globals.css";
+import {Layout} from "@/components/ui";
 
 export const metadata = {
 	title: "Japp Media | Tu proximo servicio web",
@@ -9,18 +10,18 @@ export const metadata = {
 };
 
 export const font_heading = Archivo({
-	weight: ["300","400", "600", "700"],
+	weight: ["300", "400", "600", "700"],
 	subsets: ["latin"],
 	display: "swap",
-	variable: '--font-heading',
-})
+	variable: "--font-heading",
+});
 
 export const font_body = Roboto_Flex({
 	weight: ["200", "300", "400", "600", "700"],
 	subsets: ["latin"],
 	display: "swap",
-	variable: '--font-body',
-})
+	variable: "--font-body",
+});
 
 export default function RootLayout({
 	children,
@@ -29,9 +30,15 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body className={cn( font_heading.variable, font_body.variable, `bg-background text-white flex flex-col min-h-[100vh]`)}>
+			<body
+				className={cn(
+					font_heading.variable,
+					font_body.variable,
+					`bg-background text-white flex flex-col min-h-[100vh]`
+				)}
+			>
 				<Navbar />
-				<main className='flex-grow'>{children}</main>
+				<Layout>{children}</Layout>
 				<Footer />
 			</body>
 		</html>
