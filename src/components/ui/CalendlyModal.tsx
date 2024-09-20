@@ -56,7 +56,7 @@ const CalendlyModal: React.FC<CalendlyModalProps> = ({ isOpen, onClose }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="fixed max-w-[100vw] max-h-[100vh] inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center"
+          className="sticky py-[120px] max-w-[100vw] max-h-[100vh] inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center"
         >
           <motion.div
             ref={modalRef}

@@ -2,9 +2,9 @@
 import { useSearchParams, useRouter } from 'next/navigation';
 
 import { AnimatePresence } from "framer-motion";
-import {PageTransition, CalendlyModal} from "@/components/ui";
-
-
+import { PageTransition, BookingModal } from "@/components/ui";
+import CalendlyWidget from "@/components/booking/CalendlyWidget";
+// import GoogleCalendarWidget from "@/components/booking/GoogleCalendarWidget";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const searchParams = useSearchParams();
@@ -31,7 +31,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     >
       <PageTransition>
         <main className="flex-grow">{children}</main>
-        <CalendlyModal isOpen={isModalOpen} onClose={closeModal} />
+        <BookingModal 
+          isOpen={isModalOpen} 
+          onClose={closeModal} 
+          BookingWidget={CalendlyWidget}
+          bookingWidgetProps={{ url: "https://calendly.com/your-calendly-url" }}
+        />
       </PageTransition>
     </AnimatePresence>
   );

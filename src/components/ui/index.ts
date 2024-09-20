@@ -10,3 +10,4 @@ export {default as InfiniteScroll} from './InfiniteScroll';
 export {default as PageTransition} from './PageTransition';
 export { default as CalendlyModal } from './CalendlyModal';
 export { default as BookButton } from './BookButton';
+export { default as BookingModal } from './BookingModal';

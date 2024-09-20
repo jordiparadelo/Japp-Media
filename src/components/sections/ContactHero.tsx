@@ -1,4 +1,4 @@
-import { Button, ContactForm } from "@/components/ui";
+import { BookButton,  ContactForm } from "@/components/ui";
 import React from "react";
 import CheckIcon from "@/assets/icons/check.svg";
 
@@ -44,7 +44,7 @@ function Hero() {
 						<div className={styles["section_content_card"]}>
 						<CalendarIcon/>
 							<p className="text-xl font-medium">Agenda una llamada</p>
-							<Button>Comienza Ya</Button>
+							<BookButton variant="accent" text="Comienza Ya" />
 						</div>
 						</div>
 					</div>
