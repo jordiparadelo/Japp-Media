@@ -1,3 +1,6 @@
+"use client";
+
+import { useSearchParams, useRouter } from 'next/navigation';
 import {
 	// Imaginary,
 	Hero,
@@ -5,7 +8,17 @@ import {
 	CtaBanner,
 	Benefits,
 } from "@/components/sections";
+import { CalendlyModal } from "@/components/ui";
+
 export default function Home() {
+	const searchParams = useSearchParams();
+	const router = useRouter();
+	const isModalOpen = searchParams.get('modal') === 'open';
+
+	const closeModal = () => {
+		router.push('/', { scroll: false });
+	};
+
 	return (
 		<>
 			<Hero />
@@ -13,6 +26,7 @@ export default function Home() {
 			<Services />
 			<Benefits />
 			<CtaBanner />
+			<CalendlyModal isOpen={isModalOpen} onClose={closeModal} />
 		</>
 	);
 }

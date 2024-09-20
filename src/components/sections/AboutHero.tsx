@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, SectionTag } from "../ui";
+import { BookButton, Button, SectionTag } from "../ui";
 import Image from "next/image";
 import styles from "@/styles/AboutHero.module.scss";
 
@@ -22,7 +22,7 @@ const AboutHero = () => {
 					</div>
 					<div className={styles["section_actions"]}>
 						<Button>Comienza Ya</Button>
-						<Button variant='secondary'>Agenda una llamada</Button>
+						<BookButton variant="accent" text="Agenda una llamada" />
 					</div>
 					<Image
 						className='w-full rounded-xl object-cover sm:min-w-[300px] ratio-4/3 max-w-screen-lg'

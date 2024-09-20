@@ -1,5 +1,4 @@
-import { Button, SectionTag } from "@/components/ui";
-
+import { BookButton, SectionTag } from "@/components/ui";
 import React from "react";
 import styles from "@/styles/CtaBanner.module.scss";
 import DoodleArrow from "@/assets/icons/doodle-arrow.svg";
@@ -48,7 +47,7 @@ function CtaBanner() {
 					</p>
 
 					<div className={styles["section_actions"]}>
-						<Button variant='accent'>Agenda una llamada</Button>
+						<BookButton variant="accent" text="Agenda una llamada" />
 					</div>
 				</div>
 			</div>

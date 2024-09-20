@@ -1,6 +1,5 @@
 import React from "react";
-import { Button, SectionTag } from "@/components/ui";
-
+import { BookButton, Button, SectionTag } from "@/components/ui";
 import Image from "next/image";
 import InfiniteScroll from "../ui/InfiniteScroll";
 
@@ -47,9 +46,9 @@ function Hero() {
 								nos encargamos de encontrarte clientes y dejarte el resto a ti.
 							</p>
 						</div>
-						<div className='flex flex-col w-full max-w-[320px] sm:w-auto sm:max-w-none sm:grid sm:grid-cols-2 gap-4 place-self-center pt-4'>
-							<Button>Comienza Ya</Button>
-							<Button variant='secondary'>Agenda una llamada</Button>
+						<div className={styles["section_actions"]}>
+							<Button  href="/contacto" variant="primary">Comencemos ya!</Button>
+							<BookButton variant="accent" text="Agenda una llamada" />
 						</div>
 					</div>
 					<InfiniteScroll velocity={0.25}>
@@ -58,7 +57,7 @@ function Hero() {
 							style={{
 								gridTemplateColumns: `repeat(auto-fill, 1fr)`,
 								gridTemplateRows: "1fr 1fr",
-							}}
+								}}
 						>
 							{HERO_IMAGES.map((image, index) => {
 								const condition = (index + 3) % 3 === 0;

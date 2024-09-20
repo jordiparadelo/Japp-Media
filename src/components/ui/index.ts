@@ -8,3 +8,5 @@ export {default as ServiceGrid} from './ServiceGrid';
 export {default as SwipeCarrousel} from './SwipeCarrousel';
 export {default as InfiniteScroll} from './InfiniteScroll';
 export {default as PageTransition} from './PageTransition';
+export { default as CalendlyModal } from './CalendlyModal';
+export { default as BookButton } from './BookButton';

@@ -1,38 +1,42 @@
 import React from "react";
 import { cn } from "../../libs/utils";
-type Props = {
+
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	className?: string;
-	type?: 'submit' | 'reset' | 'button';
-    variant?: 'primary' | 'secondary' | 'accent';
+	variant?: 'primary' | 'secondary' | 'accent';
 	href?: string;
-	children?: React.ReactNode;
-};
+}
 
-function Button({ className, type = 'button', href, children, variant= 'primary' }: Props) {
-	const BTN_BASE_CLASS = ' bg-indigo-600 px-4 py-3 text-center text-sm font-semibold inline-block cursor-pointer transition duration-200 ease-in-out rounded-md hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 active:scale-95';
+interface AnchorProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+	className?: string;
+	variant?: 'primary' | 'secondary' | 'accent';
+}
 
-    const VARIANT_CLASSES = {
-        'primary': cn(`${BTN_BASE_CLASS} bg-white text-[#00252E] hover:bg-blue-600 focus:ring-blue-300 min-h-10 `),
-        'secondary': cn(`${BTN_BASE_CLASS} bg-gray-500 hover:bg-gray-600 focus:ring-gray-300`),
+type Props = ButtonProps | AnchorProps;
+
+export function Button({ children, className, variant = 'primary', href, ...props }: Props) {
+	const BTN_BASE_CLASS = 'px-4 py-3 text-center text-sm font-semibold inline-block cursor-pointer transition duration-200 ease-in-out rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-95';
+
+	const VARIANT_CLASSES = {
+		'primary': cn(`${BTN_BASE_CLASS} bg-white text-[#00252E] hover:bg-blue-600 focus:ring-blue-300 min-h-10`),
+		'secondary': cn(`${BTN_BASE_CLASS} bg-gray-500 hover:bg-gray-600 focus:ring-gray-300`),
 		'accent': cn(`${BTN_BASE_CLASS} bg-[--color-secondary] text-[--color-font] focus:ring-gray-300`),
-    }
+	}
+
+	const classes = cn(VARIANT_CLASSES[variant], className);
 
 	return href ? (
 		<a
-		className={cn(
-			`${VARIANT_CLASSES[variant]}`,
-			className
-		)}
-			type={type}
+			className={classes}
 			href={href}
-		></a>
+			{...(props as AnchorProps)}
+		>
+			{children}
+		</a>
 	) : (
 		<button
-			className={cn(
-				`${VARIANT_CLASSES[variant]}`,
-				className
-			)}
-			type={type}
+			className={classes}
+			{...(props as ButtonProps)}
 		>
 			{children}
 		</button>
