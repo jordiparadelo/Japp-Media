@@ -3,13 +3,18 @@
 	padding-block: 2.5rem;
 	padding-inline: 1.25rem;
 
+	&::before {
+		top: 52% !important;
+		// height: 120% !important;
+	}
+
 	@media screen and (min-width: 768px) {
 		padding-block: 4rem;
 		padding-inline: 4rem;
 	}
 
 	@media screen and (min-width: 1024px) {
-		padding-block: 7.5rem;
+		padding-block: 7.5rem 3.25rem;
 	}
 
 	&_heading {
@@ -22,7 +27,8 @@
 		font-weight: 500;
 		line-height: 1;
 		align-self: center;
-		max-width: 65ch;
+		max-width: 90ch;
+		text-align: center;
 	}
 
 	&_actions {

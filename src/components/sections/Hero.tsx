@@ -75,8 +75,6 @@ function Hero() {
 												gridRow: `2/3`,
 										  };
 
-								console.log({ condition });
-
 								return (
 									<div
 										className='flex flex-col bg-gray-300 rounded-xl min-w-[256px] md:min-w-[400px] overflow-hidden'

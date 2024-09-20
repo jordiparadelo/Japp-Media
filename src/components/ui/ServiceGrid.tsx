@@ -1,4 +1,5 @@
-"use client";
+'use client'
+
 import React from "react";
 import ServiceCard from "@/components/ui/ServiceCard";
 import { useMediaQuery } from "@uidotdev/usehooks";

@@ -141,7 +141,7 @@ export const HOW_HELP = [
 					"Tú sigues enfocado en tu negocio, mientras nosotros nos ocupamos de hacerte crecer.",
 			},
 		],
-		image: '/images/about-us_hero.webp',
+		image: '/images/benefits_card_01.webp',
 	},
 	{
 		title: "Tengo algo de presencia digital, pero no estoy viendo resultados",
@@ -164,7 +164,7 @@ export const HOW_HELP = [
 					" Te explicamos lo que está fallando de manera sencilla y te ofrecemos soluciones claras que funcionan.",
 			},
 		],
-		image: '/images/about-us_hero.webp',
+		image: '/images/benefits_card_02.webp',
 	},
 	{
 		title: "Ya tengo una estructura, pero quiero maximizar mis resultados",
@@ -187,7 +187,7 @@ export const HOW_HELP = [
 					"Nosotros nos encargamos de la parte técnica y estratégica, mientras tú disfrutas de un flujo constante de nuevos clientes.",
 			},
 		],
-		image: '/images/about-us_hero.webp',
+		image: '/images/benefits_card_03.webp',
 	},
 ];
 

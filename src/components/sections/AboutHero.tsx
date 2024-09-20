@@ -31,7 +31,7 @@ const AboutHero = () => {
 						width={300}
 						height={400}
 					/>
-					<p className='text-xl leading-[1.5] text-pretty max-w-screen-md mx-auto'>
+					<p className='text-2xl max-w-screen-lg'>
 						En Japp Media, nuestra misión es ayudar a los negocios locales a
 						expandirse más allá de sus límites inmediatos utilizando
 						herramientas digitales poderosas. Nos especializamos en crear una

@@ -21,7 +21,7 @@ function WhyUs() {
 							Buscamos en que te centres en lo tuyo mientras atraemos a{" "}
 							<span className='text-gray-400'>nuevos clientes</span>
 						</h2>
-						<p className='text-xl max-w-screen-md mx-auto text-pretty'>
+						<p className='text-xl'>
 							Necesitas una presencia digital efectiva que atraiga nuevos
 							clientes y mantenga a tus actuales. Japp Media ofrece una gama de
 							servicios para ayudarte a alcanzar tus metas, que incluyen:

@@ -1,5 +1,5 @@
 .section {
-    padding-block: 2.5rem;
+    padding-block: 4rem;
 	padding-inline: 1.25rem;
 
 	@media screen and (min-width: 768px) {
@@ -8,7 +8,7 @@
 	}
 
 	@media screen and (min-width: 1024px) {
-		padding-block: 7.5rem;
+		padding-block: 3.25rem 7.5rem;
 	}
 
     &_heading {
@@ -21,7 +21,8 @@
         font-weight: 500;
         line-height: 1;
         align-self: center;
-        max-width: 65ch;
+        max-width: 90ch;
+		text-align: center;
     }
 
     &_layout {
@@ -30,10 +31,5 @@
 		gap: 2.5rem;
 		text-align: initial;
 		place-items: stretch;
-
-		@media screen and (min-width: 425px) {
-			text-align: center;
-			place-items: center;
-		}
 	}
 }

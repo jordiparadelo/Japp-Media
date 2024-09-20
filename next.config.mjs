@@ -24,7 +24,6 @@ const nextConfig = {
   
       return config;
     },
-    publicDirectory: 'public'
   };
   
   export default nextConfig;
