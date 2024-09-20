@@ -1,87 +1,57 @@
 "use client";
 
-import React, { useRef, useCallback } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useRef, useEffect, useState } from "react";
+import {
+	motion,
+	useAnimationFrame,
+	useReducedMotion,
+} from "framer-motion";
 
-// TODO: Improve performance
-function InfiniteScroll({ children, velocity }: { children: React.ReactNode, velocity?: number }) {
-	const sliderRef = React.useRef<React.ReactNode | any>(null);
-	const firstLineRef = React.useRef<React.ReactNode | any>(null);
-	const secondLineRef = React.useRef<React.ReactNode | any>(null);
-	const xPercentage = useRef<Number | any> (0)
-	const direction = useRef<Number | any> (-1)
+interface InfiniteScrollProps {
+	children: React.ReactNode;
+	speed?: number;
+}
 
-	// let xPercentage = 0;
-	// let direction = -1;
-	const velocityVal = () => {
-        const width = window.innerWidth / sliderRef.current?.clientWidth;
-		// return width * 0;
-		return width * (velocity || 0.025);
-	};
+function InfiniteScroll({ children, speed = 20 }: InfiniteScrollProps) {
+	const containerRef = useRef<HTMLDivElement>(null);
+	const [containerWidth, setContainerWidth] = useState(0);
+	const prefersReducedMotion = useReducedMotion();
+	const [scrollX, setScrollX] = useState(0);
 
-	const animation  = useCallback(() => {
-		if(!sliderRef.current) return;
-
-		gsap.set(firstLineRef.current, {
-			xPercent: xPercentage.current,
-		});
-		gsap.set(secondLineRef.current, {
-			xPercent: xPercentage.current,
-		});
-
-		xPercentage.current += direction.current * velocityVal();
-
-		if (xPercentage.current <= -100) {
-			xPercentage.current = 0;
+	useEffect(() => {
+		if (containerRef.current) {
+			setContainerWidth(containerRef.current.scrollWidth / 2);
 		}
-		if (xPercentage.current > 0) {
-			xPercentage.current = -100;
+	}, [children]);
+
+	useAnimationFrame((t, delta) => {
+		if (!prefersReducedMotion) {
+			setScrollX((prevScrollX) => {
+				const newScrollX = prevScrollX + speed * (delta / 1000);
+				return newScrollX > containerWidth ? 0 : newScrollX;
+			});
 		}
+	});
 
-		requestAnimationFrame(animation);
-	}, [sliderRef.current]);
-
-
-	React.useEffect(() => {
-		if(!sliderRef.current) return;
-
-
-		gsap.registerPlugin(ScrollTrigger);
-		requestAnimationFrame(animation);
-		const { height } = sliderRef.current?.getBoundingClientRect();
-
-		gsap.to(sliderRef.current, {
-			scrollTrigger: {
-				trigger: sliderRef.current,
-				start: "start-=100% center",
-				end: `${height}+=100% center`,
-				scrub: 0.5,
-				// markers: true,
-				onUpdate: (scroll) => {
-					direction.current = scroll.direction * -1;
-				},
-			},
-			xPercent: `-=5`,
-		});
-	}, [velocity, sliderRef.current]);
+	if (prefersReducedMotion) {
+		return (
+			<div className='flex w-full overflow-x-auto'>
+				<div className='flex flex-row'>{children}</div>
+			</div>
+		);
+	}
 
 	return (
-		<div className='flex w-[100vw] overflow-x-hidden place-self-center'>
-			<div
-				className='flex flex-row min-w-min place-content-start'
-				ref={sliderRef}
+		<div ref={containerRef} className='w-[100vw] flex self-center overflow-hidden'>
+			<motion.div
+				className='flex flex-row'
+				style={{ x: -scrollX }}
 			>
-				<span
-					className='pr-[1.5rem]'
-					ref={firstLineRef}
-				>
-					{children}
-				</span>
-				<span className='pr-[1.5rem]' ref={secondLineRef}>{children}</span>
-			</div>
+				{children}
+				{children}
+			</motion.div>
 		</div>
 	);
 }
-export default InfiniteScroll;
 
+export default InfiniteScroll;

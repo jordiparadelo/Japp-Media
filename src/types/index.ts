@@ -4,3 +4,8 @@ export type ServiceCardType = {
 	description: string;
 	image: string;
 };
+
+export interface ImageType {
+	src: string;
+	alt: string;
+}

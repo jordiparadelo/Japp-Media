@@ -1,5 +1,5 @@
 .section {
-    position: relative;
+	position: relative;
 	padding-block: 2.5rem;
 	padding-inline: 1.25rem;
 	// background-color: var(--bkg-dark);
@@ -13,6 +13,12 @@
 		padding-block: 7.5rem;
 	}
 
+	&_layout {
+		display: flex;
+		flex-direction: column;
+		gap: 6em;
+	}
+
 	&_heading {
 		display: flex;
 		flex-direction: column;
@@ -22,56 +28,60 @@
 		font-size: clamp(2.5rem, 10vw, 5rem);
 		font-weight: 500;
 		line-height: 1;
+		text-align: center;
+		text-wrap: pretty;
+		gap: 1.75rem;
 	}
 
-	&_heading-wrap {
-        place-self: center;
-		position: relative;
-		display: flex;
-		flex-direction: column;
-        padding-inline: 0.75em;
-		width: 100%;
-
-		&_line {
+	&_title {
+		&_wrap {
+			place-self: center;
+			position: relative;
 			display: flex;
-			flex-flow: row;
-			place-content: center;
-			place-items: center;
+			flex-direction: column;
+			padding-inline: 0.75em;
+			width: 100%;
 
-            // First Line
-            &:nth-child(1) {
-                align-self: flex-start;
-                gap: 0.5rem;
+			&_line {
+				display: flex;
+				flex-flow: row;
+				place-content: center;
+				place-items: center;
 
-                > *:nth-child(2) {
-                    background: linear-gradient(
-                        135deg,
-                        var(--color-primary) 25%,
-                        var(--color-secondary) 75%
-                    );
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    transform: rotate(5deg);
-                    font-size: 1.1em;
-                }
-            }
+				// First Line
+				&:nth-child(1) {
+					align-self: flex-start;
+					gap: 0.5rem;
 
-            // Second Lines
-            &:nth-child(2) {
-                align-self: flex-end;
+					> *:nth-child(2) {
+						background: linear-gradient(
+							135deg,
+							var(--color-primary) 25%,
+							var(--color-secondary) 75%
+						);
+						-webkit-background-clip: text;
+						-webkit-text-fill-color: transparent;
+						transform: rotate(5deg);
+						font-size: 1.1em;
+					}
+				}
 
-                > *:nth-child(1) {
-                    margin-top: -10%;
-                    width: 1.3em;
-                    height: 1.3em;
-                    transform: rotate(12deg);   
-                }
-            }
-			
-        }
+				// Second Lines
+				&:nth-child(2) {
+					align-self: flex-end;
 
-		> *:nth-child(2) {
-			align-self: flex-end;
+					> *:nth-child(1) {
+						margin-top: -10%;
+						width: 1.3em;
+						height: 1.3em;
+						transform: rotate(12deg);
+					}
+				}
+			}
+
+			> *:nth-child(2) {
+				align-self: flex-end;
+			}
 		}
 	}
 	&_actions {
