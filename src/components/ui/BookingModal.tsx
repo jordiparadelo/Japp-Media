@@ -1,13 +1,14 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+
 import { motion, AnimatePresence } from "framer-motion";
 
 type BookingModalProps = {
 	isOpen: boolean;
 	onClose: () => void;
-	BookingWidget: React.ComponentType<any>;
-	bookingWidgetProps?: Record<string, any>;
+	BookingWidget: React.ComponentType<Record<string, unknown>>;
+	bookingWidgetProps?: Record<string, unknown>;
 };
 
 const BookingModal: React.FC<BookingModalProps> = ({

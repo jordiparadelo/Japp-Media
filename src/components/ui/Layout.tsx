@@ -1,27 +1,29 @@
 "use client";
 import { useSearchParams, useRouter } from 'next/navigation';
-
 import { AnimatePresence } from "framer-motion";
-import { PageTransition, BookingModal } from "@/components/ui";
+import { PageTransition, Modal } from "@/components/ui";
 import CalendlyWidget from "@/components/booking/CalendlyWidget";
-// import GoogleCalendarWidget from "@/components/booking/GoogleCalendarWidget";
+import { useState, useEffect } from 'react';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const searchParams = useSearchParams();
-	const router = useRouter();
-	const isModalOpen = searchParams.get('modal') === 'open';
+  const router = useRouter();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-	const closeModal = () => {
-		const currentPath = window.location.pathname;
-		const newUrl = new URL(currentPath, window.location.origin);
-		// Copy all current search params except 'modal'
-		searchParams.forEach((value, key) => {
-			if (key !== 'modal') {
-				newUrl.searchParams.append(key, value);
-			}
-		});
-		router.replace(newUrl.toString(), { scroll: false });
-	};
+  useEffect(() => {
+    setIsModalOpen(searchParams.get('modal') === 'open');
+  }, [searchParams]);
+
+  const closeModal = () => {
+    const currentPath = window.location.pathname;
+    const newUrl = new URL(currentPath, window.location.origin);
+    searchParams.forEach((value, key) => {
+      if (key !== 'modal') {
+        newUrl.searchParams.append(key, value);
+      }
+    });
+    router.replace(newUrl.toString(), { scroll: false });
+  };
 
   return (
     <AnimatePresence
@@ -31,12 +33,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     >
       <PageTransition>
         <main className="flex-grow">{children}</main>
-        <BookingModal 
+        <Modal 
           isOpen={isModalOpen} 
-          onClose={closeModal} 
-          BookingWidget={CalendlyWidget}
-          bookingWidgetProps={{ url: "https://calendly.com/your-calendly-url" }}
-        />
+          onClose={closeModal}
+          // title="Agenda una llamada"
+        >
+          <CalendlyWidget url="https://calendly.com/your-calendly-url" />
+        </Modal>
       </PageTransition>
     </AnimatePresence>
   );
