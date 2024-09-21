@@ -16,6 +16,7 @@ export default function PageTransition({ children }: { children: ReactNode }) {
       animate="enter"
       exit="exit"
       transition={{ type: 'linear' }}
+      className="flex-grow"
     >
       {children}
     </motion.div>

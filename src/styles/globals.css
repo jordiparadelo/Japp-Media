@@ -23,6 +23,7 @@
 
 	/* Corners */
 	--rounded-btn: 0.5rem;
+	--rounded-sm: 0.25rem;
 	--rounded-md: 0.75rem;
 	--rounded-lg: 1.25rem;
 	--rounded: 999px;
@@ -127,10 +128,14 @@
     @apply bg-primary text-white font-bold py-2 px-4 rounded;
   } */
 	/* @apply bg-dot-pattern background-size: 1.2rem 1.2rem; */
+	.container {
+		@apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+	}
+
 }
 
  .bkg-dot-pattern {
-	--dot-size: 4px;
+	--dot-size: 3px;
 	--dot-color: var(--color-font-dark);
 	--dot-spacing: 50px;
 

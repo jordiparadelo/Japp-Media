@@ -1,5 +1,9 @@
 export const LINKS = [
   {
+    label: "Inicio",
+    href: "/",
+  },
+  {
     label: "Nosotros",
     href: "/nosotros",
   },

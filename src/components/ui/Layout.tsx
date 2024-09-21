@@ -31,8 +31,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       initial={false}
       onExitComplete={() => window.scrollTo(0, 0)}
     >
-      <PageTransition>
-        <main className="flex-grow">{children}</main>
         <Modal 
           isOpen={isModalOpen} 
           onClose={closeModal}
@@ -40,6 +38,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         >
           <CalendlyWidget url="https://calendly.com/your-calendly-url" />
         </Modal>
+      <PageTransition>
+        <main className="flex-grow">{children}</main>
       </PageTransition>
     </AnimatePresence>
   );

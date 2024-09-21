@@ -1,6 +1,16 @@
 .section {
 	padding-block: 2.5rem;
 	padding-inline: 1.25rem;
+	background-image: url("/images/background_footer.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	grid-column-gap: 100px;
+    grid-row-gap: 100px;
+    background-image: radial-gradient(circle closest-corner at 50% 100%, rgba(204, 252, 126, .06), #131313), url("/images/background_footer.png");
+    background-position: 0 0, 50% 100%;
+    background-repeat: repeat, no-repeat;
+    background-size: auto, 100%;
 
 	@media screen and (min-width: 768px) {
 		padding-block: 4rem;

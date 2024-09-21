@@ -2,6 +2,7 @@ import { BookButton, SectionTag } from "@/components/ui";
 import React from "react";
 import styles from "@/styles/CtaBanner.module.scss";
 import DoodleArrow from "@/assets/icons/doodle-arrow.svg";
+import Footer from "./Footer";
 
 function CtaBanner() {
 	return (
@@ -51,6 +52,7 @@ function CtaBanner() {
 					</div>
 				</div>
 			</div>
+			<Footer />
 		</section>
 	);
 }

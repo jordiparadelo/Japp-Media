@@ -12,3 +12,5 @@ export { default as CalendlyModal } from './CalendlyModal';
 export { default as BookButton } from './BookButton';
 export { default as BookingModal } from './BookingModal';
 export { default as Modal } from './Modal';
+export { default as ROICalculatorForm } from './ROICalculatorForm';
+export { default as Logo } from './Logo';
