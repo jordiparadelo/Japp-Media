@@ -20,7 +20,7 @@ export default function Navbar() {
 			{isMobile ? <MobileNavbar /> : <DesktopNavbar />}
 		</NavbarProvider>
 	);
-}
+};
 
 function DesktopNavbar() {
 	const { pathname } = useNavbar();

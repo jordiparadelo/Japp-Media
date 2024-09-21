@@ -92,7 +92,13 @@ function useFieldValidation() {
 		registerType: keyof FormFields,
 		required: boolean
 	): ReturnType<UseFormRegister<FormFields>> => {
-		return register(registerType, getValidationRules(registerType, required));
+		return register(
+			registerType,
+			getValidationRules(registerType, required) as RegisterOptions<
+				FormFields,
+				keyof FormFields
+			>
+		);
 	};
 
 	return { registerField, errors };
