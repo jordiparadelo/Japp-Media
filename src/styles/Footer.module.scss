@@ -31,13 +31,26 @@
 		flex-direction: column;
 		gap: 1.5rem;
 		margin-inline: auto;
-		max-width: 75ch;
 		text-wrap: pretty;
+
+		@media screen and (min-width: 768px) {
+			gap: 5rem;
+		}
 	}
+
+	&_top {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		align-self: center;
+		max-width: 75ch;
+	}
+
 	&_heading {
 		display: flex;
 		flex-direction: column;
 		place-items: center;
+
 
 		&_title-wrap {
 			align-self: stretch;
@@ -91,7 +104,25 @@
 		}
 	}
 	&_actions {
-		padding-top: 0.75rem;
 		align-self: center;
+	}
+	&_bottom {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		padding-top: 2.5rem;
+		border-top: 1px dashed rgba(255, 255, 255, 0.2);
+		font-size: 0.875rem;
+
+		@media screen and (min-width: 768px) {
+			display: grid;
+			grid-template-columns: repeat(3, auto);
+		}
+
+		&_block {
+			display: flex;
+			flex-direction: column;
+			gap: 0.25rem;
+		}
 	}
 }

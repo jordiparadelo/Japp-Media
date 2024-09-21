@@ -9,7 +9,7 @@ import DoodleArrow from "@/assets/icons/doodle-arrow.svg";
 
 function Hero() {
 	return (
-		<section className={styles["section"] + " bkg-dot-pattern"}>
+		<section className={styles["section"]}>
 			<div className='container max-w-3xl mx-auto'>
 				<div className={styles["section_layout"]}>
 					<div className={styles["section_heading"]}>

@@ -7,7 +7,7 @@ import { SectionTag, ServiceGrid } from "@/components/ui";
 
 function Services() {
 	return (
-		<section className={styles["section"] + " bkg-grid-pattern"}>
+		<section className={styles["section"]}>
 			<div className='container mx-auto'>
 				<div className={styles["section_layout"]}>
 					<div className={styles["section_heading"]}>

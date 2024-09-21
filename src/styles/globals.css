@@ -5,21 +5,24 @@
 :root {
 	--background: #153036;
 	/* Fonts */
-	--color-font: #00252E;
+	--color-font: #00252e;
 	--headingFont: "Archivo";
 	--bodyFont: "Roboto Flex";
 
 	/* Colors */
-	--color-primary: #0DDEAC;
-	--color-secondary: #C5FD01;
-	--color-accent: #C5FD01;
-	--color-font-dark: #00252E;
-	--color-font-light: #F7F7F8;
+	--color-primary: #0ddeac;
+	--color-secondary: #c5fd01;
+	--color-accent: #c5fd01;
+	--color-font-dark: #00252e;
+	--color-font-light: #f7f7f8;
 
 	/* Background */
-	--bkg-dark: #00252E;
-	--bkg-light-dark: #00303C;
-	--bkgDotPattern: radial-gradient(hsla(0, 0%, 100%, 0.1) var(--line-size), transparent 0);
+	--bkg-dark: #00252e;
+	--bkg-light-dark: #00303c;
+	--bkgDotPattern: radial-gradient(
+		hsla(0, 0%, 100%, 0.1) var(--line-size),
+		transparent 0
+	);
 
 	/* Corners */
 	--rounded-btn: 0.5rem;
@@ -131,17 +134,19 @@
 	.container {
 		@apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 	}
-
 }
 
- .bkg-dot-pattern {
+.bkg-dot-pattern {
 	--dot-size: 3px;
 	--dot-color: var(--color-font-dark);
 	--dot-spacing: 50px;
 
 	position: relative;
-    overflow: clip;
-	background-image: radial-gradient(var(--dot-color) var(--dot-size), transparent var(--dot-size));
+	overflow: clip;
+	background-image: radial-gradient(
+		var(--dot-color) var(--dot-size),
+		transparent var(--dot-size)
+	);
 	background-size: var(--dot-spacing) var(--dot-spacing);
 }
 
@@ -174,8 +179,15 @@
 
 	position: relative;
 	overflow: clip;
-	background-image: linear-gradient(var(--line-color) var(--line-size), transparent var(--line-size)),
-		linear-gradient(to right, var(--line-color) var(--line-size), transparent var(--line-size));
+	background-image: linear-gradient(
+			var(--line-color) var(--line-size),
+			transparent var(--line-size)
+		),
+		linear-gradient(
+			to right,
+			var(--line-color) var(--line-size),
+			transparent var(--line-size)
+		);
 	background-size: var(--line-spacing) var(--line-spacing);
 	background-position: center;
 	max-width: 100vw;
@@ -205,7 +217,7 @@
 }
 
 .button {
-	--btn-bg: rgba(255,255,255,0.05);
+	--btn-bg: rgba(255, 255, 255, 0.05);
 	border-radius: var(--rounded-btn, 0.5rem);
 	padding-inline: 1.5rem;
 	min-height: 2.5rem;

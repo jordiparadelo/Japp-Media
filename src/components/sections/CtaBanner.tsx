@@ -2,11 +2,10 @@ import { BookButton, SectionTag } from "@/components/ui";
 import React from "react";
 import styles from "@/styles/CtaBanner.module.scss";
 import DoodleArrow from "@/assets/icons/doodle-arrow.svg";
-import Footer from "./Footer";
 
 function CtaBanner() {
 	return (
-		<section className={styles["section"] + " bkg-grid-pattern"}>
+		<section className={'jap-section ' + styles["section"]}>
 			<div className='container mx-auto'>
 				<div className={styles["section_layout"]}>
 					<div className={styles["section_heading"]}>
@@ -52,7 +51,6 @@ function CtaBanner() {
 					</div>
 				</div>
 			</div>
-			<Footer />
 		</section>
 	);
 }
