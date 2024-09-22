@@ -2,7 +2,7 @@
 
 import React from "react";
 import ServiceCard from "@/components/ui/ServiceCard";
-import { useMediaQuery } from "@uidotdev/usehooks";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 import styles from "@/styles/Services.module.scss";
 
 import {ServiceCardType} from "@/types";

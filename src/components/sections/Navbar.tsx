@@ -1,17 +1,17 @@
-"use client";
+'use client'
 
-import { LINKS, PERSONAL_INFO } from "@/libs/constants";
-import { BookButton, Button, Logo } from "@/components/ui";
-import styles from "@/styles/Navbar.module.scss";
-import { cn } from "@/libs/utils";
-import PhoneIcon from "@/assets/icons/phone.svg";
-import Link from "next/link";
-import React from "react";
-import { useMediaQuery } from "@uidotdev/usehooks";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { NavbarProvider, useNavbar } from "@/contexts/NavbarContext";
+import Link from "next/link";
+import { cn } from "@/libs/utils";
+import { AnimatePresence, cubicBezier, motion } from "framer-motion";
+import styles from "@/styles/Navbar.module.scss";
+import { LINKS, PERSONAL_INFO } from "@/libs/constants";
 import ArrowRightIcon from "@/assets/icons/arrow-right.svg";
-import { AnimatePresence, motion, cubicBezier } from "framer-motion";
+import PhoneIcon from "@/assets/icons/phone.svg";
+import {Button, Logo, BookButton} from "@/components/ui";
 
+  
 export default function Navbar() {
 	const isMobile = useMediaQuery("(max-width: 768px)");
 
@@ -20,7 +20,7 @@ export default function Navbar() {
 			{isMobile ? <MobileNavbar /> : <DesktopNavbar />}
 		</NavbarProvider>
 	);
-};
+}
 
 function DesktopNavbar() {
 	const { pathname } = useNavbar();
@@ -85,7 +85,10 @@ function MobileNavbar() {
 								initial={{ opacity: 0, y: 50 }}
 								animate={{ opacity: 1, y: 0 }}
 								exit={{ opacity: 0, y: 50 }}
-								transition={{ duration: 0.25, ease: cubicBezier(0.175, 0.885, 0.32, 1.275) }}
+								transition={{
+									duration: 0.25,
+									ease: cubicBezier(0.175, 0.885, 0.32, 1.275),
+								}}
 							>
 								<div className={cn(styles.navbar_menu_links)}>
 									{LINKS.map((link) => (

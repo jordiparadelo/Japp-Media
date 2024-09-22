@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { AnimatePresence } from "framer-motion";
 import { PageTransition, Modal } from "@/components/ui";
