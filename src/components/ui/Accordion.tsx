@@ -27,7 +27,7 @@ export function Accordion({ children }: { children: React.ReactNode[] | React.Re
 
   return (
 	<AccordionContext.Provider value={{ toggle, selected }}>
-	  <AnimatePresence>
+	  <AnimatePresence mode='sync'>
 		<div className="flex flex-col gap-2">
 		  {Children.map(children, (child, index) => {
 			if (React.isValidElement(child)) {
