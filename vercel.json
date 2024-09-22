@@ -10,11 +10,5 @@
       "source": "/(.*)",
       "destination": "/"
     }
-  ],
-  "builds": [
-    {
-      "src": "next.config.mjs",
-      "use": "@vercel/next"
-    }
   ]
 }
