@@ -1,6 +1,6 @@
 import { BookButton,  ContactForm } from "@/components/ui";
 import CheckIcon from "@/assets/icons/check.svg";
-import styles from "@/styles/ContactHero.module.scss";
+import styles from "../../styles/ContactHero.module.scss";
 import { PERSONAL_INFO } from "@/libs/constants";
 
 import React from "react";
