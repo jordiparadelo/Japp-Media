@@ -1,8 +1,9 @@
 import React from "react";
 import { BookButton, Button, SectionTag } from "@/components/ui";
-import HeroInfiniteSlider from "../ui/HeroInfiniteSlider";
+import HeroInfiniteSlider from "@/components/ui/HeroInfiniteSlider";
 
 import styles from "../../styles/Hero.module.scss";
+
 import { HERO_IMAGES } from "@/data";
 
 import DoodleArrow from "@/assets/icons/doodle-arrow.svg";
