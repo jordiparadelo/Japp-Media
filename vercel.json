@@ -4,10 +4,10 @@
   "installCommand": "npm install",
   "framework": "nextjs",
   "outputDirectory": ".next",
-  "builds": [
+  "routes": [
     {
-      "src": "next.config.js",
-      "use": "@vercel/next"
+      "src": "/",
+      "dest": "/"
     }
   ]
 }
