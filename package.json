@@ -20,7 +20,7 @@
     "react-calendly": "^4.3.1",
     "react-dom": "^18",
     "react-hook-form": "^7.53.0",
-    "sass": "^1.79.1",
+    "sass": "^1.62.0",
     "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
