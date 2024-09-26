@@ -1,6 +1,6 @@
 import { BookButton, Button, SectionTag } from "@/components/ui";
 import HeroInfiniteSlider from "@/components/ui/HeroInfiniteSlider";
-import styles from '../../../styles/Hero.module.scss';
+import styles from '../../../styles/HomeHero.module.scss';
 import { HERO_IMAGES } from "@/data";
 import DoodleArrow from "@/assets/icons/doodle-arrow.svg";
 
