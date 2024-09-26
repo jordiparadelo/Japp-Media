@@ -20,6 +20,8 @@
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
+	min-height: 400px;
+	place-items: center;
 
 	@media screen and (max-width: 768px) {
 		gap: unset;

@@ -137,9 +137,9 @@
 }
 
 .bkg-dot-pattern {
-	--dot-size: 3px;
+	--dot-size: 2.5px;
 	--dot-color: var(--color-font-dark);
-	--dot-spacing: 50px;
+	--dot-spacing: 100px;
 
 	position: relative;
 	overflow: clip;
@@ -148,17 +148,20 @@
 		transparent var(--dot-size)
 	);
 	background-size: var(--dot-spacing) var(--dot-spacing);
+	background-position: center;
+
 }
 
 .bkg-dot-pattern::before {
 	content: "";
 	position: absolute;
 	top: 10%;
-	transform: translateY(-50%);
+	left: 50%;
+    transform: translateY(-50%) translateX(-50%);
 	width: 100%;
 	max-width: 100vw;
 	overflow-x: hidden;
-	height: 100%;
+	height: 75%;
 	opacity: 0.6;
 	background-image: radial-gradient(#0ddeac 50%, #00252e 50%);
 	filter: blur(200px);

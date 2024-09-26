@@ -5,7 +5,7 @@ import DoodleArrow from "@/assets/icons/doodle-arrow.svg";
 
 function CtaBanner() {
 	return (
-		<section className={'jap-section ' + styles["section"]}>
+		<section className={styles["section"] + ' bkg-dot-pattern'}>
 			<div className='container mx-auto'>
 				<div className={styles["section_layout"]}>
 					<div className={styles["section_heading"]}>

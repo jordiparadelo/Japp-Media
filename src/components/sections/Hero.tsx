@@ -1,7 +1,6 @@
 import { BookButton, Button, SectionTag } from "@/components/ui";
 import HeroInfiniteSlider from "@/components/ui/HeroInfiniteSlider";
-import styles from '@/styles/Hero.module.css';
-// import styles from '@/styles/Hero.module.scss';
+import styles from '@/styles/Hero.module.scss';
 import { HERO_IMAGES } from "@/data";
 import DoodleArrow from "@/assets/icons/doodle-arrow.svg";
 
@@ -9,7 +8,7 @@ import React from "react";
 
 function Hero() {
 	return (
-		<section className={styles["section"]}>
+		<section className={styles["section"] + " bkg-grid-pattern"}>
 			<div className='container max-w-3xl mx-auto'>
 				<div className={styles["section_layout"]}>
 					<div className={styles["section_heading"]}>
@@ -23,10 +22,10 @@ function Hero() {
 									>
 										Clientes
 									</SectionTag>
-									<span>sin</span>
+									<DoodleArrow />
 								</span>
 								<span className={styles["section_title_wrap_line"]}>
-									<DoodleArrow />
+									<span>sin</span>
 
 									<SectionTag
 										rotation={3}

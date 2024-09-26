@@ -10,7 +10,7 @@ import CalendarIcon from '@/assets/icons/calendar.svg'
 
 function Hero() {
 	return (
-		<section className={styles["section"] + " bkg-dot-pattern"}>
+		<section className={styles["section"] + " bkg-grid-pattern"}>
 			<div className='container mx-auto'>
 				<div className={styles["section_layout"]}>
 					<div className={styles["section_content"]}>

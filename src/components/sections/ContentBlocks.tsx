@@ -28,7 +28,7 @@ export function ContentBlocks({ blocks }: { blocks: StepGuidedProps[] }) {
 	);
 }
 
-function BlocksCard({ title, description, details, image }: StepGuidedProps) {
+function BlocksCard({ title, details, image }: StepGuidedProps) {
 	return (
 		<div className={styles['card']}>
 			{image && (
@@ -45,7 +45,6 @@ function BlocksCard({ title, description, details, image }: StepGuidedProps) {
 			<div className={styles['card_content']}>
 			<div className={styles['card_content_heading']}>
 				<h2 className='text-3xl '>{title}</h2>
-				<p className='text-rg'>{description}</p>
 				</div>
 				<Accordion>
 					{details?.map((detail) => (

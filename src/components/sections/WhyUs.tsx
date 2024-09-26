@@ -7,7 +7,7 @@ import styles from "@/styles/WhyUs.module.scss";
 
 function WhyUs() {
 	return (
-		<section className={styles["section"] + " bkg-grid-pattern"}>
+		<section className={styles["section"] + " bkg-dot-pattern"}>
 			<div className='container mx-auto'>
 				<div className={styles["section_layout"]}>
 					<div className={styles["section_heading"]}>

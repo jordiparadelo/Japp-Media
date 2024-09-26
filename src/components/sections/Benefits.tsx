@@ -8,7 +8,7 @@ import styles from "@/styles/Benefits.module.scss";
 
 function Benefits() {
 	return (
-		<section className={styles["section"]}>
+		<section className={styles["section"] + " bkg-grid-pattern"}>
 			<div className='container mx-auto'>
 				<div className={styles["section_layout"]}>
 					<div className={styles["section_heading"]}>
