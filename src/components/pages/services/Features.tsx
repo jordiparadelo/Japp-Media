@@ -1,4 +1,4 @@
-export default function Features() {
+export default function Features({serviceId}: {serviceId: string}) {
 	const features = [
 		{
 			title: "Respond after hours and instantly",

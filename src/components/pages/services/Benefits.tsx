@@ -1,4 +1,4 @@
-export default function Benefits() {
+export default function Benefits({serviceId}: {serviceId: string}) {
 	const benefits = [
 		{
 			title: "Instant Response",
