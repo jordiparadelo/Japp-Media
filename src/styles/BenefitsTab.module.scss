@@ -1,0 +1,59 @@
+.benefits-tab {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+
+    &_nav {
+        display: flex;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        border-radius: var(--border-radius-full);
+        border: 1px solid var(--color-border-base);
+        background: var(--color-background-base);
+        padding: 0.5rem;
+
+        &_container {
+            display: flex;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            overflow: auto;
+            scrollbar-width: none;
+
+            // fade mask on the left and right
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
+
+        &_shadow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: white;
+            border-radius: var(--border-radius-full);
+            z-index: 0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &_link {
+            flex: 1;
+            border-radius: var(--border-radius-full);
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            color: var(--color-font-light);
+            line-height: 1;
+            padding: 1em 1.5em; 
+            text-wrap: nowrap;
+            z-index: 1;
+            mix-blend-mode: difference;
+        }
+    }
+
+    &_panel {
+        display: flex;
+        place-items: center;
+        place-content: center;
+        gap: 1rem;
+    }
+}

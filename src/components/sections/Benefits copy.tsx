@@ -1,6 +1,8 @@
 import React from "react";
 
-import {  SectionTag, BenefitsTab } from "@/components/ui";
+import { FEATURES } from "@/data";
+import { ContentBlocks } from "./ContentBlocks";
+import { Button, SectionTag } from "@/components/ui";
 
 import styles from "@/styles/Benefits.module.scss";
 
@@ -28,9 +30,12 @@ function Benefits() {
 							o mejorar reputación. Te ofrecemos claridad y una estrategia
 							diseñada para lo que realmente te hace falta.
 						</p>
-						<div className="mt-5">
-						<BenefitsTab />
+						<div className={styles["section_heading_actions"]}>
+							<Button>Agenda una llamada</Button>
 						</div>
+					</div>
+					<div className='max-w-screen-lg mx-auto'>
+						<ContentBlocks blocks={FEATURES} />
 					</div>
 				</div>
 			</div>
