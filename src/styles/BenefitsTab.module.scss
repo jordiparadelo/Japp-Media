@@ -47,6 +47,12 @@
             text-wrap: nowrap;
             z-index: 1;
             mix-blend-mode: difference;
+            transition: all 0.3s ease;
+
+            &:not([data-selected="true"]):hover {
+                color: var(--color-accent);
+                transform: scale(1.025);
+            }
         }
     }
 

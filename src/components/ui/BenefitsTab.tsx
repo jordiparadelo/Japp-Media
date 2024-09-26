@@ -2,18 +2,22 @@
 import React, { useState, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "@/styles/BenefitsTab.module.scss";
+import { BlocksCard } from "@/components/ui";
+import { FEATURES } from "@/data";
+import { BlocksCardProps } from "./BlocksCard";
+
 
 interface Tab {
 	id: number;
 	title: string;
-	content: string;
+	content: string | BlocksCardProps;
 }
 
 const TABS: Tab[] = [
-	{ id: 1, title: "Aumenta tu presencia", content: "Content 1" },
-	{ id: 2, title: "Mejora la reputación", content: "Content 2" },
-	{ id: 3, title: "Automatiza tu comunicación", content: "Content 3" },
-	{ id: 4, title: "Gestiona tus citas", content: "Content 4" },
+	{ id: 1, title: "Aumenta tu presencia", content: FEATURES[0] },
+	{ id: 2, title: "Mejora la reputación", content: FEATURES[1] },
+	{ id: 3, title: "Automatiza tu comunicación", content: FEATURES[2] },
+	{ id: 4, title: "Gestiona tus citas", content: FEATURES[3] },
 ];
 
 const SLIDE_DISTANCE = 500;
@@ -130,7 +134,8 @@ function BenefitsTab() {
 							}
 						}}
 					>
-						{activeTab.content}
+						
+						<BlocksCard {...activeTab.content as BlocksCardProps}/>
 					</motion.div>
 				</AnimatePresence>
 			</div>
@@ -164,7 +169,6 @@ function TabNavigation({
                         transform: `translateX(${shadowProps.x}px)`,
                         width: `${shadowProps.width}px`,
 						height: `${shadowProps.height}px`,
-
                     }}
                 ></motion.span>
 				{tabs.map((tab, index) => (
