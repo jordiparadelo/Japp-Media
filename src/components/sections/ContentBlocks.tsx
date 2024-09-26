@@ -1,18 +1,10 @@
 import React from "react";
-import { StaticImageData } from "next/image";
 
 import styles from '@/styles/ContentBlocks.module.scss'
 import { BlocksCard } from "@/components/ui";
+import { StepGuidedProps } from "@/types";
 
-export type StepGuidedProps = {
-	title?: string;
-	description?: string;
-	details?: Array<{
-		title: string;
-		description: string;
-	}>;
-	image?: StaticImageData | string;
-};
+
 
 export function ContentBlocks({ blocks }: { blocks: StepGuidedProps[] }) {
 	return (

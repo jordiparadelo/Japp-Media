@@ -28,10 +28,9 @@ function Benefits() {
 							o mejorar reputación. Te ofrecemos claridad y una estrategia
 							diseñada para lo que realmente te hace falta.
 						</p>
-						<div className="mt-5">
-						<BenefitsTab />
-						</div>
+						
 					</div>
+						<BenefitsTab />
 				</div>
 			</div>
 		</section>

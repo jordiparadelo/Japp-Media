@@ -1,23 +1,18 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "@/styles/BenefitsTab.module.scss";
 import { BlocksCard } from "@/components/ui";
 import { FEATURES } from "@/data";
-import { BlocksCardProps } from "./BlocksCard";
+import { BlocksCardProps, TabType } from "@/types";
 
 
-interface Tab {
-	id: number;
-	title: string;
-	content: string | BlocksCardProps;
-}
 
-const TABS: Tab[] = [
+const TABS: TabType[] = [
 	{ id: 1, title: "Aumenta tu presencia", content: FEATURES[0] },
 	{ id: 2, title: "Mejora la reputación", content: FEATURES[1] },
 	{ id: 3, title: "Automatiza tu comunicación", content: FEATURES[2] },
-	{ id: 4, title: "Gestiona tus citas", content: FEATURES[3] },
+	{ id: 4, title: "Agenda más trabajos", content: FEATURES[3] },
 ];
 
 const SLIDE_DISTANCE = 500;
@@ -82,16 +77,16 @@ function BenefitsTab() {
 		}
 	};
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (containerRef.current) {
 			const container = containerRef.current;
 			const firstTab = container.querySelector('[data-selected="true"]');
 			if (firstTab) {
-				const { x, width, height } = firstTab.getBoundingClientRect();
+				const { offsetLeft, offsetWidth, offsetHeight } = firstTab as HTMLElement;
 				setShadowProps({
-					x,
-					width,
-					height,
+					x: offsetLeft,
+					width: offsetWidth,
+					height: offsetHeight,
 				});
 			}
 		}
@@ -144,7 +139,7 @@ function BenefitsTab() {
 }
 
 interface TabNavigationProps {
-	tabs: Tab[];
+	tabs: TabType[];
 	activeTabIndex: number;
     shadowProps: {
         x: number;

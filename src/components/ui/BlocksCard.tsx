@@ -1,18 +1,10 @@
-
 import { Accordion, AccordionItem } from "../ui/Accordion";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 import styles from '@/styles/ContentBlocks.module.scss'
+import { BlocksCardProps } from "@/types";
 
-export type BlocksCardProps = {
-	title?: string;
-	description?: string;
-	details?: Array<{
-		title: string;
-		description: string;
-	}>;
-	image?: StaticImageData | string;
-};
+
 
 export default function BlocksCard({ title, details, image }: BlocksCardProps) {
 	return (
@@ -30,18 +22,20 @@ export default function BlocksCard({ title, details, image }: BlocksCardProps) {
 			)}
 			<div className={styles['card_content']}>
 			<div className={styles['card_content_heading']}>
-				<h2 className='text-3xl '>{title}</h2>
+				<h2 className='text-2xl '>{title}</h2>
 				</div>
-				{details && (<Accordion>
-					{details?.map((detail) => (
-						<AccordionItem
-							key={detail.title}
-							title={detail.title}
-							content={detail.description}
-						/>
-					))}
-				</Accordion>)}
-				
+				{Array.isArray(details) && details.length > 0 && (
+					<Accordion>
+						{details.map((detail: { title: string; description: string }) => (
+							<AccordionItem
+								key={detail.title}
+								title={detail.title}
+								content={detail.description}
+							/>
+						))}
+					</Accordion>
+				)}
+				{typeof details === 'string' && <p>{details}</p>}   
 			</div>
 		</div>
 	);

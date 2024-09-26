@@ -9,19 +9,10 @@ import {
 	UseFormRegister,
 } from "react-hook-form";
 import styles from "@/styles/ContactForm.module.scss";
-
-type FormFields = {
-	name: string;
-	phone: string;
-	email: string;
-	selectBusiness: string;
-	nameBusiness: string;
-	message: string;
-	termsAccepted: boolean;
-};
+import { FormFieldsType } from "@/types";
 
 // Base validation rules
-const baseValidationRules: Record<keyof FormFields, RegisterOptions> = {
+const baseValidationRules: Record<keyof FormFieldsType, RegisterOptions> = {
 	name: {
 		minLength: {
 			value: 2,
@@ -73,10 +64,10 @@ function useFieldValidation() {
 	const {
 		register,
 		formState: { errors },
-	} = useFormContext<FormFields>();
+	} = useFormContext<FormFieldsType>();
 
 	const getValidationRules = (
-		registerType: keyof FormFields,
+		registerType: keyof FormFieldsType,
 		required: boolean
 	): RegisterOptions => {
 		const rules: RegisterOptions = { ...baseValidationRules[registerType] };
@@ -89,14 +80,14 @@ function useFieldValidation() {
 	};
 
 	const registerField = (
-		registerType: keyof FormFields,
+		registerType: keyof FormFieldsType,
 		required: boolean
-	): ReturnType<UseFormRegister<FormFields>> => {
+	): ReturnType<UseFormRegister<FormFieldsType>> => {
 		return register(
 			registerType,
 			getValidationRules(registerType, required) as RegisterOptions<
-				FormFields,
-				keyof FormFields
+				FormFieldsType,
+				keyof FormFieldsType
 			>
 		);
 	};
@@ -105,9 +96,9 @@ function useFieldValidation() {
 }
 
 function ContactForm() {
-	const methods = useForm<FormFields>();
+	const methods = useForm<FormFieldsType>();
 
-	const onSubmit: SubmitHandler<FormFields> = async (data) => {
+	const onSubmit: SubmitHandler<FormFieldsType> = async (data) => {
 		await new Promise((r) => setTimeout(r, 2000));
 		console.log(data);
 	};
@@ -195,7 +186,7 @@ type InputFieldProps = {
 	type?: React.InputHTMLAttributes<HTMLElement>["type"];
 	placeholder?: string;
 	required?: boolean;
-	registerType: keyof FormFields;
+	registerType: keyof FormFieldsType;
 };
 
 function InputField({
@@ -227,7 +218,7 @@ function InputField({
 
 type SelectFieldProps = {
 	label: string;
-	registerType: keyof FormFields;
+	registerType: keyof FormFieldsType;
 	required?: boolean;
 	options: { value: string; label: string }[];
 };
@@ -269,7 +260,7 @@ type TextareaFieldProps = {
 	label: string;
 	placeholder?: string;
 	required?: boolean;
-	registerType: keyof FormFields;
+	registerType: keyof FormFieldsType;
 };
 
 function TextareaField({
@@ -299,7 +290,7 @@ function TextareaField({
 
 type CheckboxFieldProps = {
 	label: string;
-	registerType: keyof FormFields;
+	registerType: keyof FormFieldsType;
 	required?: boolean;
 };
 

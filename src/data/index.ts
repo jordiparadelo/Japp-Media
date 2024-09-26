@@ -57,19 +57,20 @@ export const FEATURES = [
 		title: "Aumente su reputation y su visualización.",
 		description:
 			"Mejora tu precencia y reputación de tu negocio en Google con monitoreo activo y gestión de reseñas.",
-		details: [
-			{
-				title: "Automatiza Reseñas y Solicitudes de Feedback:",
-				description:
-					"Envía solicitudes automáticas para obtener reseñas en Google y mejora tu reputación online sin esfuerzo.",
-			},
-			{
-				title: "Alertas en Tiempo Real de Nuevas Reseñas:",
-				description:
-					"Recibe notificaciones inmediatas cuando se publiquen nuevas reseñas y responde rápidamente para gestionar la satisfacción del cliente.",
-			},
-		],
-		image: '/images/benefits_card_02.webp',
+		details: 'Rank higher on search, improve Google ad performance, and maintain accurate business listings to drive a steady stream of customers to your digital storefront.',
+		// details: [
+		// 	{
+		// 		title: "Automatiza Reseñas y Solicitudes de Feedback:",
+		// 		description:
+		// 			"Envía solicitudes automáticas para obtener reseñas en Google y mejora tu reputación online sin esfuerzo.",
+		// 	},
+		// 	{
+		// 		title: "Alertas en Tiempo Real de Nuevas Reseñas:",
+		// 		description:
+		// 			"Recibe notificaciones inmediatas cuando se publiquen nuevas reseñas y responde rápidamente para gestionar la satisfacción del cliente.",
+		// 	},
+		// ],
+		image: '/images/benefits_card_02.png',
 	},
 	{
 		title: "Campañas de Respuesta Directa (DR)",
