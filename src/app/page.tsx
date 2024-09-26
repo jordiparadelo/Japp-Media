@@ -1,16 +1,12 @@
-'use client';
-
 import {
 	// Imaginary,
 	Hero,
 	Services,
 	Benefits,
-	CtaBanner,
-} from "@/components/sections";
+} from "@/components/pages/home";
+import { CtaBanner } from "@/components/sections";
 
 export default function Home() {
-
-
 	return (
 		<>
 			<Hero />

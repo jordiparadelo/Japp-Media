@@ -1,6 +1,6 @@
 import React from "react";
-import SwipeCarousel from "../ui/SwipeCarrousel";
-import { SectionTag } from "../ui";
+import SwipeCarousel from "@/components/ui/SwipeCarrousel";
+import { SectionTag } from "@/components/ui";
 import { WHY_US } from "@/data";
 import Image from "next/image";
 import styles from "@/styles/WhyUs.module.scss";

@@ -1,4 +1,4 @@
-import { Accordion, AccordionItem } from "../ui/Accordion";
+import { Accordion, AccordionItem } from "@/components/ui/Accordion";
 import Image from "next/image";
 
 import styles from '@/styles/ContentBlocks.module.scss'

@@ -1,10 +1,11 @@
 import React from "react";
-import { ContactHero, CtaBanner, WhyUs } from "@/components/sections";
+import {  CtaBanner, WhyUs } from "@/components/sections";
+import { Hero } from "@/components/pages/contact";
 
 function ContactPage() {
 	return (
 		<>
-			<ContactHero />
+			<Hero />
 			<WhyUs />
 			<CtaBanner />
 		</>

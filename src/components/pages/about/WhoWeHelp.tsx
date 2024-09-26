@@ -1,9 +1,10 @@
-import React from "react";
-
 import { HOW_HELP } from "@/data";
-import { ContentBlocks } from "./ContentBlocks";
 import { SectionTag } from "@/components/ui";
 import styles from "@/styles/WhoWeHelp.module.scss";
+
+import React from "react";
+
+import { ContentBlocks } from "@/components/sections";
 
 function WhoWeHelp() {
 	// TODO: Update classes with scss

@@ -6,7 +6,7 @@ import { StepGuidedProps } from "@/types";
 
 
 
-export function ContentBlocks({ blocks }: { blocks: StepGuidedProps[] }) {
+export default function ContentBlocks({ blocks }: { blocks: StepGuidedProps[] }) {
 	return (
 		<ul className={styles['grid']}>
 			{blocks?.map((item) => (

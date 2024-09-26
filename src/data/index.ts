@@ -1,5 +1,6 @@
 export const SERVICES = [
 	{
+		id: "sitio-web",
 		service: "Sitio Web",
 		title: "Mejora tu presencia digital",
 		description:
@@ -7,6 +8,7 @@ export const SERVICES = [
 		image: "/images/benefits_card_01.webp",
 	},
 	{
+		id: "respuestas-automaticas",
 		service: "Respuestas automáticas",
 		title: "No pierdas clientes por no contestar",
 		description:
@@ -14,6 +16,7 @@ export const SERVICES = [
 		image: "/images/service_card_02.webp",
 	},
 	{
+		id: "google-reviews",
 		service: "Google Reviews",
 		title: "Aumenta tu reputación en Google",
 		description:
@@ -21,6 +24,7 @@ export const SERVICES = [
 		image: "/images/service_card_04.webp",
 	},
 	{
+		id: "calendario-citas",
 		service: "Calendario de citas",
 		title: "Agenda a tus clientes y no pierdas tiempo",
 		description:

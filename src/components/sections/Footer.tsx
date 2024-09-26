@@ -2,7 +2,7 @@ import React from "react";
 import { LINKS, PERSONAL_INFO } from "@/libs/constants";
 import Link from "next/link";
 import { Logo } from "@/components/ui";
-import styles from "../../styles/Footer.module.scss";
+import styles from "@/styles/Footer.module.scss";
 
 export default function Footer() {
 	return (

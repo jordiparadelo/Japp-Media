@@ -1,9 +1,9 @@
 import React from "react";
-import { BookButton, Button, SectionTag } from "../ui";
+import { BookButton, Button, SectionTag } from "@/components/ui";
 import Image from "next/image";
 import styles from "@/styles/AboutHero.module.scss";
 
-const AboutHero = () => {
+const Hero = () => {
 	return (
 		<section className={styles["section"] + " bkg-grid-pattern"}>
 			<div className='container mx-auto'>
@@ -45,4 +45,4 @@ const AboutHero = () => {
 	);
 };
 
-export default AboutHero;
+export default Hero;
