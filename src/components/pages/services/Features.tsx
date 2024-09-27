@@ -14,7 +14,7 @@ export default function Features({serviceId}: {serviceId: string}) {
 	return (
 		<section className='bg-gray-100 py-16'>
 			<div className='container mx-auto px-4'>
-				<h2 className='text-3xl font-semibold mb-12'>Features</h2>
+				<h2 className='text-3xl font-semibold mb-12'>Features {serviceId}</h2>
 				{features.map((feature, index) => (
 					<div
 						key={index}

@@ -2,12 +2,12 @@
 
 import { Hero, DoYouKnow, Features, Benefits } from "@/components/pages/services";
 import { CtaBanner } from "@/components/sections";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { SERVICES } from "@/data";
 import { ServiceCardType } from "@/types";
 
 export default function ServicesPageLayout({id}: {id: string}) {
-	const router = useRouter();
+	// const router = useRouter();
 	const serviceNotFound = SERVICES.some((service: ServiceCardType) => 
 		service.service.toLowerCase().replace(/\s+/g, '-') === id
 	);
@@ -15,7 +15,7 @@ export default function ServicesPageLayout({id}: {id: string}) {
 	// if (serviceNotFound) {
 	// 	router.push("/404");
 	// }
-	
+
 	return (
 		<>
 			<Hero serviceId={id} />

@@ -6,7 +6,7 @@ export default function DoYouKnow({serviceId}: {serviceId: string}) {
 				<div className='flex justify-between'>
 					<div className='text-center'>
 						<p className='text-4xl font-bold'>1 min</p>
-						<p>Average response time</p>
+						<p>Average response time {serviceId}</p>
 					</div>
 					<div className='text-center'>
 						<p className='text-4xl font-bold'>1000+</p>
