@@ -21,7 +21,26 @@
 		padding-inline: 1.5rem;
 		justify-content: space-between;
 		position: relative;
-    min-height: 70px;
+		min-height: 70px;
+		position: relative;
+		z-index: 1;
+
+		&:before {
+			--outline-size: 3px;
+			content: "";
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: calc(100% + var(--outline-size));
+			height: calc(100% + var(--outline-size));
+			border-radius: calc(var(--rounded-md) + var(--outline-size));
+			background-color: inherit;
+			filter: invert(1);
+			backdrop-filter: blur(8px);
+			opacity: 0.2;
+			z-index: -2;
+		}
 
 		@media screen and (min-width: 768px) {
 			flex-direction: row;
@@ -45,13 +64,13 @@
 		flex-direction: column;
 		gap: 1rem;
 		align-items: center;
-    line-height: 1;
-    font-size: 1rem;
+		line-height: 1;
+		font-size: 1rem;
 
 		@media screen and (min-width: 768px) {
 			flex-direction: row;
-      gap: 1rem;
-      line-height: 1;
+			gap: 1rem;
+			line-height: 1;
 		}
 	}
 
@@ -82,7 +101,7 @@
 	// Mobile
 	&_menu {
 		position: absolute;
-		top: calc(100% + 0.5rem );
+		top: calc(100% + 0.5rem);
 		left: 0;
 		right: 0;
 		// bottom: 0;
@@ -90,56 +109,55 @@
 		flex-direction: column;
 		gap: 1rem;
 		align-items: center;
-    border-radius: var(--rounded-md);
-    background-color: var(--color-font);
-    backdrop-filter: blur(8px);
-    padding-block: 1.5rem;
-    padding-inline: 1.5rem;
-    z-index: 25;
+		border-radius: var(--rounded-md);
+		background-color: var(--color-font);
+		backdrop-filter: blur(8px);
+		padding-block: 1.5rem;
+		padding-inline: 1.5rem;
+		z-index: 25;
 
-    &_links {
-      flex-direction: column;
-      align-self: stretch;
-      gap: 0;
-  
+		&_links {
+			flex-direction: column;
+			align-self: stretch;
+			gap: 0;
 
-      &_link {
-        min-height: 3rem;
-        display: flex;
-        justify-content: space-between;
-        place-items: center;
-        flex-grow: 1;
-        flex-direction: row;
-        align-self: stretch;
-        gap: 0.5rem;
-        padding-inline: 1rem;
-        border-radius: var(--rounded-btn);
-        background-color: rgba(255, 255, 255, 0.1);
-        transition: background-color 0.2s ease;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+			&_link {
+				min-height: 3rem;
+				display: flex;
+				justify-content: space-between;
+				place-items: center;
+				flex-grow: 1;
+				flex-direction: row;
+				align-self: stretch;
+				gap: 0.5rem;
+				padding-inline: 1rem;
+				border-radius: var(--rounded-btn);
+				background-color: rgba(255, 255, 255, 0.1);
+				transition: background-color 0.2s ease;
+				border: 1px solid rgba(255, 255, 255, 0.2);
 
-        svg {
-          transition: transform 0.3s ease, opacity 0.3s ease;
-        }
+				svg {
+					transition: transform 0.3s ease, opacity 0.3s ease;
+				}
 
-        &:not(:hover) {
-          background-color: rgba(255, 255, 255, 0);
-          border: unset;
-          svg {
-            transform: translateX(100%);
-            opacity: 0;
-          }
-        }
-      }
-    }
+				&:not(:hover) {
+					background-color: rgba(255, 255, 255, 0);
+					border: unset;
+					svg {
+						transform: translateX(100%);
+						opacity: 0;
+					}
+				}
+			}
+		}
 
-    &_actions {
-      align-self: stretch;
-      display: grid;
-      grid-auto-flow: row;  
-      padding-block-start: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(25ch, 1fr));
-      gap: 1rem;
-    }
+		&_actions {
+			align-self: stretch;
+			display: grid;
+			grid-auto-flow: row;
+			padding-block-start: 1rem;
+			grid-template-columns: repeat(auto-fit, minmax(25ch, 1fr));
+			gap: 1rem;
+		}
 	}
 }

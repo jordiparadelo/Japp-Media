@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { NavbarProvider, useNavbar } from "@/contexts/NavbarContext";
@@ -9,11 +9,11 @@ import styles from "@/styles/Navbar.module.scss";
 import { LINKS, PERSONAL_INFO } from "@/libs/constants";
 import ArrowRightIcon from "@/assets/icons/arrow-right.svg";
 import PhoneIcon from "@/assets/icons/phone.svg";
-import {Button, Logo, BookButton} from "@/components/ui";
+import { Button, Logo, BookButton } from "@/components/ui";
 
-  
 export default function Navbar() {
 	const isMobile = useMediaQuery("(max-width: 768px)");
+
 
 	return (
 		<NavbarProvider>
@@ -23,7 +23,7 @@ export default function Navbar() {
 }
 
 function DesktopNavbar() {
-	const { pathname } = useNavbar();
+	const { pathname } = useNavbar();;
 
 	return (
 		<nav className={styles.navbar}>
@@ -98,6 +98,7 @@ function MobileNavbar() {
 											className={cn(styles.navbar_menu_links_link, {
 												[styles["navbar_link--active"]]: pathname === link.href,
 											})}
+											onClick={() => toggleMenu()}
 										>
 											{link.label}
 											<ArrowRightIcon />
