@@ -54,20 +54,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 	
 	return (
 		<>
-			{/* Suspense wrapper for loading state */}
 			<Suspense fallback={<div>Loading...</div>}>
 				<Modal title='Agenda una llamada'>
 					<CalendlyWidget url='https://calendly.com/your-calendly-url' />
 				</Modal>
 			</Suspense>
 
-			{/* AnimatePresence for handling enter/exit animations */}
 			<AnimatePresence
 				mode='wait'
 				initial={false}
 				onExitComplete={() => window.scrollTo(0, 0)}
 			>
-				{/* Animated main content wrapper */}
 				<motion.main
 					className='flex-grow transform-origin-top'
 					{...anim(perspectiveVariants)}
