@@ -143,7 +143,7 @@ function ContactForm() {
 						label='Teléfono'
 						placeholder='Ejemplo: 612345678'
 						type='tel'
-						// required={true}
+						required={true}
 						registerType='phone'
 					/>
 				</div>
@@ -151,7 +151,7 @@ function ContactForm() {
 					label='Correo Electrónico'
 					placeholder='correo@ejemplo.com'
 					type='email'
-					// required={true}
+					required={true}
 					registerType='email'
 				/>
 				<div className={styles["form_group"]}>
@@ -167,9 +167,9 @@ function ContactForm() {
 						// required={true}
 						options={[
 							{ value: "", label: "Seleccione un tipo de negocio" },
-							{ value: "retail", label: "Venta al por menor" },
-							{ value: "service", label: "Servicios" },
-							{ value: "manufacturing", label: "Fabricación" },
+							{ value: "autonomous", label: "Autónomo" },
+							{ value: "local-business", label: "Negocio Local" },
+							{ value: "retail", label: "Proveedor" },
 							{ value: "other", label: "Otro" },
 						]}
 					/>

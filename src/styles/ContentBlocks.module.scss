@@ -34,7 +34,9 @@
 
 	@media screen and (min-width: 768px) {
 		display: grid;
+		// grid-template-columns: 1.5fr auto;
 		grid-template-columns: 1.5fr 1fr;
+		// grid-auto-columns: 1.5fr max(40ch, 1fr);
 		grid-template-rows: 1fr;
 		grid-auto-flow: dense;
 
@@ -48,7 +50,7 @@
 		padding: 1.25rem;
 		text-align: left;
 		background-color: white;
-
+		min-width: 40ch;
 
 		&_actions {
 			display: flex;

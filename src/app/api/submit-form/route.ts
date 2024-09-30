@@ -15,26 +15,46 @@ export async function POST(request: Request) {
     });
 
     const base = Airtable.base(process.env.AIRTABLE_BASE_ID!);
+    const table = base(process.env.AIRTABLE_TABLE_ID!);
 
     const body = await request.json();
 
-    // Create a record in Airtable
-    const createdRecords = await base(process.env.AIRTABLE_TABLE_ID!).create([
-      {
-        fields: {
-          Name: body.name,
-          Phone: body.phone,
-          Email: body.email,
-          'Business Name': body.nameBusiness,
-        //   'Business Type': body.selectBusiness,
-          Notes: body.message,
-        //   'Terms Accepted': body.termsAccepted,
-          Service: body.service,
-        },
-      },
-    ]);
+    // Check for existing record with the same email
+    const existingRecords = await table.select({
+      filterByFormula: `{Email} = '${body.email}'`
+    }).firstPage();
 
-    return NextResponse.json({ success: true, id: createdRecords[0].id });
+    if (existingRecords && existingRecords.length > 0) {
+      // Update existing record
+      const updatedRecord = await table.update(existingRecords[0].id, {
+        Name: body.name,
+        Phone: body.phone,
+        Email: body.email,
+        'Business Name': body.nameBusiness,
+        'Type of Business': body.selectBusiness,
+        Notes: body.message,
+        Service: body.service,
+        Status: 'In progress'
+      });
+
+      return NextResponse.json({ success: true, id: updatedRecord.id, updated: true });
+    } else {
+      // Create a new record
+      const createdRecords = await table.create([
+        {
+          fields: {
+            Name: body.name,
+            Phone: body.phone,
+            Email: body.email,
+            'Business Name': body.nameBusiness,
+            Notes: body.message,
+            Service: body.service,
+          },
+        },
+      ]);
+
+      return NextResponse.json({ success: true, id: createdRecords[0].id, created: true });
+    }
   } catch (error) {
     console.error('Error submitting form:', error);
     return NextResponse.json(

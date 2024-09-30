@@ -1,6 +1,6 @@
 export const SERVICES = [
 	{
-		id: "web-site",
+		id: "Web Site",
 		service: "Sitio Web",
 		title: "Mejora tu presencia digital",
 		description:
@@ -8,7 +8,7 @@ export const SERVICES = [
 		image: "/images/feature_card-01.webp",
 	},
 	{
-		id: "automatic-responses",
+		id: "Automatic Response",
 		service: "Respuestas automáticas",
 		title: "No pierdas clientes por no contestar",
 		description:
@@ -16,7 +16,7 @@ export const SERVICES = [
 		image: "/images/service_card_02.webp",
 	},
 	{
-		id: "google-reviews",
+		id: "Google Reviews",
 		service: "Google Reviews",
 		title: "Aumenta tu reputación en Google",
 		description:
@@ -24,7 +24,7 @@ export const SERVICES = [
 		image: "/images/service_card_04.webp",
 	},
 	{
-		id: "appointment-calendar",
+		id: "Appointment Calendar",
 		service: "Calendario de citas",
 		title: "Agenda a tus clientes y no pierdas tiempo",
 		description:
@@ -35,28 +35,28 @@ export const SERVICES = [
 
 export const FEATURES = [
 	{
-		id: "web-site",
+		id: "Web Site",
 		title: "Atraiga clientes potenciales: sitio web en un  día",
 		description:
 			"Si todavia no tienes sitio web, te ayudamos a crear uno en pocos dias. Si ya tienes uno, te ayudamos a que conectes mas con clientes potenciales.",
 		image: "/images/feature_card-01.webp",
 	},
 	{
-		id: "google-reviews",
+		id: "Google Reviews",
 		title: "Aumenta tu reputation y su visualización.",
 		description:
 			"Mejora tu precencia y reputación de tu negocio en Google con monitoreo activo y gestión de reseñas.",
 		image: "/images/feature_card-02.webp",
 	},
 	{
-		id: "automatic-responses",
+		id: "Automatic Response",
 		title: "Respuestas Automáticas de Texto y Email",
 		description:
 			"Asegura una comunicación oportuna con respuestas automáticas para tus clientes. No pierdas tiempo en responder mensajes, gestionamos la comunicación con repuesta al momento. Aumenta mas ventas sin esfuerzo.",
 		image: "/images/feature_card-03.webp",
 	},
 	{
-		id: "appointment-calendar",
+		id: "Appointment Calendar",
 		title: "Tus citas apuntadas y gestionadas de forma automatica",
 		description:
 			"No pierdas gestionando las citas a tus clientes, gestionamos tus citas y recordatorios de manera automatica, para que solo tengas que preocuparte de lo que realmente importa, tu negocio.",
@@ -89,7 +89,7 @@ export const FEATURES_EXTENDED = [
 		image: "/images/feature_card-01.webp",
 	},
 	{
-		id: "google-reviews",
+		id: "Google Reviews",
 		title: "Aumente su reputation y su visualización.",
 		description:
 			"Mejora tu precencia y reputación de tu negocio en Google con monitoreo activo y gestión de reseñas.",
