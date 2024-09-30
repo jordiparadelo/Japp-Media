@@ -1,4 +1,5 @@
-'use client';
+"use client";
+
 import React from "react";
 import {
 	SubmitHandler,
@@ -10,6 +11,7 @@ import {
 } from "react-hook-form";
 import styles from "@/styles/ContactForm.module.scss";
 import { FormFieldsType } from "@/types";
+import { useSearchParams } from "next/navigation";
 
 // Base validation rules
 const baseValidationRules: Record<keyof FormFieldsType, RegisterOptions> = {
@@ -57,6 +59,7 @@ const baseValidationRules: Record<keyof FormFieldsType, RegisterOptions> = {
 		},
 	},
 	termsAccepted: {},
+	service: {}, // Add this line
 };
 
 // Custom hook for field registration and validation
@@ -97,6 +100,8 @@ function useFieldValidation() {
 
 function ContactForm() {
 	const methods = useForm<FormFieldsType>();
+	const searchParams = useSearchParams();
+	const service = searchParams.get("service");
 
 	const onSubmit: SubmitHandler<FormFieldsType> = async (data) => {
 		await new Promise((r) => setTimeout(r, 2000));
@@ -158,6 +163,14 @@ function ContactForm() {
 					registerType='message'
 					// required={true}
 				/>
+				{/* Send service id to the backend */}
+				{service && (
+					<InputField
+						type='hidden'
+						registerType='service'
+						value={service}
+					/>
+				)}
 				<CheckboxField
 					label='Acepto los términos y condiciones proporcionados por la empresa. Al facilitar mi número de teléfono, acepto recibir mensajes de texto de la empresa.'
 					registerType='termsAccepted'
@@ -182,32 +195,37 @@ function ContactForm() {
 export default ContactForm;
 
 type InputFieldProps = {
-	label: string;
+	label?: string;
 	type?: React.InputHTMLAttributes<HTMLElement>["type"];
 	placeholder?: string;
 	required?: boolean;
 	registerType: keyof FormFieldsType;
+	value?: string;
 };
 
-function InputField({
+function InputField ({
 	label,
 	placeholder,
 	type,
 	required,
 	registerType,
+	value,
 }: InputFieldProps) {
 	const { registerField, errors } = useFieldValidation();
 
 	return (
 		<label className={styles["form_field"]}>
-			<span className={styles["form_label"]}>
-				{label} <span className='text-red-500'>{required && "*"}</span>
-			</span>
+			{label && (
+				<span className={styles["form_label"]}>
+					{label} <span className='text-red-500'>{required && "*"}</span>
+				</span>
+			)}
 			<input
 				type={type}
 				placeholder={placeholder}
 				className={styles["form_input"]}
 				{...registerField(registerType, !!required)}
+				value={value}
 			/>
 			{errors[registerType] && (
 				<span className='text-red-500'>{errors[registerType]?.message}</span>

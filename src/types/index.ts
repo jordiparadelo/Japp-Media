@@ -13,6 +13,7 @@ export interface ImageType {
 }
 
 export type BlocksCardProps = {
+	id: string;
 	title?: string;
 	description?: string;
 	details?: Array<{
@@ -46,4 +47,5 @@ export type FormFieldsType = {
 	nameBusiness: string;
 	message: string;
 	termsAccepted: boolean;
+	service?: string;
 };

@@ -5,7 +5,7 @@ export const SERVICES = [
 		title: "Mejora tu presencia digital",
 		description:
 			"Crea o mejora tu sitio web: aumenta tu presencia, cierra mas reservas y atrae más clientes potenciales.",
-		image: "/images/benefits_card_01.webp",
+		image: "/images/feature_card-01.webp",
 	},
 	{
 		id: "respuestas-automaticas",
@@ -35,6 +35,37 @@ export const SERVICES = [
 
 export const FEATURES = [
 	{
+		id: "sitio-web",
+		title: "Atraiga clientes potenciales: sitio web en un  día",
+		description:
+			"Si todavia no tienes sitio web, te ayudamos a crear uno en pocos dias. Si ya tienes uno, te ayudamos a que conectes mas con clientes potenciales.",
+		image: "/images/feature_card-01.webp",
+	},
+	{
+		id: "google-reviews",
+		title: "Aumenta tu reputation y su visualización.",
+		description:
+			"Mejora tu precencia y reputación de tu negocio en Google con monitoreo activo y gestión de reseñas.",
+		image: "/images/feature_card-02.webp",
+	},
+	{
+		id: "respuestas-automaticas",
+		title: "Respuestas Automáticas de Texto y Email",
+		description:
+			"Asegura una comunicación oportuna con respuestas automáticas para tus clientes. No pierdas tiempo en responder mensajes, gestionamos la comunicación con repuesta al momento. Aumenta mas ventas sin esfuerzo.",
+		image: "/images/feature_card-03.webp",
+	},
+	{
+		id: "calendario-citas",
+		title: "Tus citas apuntadas y gestionadas de forma automatica",
+		description:
+			"No pierdas gestionando las citas a tus clientes, gestionamos tus citas y recordatorios de manera automatica, para que solo tengas que preocuparte de lo que realmente importa, tu negocio.",
+		image: "/images/feature_card-04.webp",
+	},
+];
+export const FEATURES_EXTENDED = [
+	{
+		id: "sitio-web",
 		title: "Atraiga clientes potenciales: sitio web en un  día",
 		description:
 			"Sitios web de alta conversión en solo unos días para atraer y convertir más clientes potenciales.",
@@ -55,13 +86,15 @@ export const FEATURES = [
 					"Capture datos valiosos de clientes potenciales con formularios optimizados y fáciles de usar focalizados en generar mas ventas.",
 			},
 		],
-		image: '/images/benefits_card_01.webp',
+		image: "/images/feature_card-01.webp",
 	},
 	{
+		id: "google-reviews",
 		title: "Aumente su reputation y su visualización.",
 		description:
 			"Mejora tu precencia y reputación de tu negocio en Google con monitoreo activo y gestión de reseñas.",
-		details: 'Rank higher on search, improve Google ad performance, and maintain accurate business listings to drive a steady stream of customers to your digital storefront.',
+		details:
+			"Rank higher on search, improve Google ad performance, and maintain accurate business listings to drive a steady stream of customers to your digital storefront.",
 		// details: [
 		// 	{
 		// 		title: "Automatiza Reseñas y Solicitudes de Feedback:",
@@ -74,9 +107,10 @@ export const FEATURES = [
 		// 			"Recibe notificaciones inmediatas cuando se publiquen nuevas reseñas y responde rápidamente para gestionar la satisfacción del cliente.",
 		// 	},
 		// ],
-		image: '/images/benefits_card_02.png',
+		image: "/images/feature_card-02.webp",
 	},
 	{
+		id: "calendario-citas",
 		title: "Campañas de Respuesta Directa (DR)",
 		description:
 			"Lanza campañas de marketing que generan acciones inmediatas de los clientes.",
@@ -97,9 +131,10 @@ export const FEATURES = [
 					"Accede a informes detallados en tiempo real para medir la efectividad de las campañas y realizar ajustes que maximicen las conversiones.",
 			},
 		],
-		image: '/images/benefits_card_03.webp',
+		image: "/images/feature_card-03.webp",
 	},
 	{
+		id: "respuestas-automaticas",
 		title: "Respuestas Automáticas de Texto y Email",
 		description:
 			"Asegura una comunicación oportuna con respuestas automáticas para tus clientes.",
@@ -120,7 +155,7 @@ export const FEATURES = [
 					"Mantén a tus clientes informados y satisfechos al responder de manera rápida y consistente, fomentando su lealtad y confianza en tu negocio.",
 			},
 		],
-		image: '/images/benefits_card_04.webp',
+		image: "/images/feature_card-04.webp",
 	},
 ];
 
@@ -146,7 +181,7 @@ export const HOW_HELP = [
 					"Tú sigues enfocado en tu negocio, mientras nosotros nos ocupamos de hacerte crecer.",
 			},
 		],
-		image: '/images/benefits_card_01.webp',
+		image: "/images/feature_card-01.webp",
 	},
 	{
 		title: "Tengo algo de presencia digital, pero no estoy viendo resultados",
@@ -169,7 +204,7 @@ export const HOW_HELP = [
 					" Te explicamos lo que está fallando de manera sencilla y te ofrecemos soluciones claras que funcionan.",
 			},
 		],
-		image: '/images/benefits_card_02.webp',
+		image: "/images/feature_card-02.webp",
 	},
 	{
 		title: "Ya tengo una estructura, pero quiero maximizar mis resultados",
@@ -192,7 +227,7 @@ export const HOW_HELP = [
 					"Nosotros nos encargamos de la parte técnica y estratégica, mientras tú disfrutas de un flujo constante de nuevos clientes.",
 			},
 		],
-		image: '/images/benefits_card_03.webp',
+		image: "/images/feature_card-03.webp",
 	},
 ];
 
