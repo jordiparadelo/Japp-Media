@@ -12,6 +12,7 @@ import {
 import styles from "@/styles/ContactForm.module.scss";
 import { FormFieldsType } from "@/types";
 import { useSearchParams } from "next/navigation";
+import { useState } from 'react';
 
 // Base validation rules
 const baseValidationRules: Record<keyof FormFieldsType, RegisterOptions> = {
@@ -102,18 +103,34 @@ function ContactForm() {
 	const methods = useForm<FormFieldsType>();
 	const searchParams = useSearchParams();
 	const service = searchParams.get("service");
+	const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
 	const onSubmit: SubmitHandler<FormFieldsType> = async (data) => {
-		await new Promise((r) => setTimeout(r, 2000));
-		console.log(data);
+		console.log({data});
+		setSubmitStatus('submitting');
+		try {
+			const response = await fetch('/api/submit-form', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(data),
+			});
+
+			if (!response.ok) {
+				throw new Error('Failed to submit form');
+			}
+
+			setSubmitStatus('success');
+		} catch (error) {
+			console.error('Error submitting form:', error);
+			setSubmitStatus('error');
+		}
 	};
 
 	return (
 		<FormProvider {...methods}>
-			<form
-				onSubmit={methods.handleSubmit(onSubmit)}
-				className={styles["form"]}
-			>
+			<form onSubmit={methods.handleSubmit(onSubmit)} className={styles["form"]}>
 				<div className={styles["form_group"]}>
 					<InputField
 						label='Nombre Completo'
@@ -180,13 +197,17 @@ function ContactForm() {
 					<button
 						className='button button--primary'
 						type='submit'
-						disabled={methods.formState.isSubmitting}
+						disabled={submitStatus === 'submitting'}
 					>
-						{methods.formState.isSubmitting
-							? "Enviando..."
-							: "Enviar Solicitud"}
+						{submitStatus === 'submitting' ? "Enviando..." : "Enviar Solicitud"}
 					</button>
 				</div>
+				{submitStatus === 'success' && (
+					<p className="text-green-500 mt-4">¡Formulario enviado con éxito!</p>
+				)}
+				{submitStatus === 'error' && (
+					<p className="text-red-500 mt-4">Error al enviar el formulario. Por favor, inténtelo de nuevo.</p>
+				)}
 			</form>
 		</FormProvider>
 	);

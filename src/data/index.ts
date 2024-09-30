@@ -1,6 +1,6 @@
 export const SERVICES = [
 	{
-		id: "sitio-web",
+		id: "web-site",
 		service: "Sitio Web",
 		title: "Mejora tu presencia digital",
 		description:
@@ -8,7 +8,7 @@ export const SERVICES = [
 		image: "/images/feature_card-01.webp",
 	},
 	{
-		id: "respuestas-automaticas",
+		id: "automatic-responses",
 		service: "Respuestas automáticas",
 		title: "No pierdas clientes por no contestar",
 		description:
@@ -24,7 +24,7 @@ export const SERVICES = [
 		image: "/images/service_card_04.webp",
 	},
 	{
-		id: "calendario-citas",
+		id: "appointment-calendar",
 		service: "Calendario de citas",
 		title: "Agenda a tus clientes y no pierdas tiempo",
 		description:
@@ -35,7 +35,7 @@ export const SERVICES = [
 
 export const FEATURES = [
 	{
-		id: "sitio-web",
+		id: "web-site",
 		title: "Atraiga clientes potenciales: sitio web en un  día",
 		description:
 			"Si todavia no tienes sitio web, te ayudamos a crear uno en pocos dias. Si ya tienes uno, te ayudamos a que conectes mas con clientes potenciales.",
@@ -49,14 +49,14 @@ export const FEATURES = [
 		image: "/images/feature_card-02.webp",
 	},
 	{
-		id: "respuestas-automaticas",
+		id: "automatic-responses",
 		title: "Respuestas Automáticas de Texto y Email",
 		description:
 			"Asegura una comunicación oportuna con respuestas automáticas para tus clientes. No pierdas tiempo en responder mensajes, gestionamos la comunicación con repuesta al momento. Aumenta mas ventas sin esfuerzo.",
 		image: "/images/feature_card-03.webp",
 	},
 	{
-		id: "calendario-citas",
+		id: "appointment-calendar",
 		title: "Tus citas apuntadas y gestionadas de forma automatica",
 		description:
 			"No pierdas gestionando las citas a tus clientes, gestionamos tus citas y recordatorios de manera automatica, para que solo tengas que preocuparte de lo que realmente importa, tu negocio.",
