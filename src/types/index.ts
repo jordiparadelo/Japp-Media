@@ -30,6 +30,7 @@ export interface TabType {
 }
 
 export type StepGuidedProps = {
+	id: string;
 	title?: string;
 	description?: string;
 	details?: Array<{

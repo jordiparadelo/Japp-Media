@@ -13,7 +13,7 @@ export default function ContentBlocks({ blocks }: { blocks: StepGuidedProps[] })
 				<li
 					key={item.title}
 				>
-					<BlocksCard {...item} />
+					<BlocksCard {...item} id={item.id} />
 				</li>
 			))}
 		</ul>
