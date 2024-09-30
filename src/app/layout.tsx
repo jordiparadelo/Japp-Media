@@ -2,7 +2,7 @@ import { Archivo, Roboto_Flex } from "next/font/google";
 import { Footer, Navbar } from "@/components/sections";
 import { cn } from "@/libs/utils";
 import "@/styles/globals.css";
-import {Layout} from "@/components/ui";
+import { Layout } from "@/components/ui";
 
 export const metadata = {
 	title: "Japp Media | Tu proximo servicio web",
