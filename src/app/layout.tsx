@@ -3,6 +3,7 @@ import { Footer, Navbar } from "@/components/sections";
 import { cn } from "@/libs/utils";
 import "@/styles/globals.css";
 import { Layout } from "@/components/ui";
+import { Suspense } from "react";
 
 export const metadata = {
 	title: "Japp Media | Tu proximo servicio web",
@@ -37,7 +38,9 @@ export default function RootLayout({
 					`bg-background text-white flex flex-col min-h-[100vh]`
 				)}
 			>
-				<Navbar />
+				<Suspense fallback={<div>Loading...</div>}>
+					<Navbar /> 
+				</Suspense>
 				<Layout>{children}</Layout>
 				<Footer />
 			</body>
