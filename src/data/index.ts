@@ -161,6 +161,7 @@ export const FEATURES_EXTENDED = [
 
 export const HOW_HELP = [
 	{
+		id: "quiero-mas-clientes",
 		title: "Quiero más clientes, pero no sé por dónde empezar",
 		description:
 			"Sitios web de alta conversión en solo unos días para atraer y convertir más clientes potenciales.",
@@ -184,7 +185,8 @@ export const HOW_HELP = [
 		image: "/images/feature_card-01.webp",
 	},
 	{
-		title: "Tengo algo de presencia digital, pero no estoy viendo resultados",
+		id: "quiero-mas-clientes",
+			title: "Tengo algo de presencia digital, pero no estoy viendo resultados",
 		description:
 			"Sitios web de alta conversión en solo unos días para atraer y convertir más clientes potenciales.",
 		details: [

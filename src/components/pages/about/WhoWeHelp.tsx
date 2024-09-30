@@ -5,6 +5,7 @@ import styles from "@/styles/WhoWeHelp.module.scss";
 import React from "react";
 
 import { ContentBlocks } from "@/components/sections";
+import { StepGuidedProps } from "@/types";
 
 function WhoWeHelp() {
 	// TODO: Update classes with scss
@@ -31,7 +32,7 @@ function WhoWeHelp() {
 						</p>
 					</div>
 					<div className='max-w-screen-lg mx-auto'>
-						<ContentBlocks blocks={HOW_HELP} />
+						<ContentBlocks blocks={HOW_HELP as StepGuidedProps[]}  />
 					</div>
 				</div>
 			</div>
