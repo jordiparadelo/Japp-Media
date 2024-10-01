@@ -50,3 +50,32 @@ export type FormFieldsType = {
 	termsAccepted: boolean;
 	service?: string;
 };
+
+export type InputFieldProps = {
+	label?: string;
+	type?: React.InputHTMLAttributes<HTMLElement>["type"];
+	placeholder?: string;
+	required?: boolean;
+	registerType: keyof FormFieldsType;
+	value?: string;
+  };
+  
+export type SelectFieldProps = {
+	label: string;
+	registerType: keyof FormFieldsType;
+	required?: boolean;
+	options: { value: string; label: string }[];
+  };
+  
+export type TextareaFieldProps = {
+	label: string;
+	placeholder?: string;
+	required?: boolean;
+	registerType: keyof FormFieldsType;
+  };
+  
+export type CheckboxFieldProps = {
+	label: string;
+	registerType: keyof FormFieldsType;
+	required?: boolean;
+  };

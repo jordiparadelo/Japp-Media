@@ -1,5 +1,5 @@
 import { Archivo, Roboto_Flex } from "next/font/google";
-import { Footer, Navbar } from "@/components/sections";
+import { Footer, Navbar } from "@/components/layouts";
 import { cn } from "@/libs/utils";
 import "@/styles/globals.css";
 import { Layout } from "@/components/ui";

@@ -10,6 +10,7 @@ import PhoneIcon from "@/assets/icons/phone-fill.svg";
 import CalendarIcon from "@/assets/icons/calendar.svg";
 import { useSearchParams } from "next/navigation";
 import { FEATURES } from "@/data";
+
 function Hero() {
 	const searchParams = useSearchParams();
 	const service = searchParams.get("service");

@@ -1,6 +1,6 @@
 import React from "react";
-import {  CtaBanner, WhyUs } from "@/components/sections";
-import { Hero } from "@/components/pages/contact";
+import {  CtaBanner, WhyUs } from "@/components/layouts";
+import { Hero } from "@/components/pages/Contact";
 
 function ContactPage() {
 	return (

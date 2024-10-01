@@ -4,7 +4,7 @@ import styles from "@/styles/WhoWeHelp.module.scss";
 
 import React from "react";
 
-import { ContentBlocks } from "@/components/sections";
+import { ContentBlocks } from "@/components/layouts";
 import { StepGuidedProps } from "@/types";
 
 function WhoWeHelp() {

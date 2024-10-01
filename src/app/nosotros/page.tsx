@@ -1,6 +1,6 @@
 import React from "react";
-import {  CtaBanner, WhyUs } from "@/components/sections";
-import { Hero, WhoWeHelp } from "@/components/pages/about";
+import {  CtaBanner, WhyUs } from "@/components/layouts";
+import { Hero, WhoWeHelp } from "@/components/pages/About";
 
 function AboutPage() {
 	return (

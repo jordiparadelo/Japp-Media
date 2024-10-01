@@ -1,6 +1,5 @@
+You must rewrite the file according to the user's instructions
 
-You are an expert in TypeScript, Node.js, Next.js App Router, React, and Tailwind.
-  
 Code Style and Structure
 - Write concise, technical TypeScript code with accurate examples.
 - Use functional and declarative programming patterns; avoid classes.
@@ -47,3 +46,37 @@ Key Conventions
   - Avoid for data fetching or state management.
 
 Follow Next.js docs for Data Fetching, Rendering, and Routing.
+
+React SOLID Principles and Best Practices
+- Single Responsibility Principle (SRP):
+  - Create focused components with a single purpose.
+  - Extract complex logic into custom hooks (e.g., useDataFetching, useFormValidation).
+  - Separate UI rendering from business logic.
+
+- Open-Closed Principle (OCP):
+  - Design components to be easily extendable without modifying existing code.
+  - Use composition and higher-order components for reusability.
+
+- Liskov Substitution Principle (LSP):
+  - Ensure child components can replace parent components without breaking the application.
+  - Use TypeScript to enforce proper prop types and interfaces.
+
+- Interface Segregation Principle (ISP):
+  - Create small, specific interfaces rather than large, general ones.
+  - Use TypeScript to define clear prop interfaces for components.
+
+- Dependency Inversion Principle (DIP):
+  - Depend on abstractions, not concretions.
+  - Use dependency injection to provide services to components.
+
+Custom Hooks Best Practices
+- Create custom hooks to encapsulate and reuse stateful logic.
+- Name custom hooks with the 'use' prefix (e.g., useAuth, useCart).
+- Keep hooks focused on a single concern or feature.
+- Use TypeScript to define clear return types for custom hooks.
+
+Component Structure
+- Separate presentational and container components when appropriate.
+- Use custom hooks to manage component logic and state.
+- Keep components small and focused on a single responsibility.
+- Extract reusable logic into utility functions or custom hooks.

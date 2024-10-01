@@ -34,7 +34,6 @@ export async function POST(request: Request) {
         'Type of Business': body.selectBusiness,
         Notes: body.message,
         Service: body.service,
-        Status: 'In progress'
       });
 
       return NextResponse.json({ success: true, id: updatedRecord.id, updated: true });
@@ -47,7 +46,9 @@ export async function POST(request: Request) {
             Phone: body.phone,
             Email: body.email,
             'Business Name': body.nameBusiness,
+            'Type of Business': body.selectBusiness,
             Notes: body.message,
+            Status: 'In progress',  
             Service: body.service,
           },
         },
