@@ -19,4 +19,4 @@ export { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from '.
 export { default as BenefitsTab } from './BenefitsTab';
 export { default as BlocksCard } from './BlocksCard';
 export { default as AnimatedLayout } from './AnimatedLayout';
-
+export { default as CalcomWidget } from './CalcomWidget';

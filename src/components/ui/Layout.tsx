@@ -1,15 +1,15 @@
 "use client";
 
-import { Suspense } from "react";
 import { Modal, AnimatedLayout } from "@/components/ui";
-import CalendlyWidget from "@/components/booking/CalendlyWidget";
+import { Suspense } from "react";
+import { CalcomWidget } from "@/components/ui";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
 	return (
 		<>
 			<Suspense fallback={<div>Loading...</div>}>
 				<Modal title='Agenda una llamada'>
-					<CalendlyWidget url='https://calendly.com/your-calendly-url' />
+					<CalcomWidget />
 				</Modal>
 			</Suspense>
 
