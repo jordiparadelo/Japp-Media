@@ -3,7 +3,7 @@ import {
 	Hero,
 	Services,
 	Benefits,
-} from "@/components/pages/Home";
+} from "@/components/pages/home";
 import { CtaBanner } from "@/components/layouts";
 
 export default function Home() {

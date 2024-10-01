@@ -1,5 +1,5 @@
 import React from "react";
-import { ServicePageLayout } from "@/components/pages/Services";
+import { ServicePageLayout } from "@/components/pages/services";
 
 function ServicesPage({ params }: { params: { serviciosId: string } }) {
 	return (

@@ -1,6 +1,6 @@
 "use client";
 
-import { Hero, DoYouKnow, Features, Benefits } from "@/components/pages/Services";
+import { Hero, DoYouKnow, Features, Benefits } from "@/components/pages/services";
 import { CtaBanner } from "@/components/layouts";
 // import { useRouter } from "next/navigation";
 import { SERVICES } from "@/data";
