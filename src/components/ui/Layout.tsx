@@ -13,9 +13,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 				</Modal>
 			</Suspense>
 
-			<Suspense>
 				<AnimatedLayout>{children}</AnimatedLayout>
-			</Suspense>
+			{/* <Suspense>
+			</Suspense> */}
 		</>
 	);
 }

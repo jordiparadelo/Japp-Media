@@ -1,0 +1,31 @@
+.container {
+    @apply min-h-screen flex flex-col items-center justify-between p-4 md:p-8;
+  }
+  
+  .header {
+    @apply flex flex-col items-center text-center mb-8;
+  }
+  
+  .logo {
+    @apply mb-4;
+  }
+  
+  .businessName {
+    @apply text-3xl font-bold mb-2;
+  }
+  
+  .tagline {
+    @apply text-lg text-gray-600;
+  }
+  
+  .main {
+    @apply flex flex-col items-center text-center max-w-2xl w-full;
+  }
+  
+  .welcomeMessage {
+    @apply text-xl mb-8;
+  }
+  
+  .currentRating {
+    @apply text-lg mb-8;
+  }

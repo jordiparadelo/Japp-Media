@@ -21,3 +21,4 @@ export { default as BlocksCard } from './BlocksCard';
 export { default as AnimatedLayout } from './AnimatedLayout';
 export { default as CalcomWidget } from './CalcomWidget';
 export { default as Slider } from './Slider';
+export { default as ReviewButton } from './ReviewButton';

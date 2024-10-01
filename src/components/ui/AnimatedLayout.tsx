@@ -30,15 +30,12 @@ function FrozenRouter({ children }: { children: React.ReactNode }) {
 }
 
 // Separate AnimatedContent component
-function AnimatedContent({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-
+function AnimatedContent({ children }: { children: React.ReactNode}) {
   return (
     <motion.main
       className="flex-grow transform-origin-top"
       {...anim(perspectiveVariants)}
       transition={transition}
-      key={pathname}
     >
       <FrozenRouter>{children}</FrozenRouter>
     </motion.main>
@@ -47,13 +44,14 @@ function AnimatedContent({ children }: { children: React.ReactNode }) {
 
 // Main AnimatedLayout component
 export default function AnimatedLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
   return (
     <AnimatePresence
       mode="wait"
       initial={false}
       onExitComplete={() => window.scrollTo(0, 0)}
     >
-      <AnimatedContent>{children}</AnimatedContent>
+      <AnimatedContent key={pathname}>{children}</AnimatedContent>
     </AnimatePresence>
   );
 }

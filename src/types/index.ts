@@ -79,3 +79,26 @@ export type CheckboxFieldProps = {
 	registerType: keyof FormFieldsType;
 	required?: boolean;
   };
+
+  export interface BusinessData {
+	name: string;
+	logoUrl?: string;
+	tagline?: string;
+	welcomeMessage?: string;
+	googleReviewUrl?: string;
+	currentRating?: number;
+	totalReviews?: number;
+  }
+
+export interface Business {
+	id: string;
+	name: string;
+	googleReviewLink: string;
+	// Add other business properties as needed
+}
+
+export interface Review {
+	rating: number;
+	comment: string;
+	// Add other review properties as needed
+}
