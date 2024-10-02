@@ -4,23 +4,12 @@ import { Hero, ReviewForm } from "@/components/pages/reviews";
 
 async function ReviewPageLayout({ id }: { id: string }) {
 
-	const businessData = {
-		id: id,
-		name: id,
-		description: "Business Description",
-		logo: "https://via.placeholder.com/150",
-		reviews: [
-			{
-				review: "This is a review",
-				rating: 4.5,
-			},
-		],
-	};
+	console.log(id);
 
 	// if (!businessData) return null;
 	return (
 		<>
-			<Hero businessData={businessData} />
+			<Hero />
 			<ReviewForm />
 			{/* <h1>ReviewPageLayout {id}</h1> */}
 		</>

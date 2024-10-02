@@ -3,7 +3,7 @@
 export const PERSONAL_INFO = {
     name: 'Japp Media',
     description: 'Japp Media es una empresa de desarrollo de software y marketing digital',
-    phone: '5555555555',
+    phone: '+34605163193',
     email: 'jappmedia@gmail.com',
     address: 'Calle 123, Ciudad de México, México',
     socialMedia: [

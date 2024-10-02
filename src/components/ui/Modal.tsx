@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import { useModal } from '@/hooks/useModal';
 
@@ -10,6 +10,15 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ title, children }) => {
+
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ModalInner title={title}>{children}</ModalInner>
+    </Suspense>
+  );
+};
+
+function ModalInner({ children, title }: { children: React.ReactNode, title: string | undefined }) {
   const { isModalOpen, isMounted, closeModal, modalRef } = useModal();
 
   if (!isMounted) {
@@ -35,7 +44,7 @@ const Modal: React.FC<ModalProps> = ({ title, children }) => {
             className="bg-white p-4 rounded-lg w-full max-w-2xl max-h-[65vh] overflow-y-auto" 
           >
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-bold text-gray-800">{title}</h2>
+              {title && <h2 className="text-xl font-bold text-gray-800">{title}</h2>}
               <button onClick={closeModal} className="text-gray-600 hover:text-gray-800">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -48,6 +57,6 @@ const Modal: React.FC<ModalProps> = ({ title, children }) => {
       )}
     </AnimatePresence>
   );
-};
+}
 
 export default Modal;
