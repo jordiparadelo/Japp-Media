@@ -8,8 +8,8 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({ href = '/' }) => {
   return (
-    <Link href={href}>
-      <LogoIcon style={{ width: '100%', height: '32px' }} />
+    <Link href={href} aria-label="Go to home page">
+      <LogoIcon style={{  height: '32px' }} />
     </Link>
   );
 };

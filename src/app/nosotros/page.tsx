@@ -1,10 +1,14 @@
 import React from "react";
-import {  CtaBanner, WhoWeHelp, WhyUs, AboutHero } from "@/components/sections";
+import {  CtaBanner, WhyUs } from "@/components/layouts";
+import { Hero, WhoWeHelp } from "@/components/pages/about";
+import { getSEOConfig } from "@/data/seo";
+
+export const metadata = getSEOConfig('about');
 
 function AboutPage() {
 	return (
 		<>
-			<AboutHero />
+			<Hero />
 			<WhyUs />
 			<WhoWeHelp />
 			<CtaBanner />

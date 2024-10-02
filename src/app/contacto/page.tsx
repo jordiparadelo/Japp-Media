@@ -1,10 +1,16 @@
-import React from "react";
-import { ContactHero, CtaBanner, WhyUs } from "@/components/sections";
+import React, { Suspense } from "react";
+import {  CtaBanner, WhyUs } from "@/components/layouts";
+import { Hero } from "@/components/pages/contact";
+import { getSEOConfig } from "@/data/seo";
+
+export const metadata = getSEOConfig('contact');
 
 function ContactPage() {
 	return (
 		<>
-			<ContactHero />
+			<Suspense fallback={<div>Loading...</div>}>
+				<Hero />
+			</Suspense>
 			<WhyUs />
 			<CtaBanner />
 		</>

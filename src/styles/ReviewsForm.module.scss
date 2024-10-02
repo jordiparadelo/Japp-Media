@@ -1,0 +1,8 @@
+.reviews-form {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	border-radius: var(--border-radius-md);
+	background-color: var(--color-font-light);
+	padding: 1rem;
+}
