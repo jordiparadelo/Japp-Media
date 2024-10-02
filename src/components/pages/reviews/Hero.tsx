@@ -1,32 +1,31 @@
-'use client'
+"use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-import styles from "@/styles/ReviewPage.module.scss";
-import Image from "next/image";
-import { BusinessData } from "@/types";
+import { ReviewsForm, SectionTag } from "@/components/ui";
+import styles from "@/styles/ReviewsHero.module.scss";
 
-function Hero({ businessData }: { businessData: BusinessData }) {
-
-    if(!businessData) return null;
-
+function Hero() {
 	return (
-		<motion.header
-			className={styles.header}
-			initial={{ opacity: 0, y: -50 }}
-			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.5 }}
-		>
-			{businessData.logoUrl && <Image
-				src={businessData.logoUrl}
-				alt={businessData.name}
-				width={150}
-				height={150}
-				className={styles.logo}
-			/>}
-			<h1 className={styles.businessName}>{businessData.name}</h1>
-			{businessData.tagline && <p className={styles.tagline}>{businessData.tagline}</p>}
-		</motion.header>
+		<section className={styles["section"] + " bkg-grid-pattern"}>
+			<div className='container mx-auto'>
+				<div className={styles["section_layout"]}>
+					<div className={styles["section_heading"]}>
+						<SectionTag
+							rotation={-3}
+							color='var(--color-primary)'
+						>
+							<span className='font-semibold'>Recomiendanos</span>
+						</SectionTag>
+						<h1 className='heading-h1'>
+							Ayudanos a crecer
+							<span className='text-gray-300'>tu valoración nos importa</span>
+						</h1>
+					</div>
+					
+					<ReviewsForm />
+				</div>
+			</div>
+		</section>
 	);
 }
 

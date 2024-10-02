@@ -1,6 +1,6 @@
 // import { getBusinessData } from "@/services/reviews/getBusinessData";
 import React from "react";
-import { Hero } from "@/components/pages/reviews";
+import { Hero, ReviewForm } from "@/components/pages/reviews";
 
 async function ReviewPageLayout({ id }: { id: string }) {
 
@@ -21,6 +21,7 @@ async function ReviewPageLayout({ id }: { id: string }) {
 	return (
 		<>
 			<Hero businessData={businessData} />
+			<ReviewForm />
 			{/* <h1>ReviewPageLayout {id}</h1> */}
 		</>
 	);
