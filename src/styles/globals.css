@@ -12,9 +12,10 @@
 	/* Colors */
 	--color-primary: #0ddeac;
 	--color-secondary: #c5fd01;
-	--color-accent: #c5fd01;
+	--color-accent: #b8e51a;
 	--color-font-dark: #00252e;
 	--color-font-light: #f7f7f8;
+	--color-light: #fff;
 	--color-border-base: #e0e0e0;
 	--color-border-dark: #00252e;
 	--color-border-light: #f7f7f8;
@@ -26,6 +27,8 @@
 	--border-radius-lg: 1.25rem;
 	--border-radius-full: 999px;
 	--border-radius-none: 0;
+	--border-radius-button: var(--border-radius-full);
+	--border-radius-card: var(--border-radius-md);
 
 	/* Background */
 	--bkg-dark: #00252e;
@@ -35,12 +38,25 @@
 		transparent 0
 	);
 
-	/* Corners */
-	--rounded-btn: 0.5rem;
-	--rounded-sm: 0.25rem;
-	--rounded-md: 0.75rem;
-	--rounded-lg: 1.25rem;
-	--rounded: 999px;
+	/* Container */
+	--container-large: 1400px;
+	--container-medium: 1200px;
+	--container-small: 900px;
+	--container-xsmall: 600px;
+	--container-xxsmall: 400px;
+
+	/* Font Sizes */
+	--font-size-h1: clamp(2.25rem, 5vw, 4.5rem);
+	--font-size-h2: clamp(2rem, 5vw, 3rem);
+	--font-size-h3: clamp(1.75rem, 5vw, 2.5rem);
+	--font-size-h4: clamp(1.5rem, 5vw, 2rem);
+	--font-size-h5: clamp(1.25rem, 5vw, 1.5rem);
+	--font-size-h6: clamp(1.2rem, 5vw, 1.25rem);
+
+	/* Spacing */
+	--section-block-large: 6rem;
+	--section-block-medium: 4rem;
+	--section-block-small: 3rem;
 }
 
 @layer base {
@@ -137,14 +153,39 @@
 	}
 }
 
-@layer components {
-	/* .btn-primary {
-    @apply bg-primary text-white font-bold py-2 px-4 rounded;
-  } */
-	/* @apply bg-dot-pattern background-size: 1.2rem 1.2rem; */
-	.container {
-		@apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-	}
+/* Ui */
+.button {
+	display: inline-block;
+	padding: 1rem 2rem;
+	border-radius: var(--border-radius-button);
+	background-color: var(--color-font-light);
+	color: var(--color-font-dark);
+	font-weight: 500;
+	font-size: 1rem;
+	transition: all 0.3s ease-in-out;
+	min-height: 48px;
+	text-wrap: nowrap;
+	min-width: min-content;
+}
+
+.button[data-variant="primary"] {
+	background-color: var(--color-accent);
+	color: var(--color-font-dark);
+}
+
+.button [data-variant="secondary"] {
+	background-color: var(--color-font-light);
+	color: var(--color-font-dark);
+}
+
+.button[data-variant="accent"] {
+	background-color: var(--color-accent);
+	color: var(--color-font-dark);
+}
+
+.button[data-variant="light"] {
+	background-color: var(--color-light);
+	color: var(--color-font-dark);
 }
 
 .bkg-dot-pattern {
@@ -160,7 +201,6 @@
 	);
 	background-size: var(--dot-spacing) var(--dot-spacing);
 	background-position: center;
-
 }
 
 .bkg-dot-pattern::before {
@@ -168,7 +208,7 @@
 	position: absolute;
 	top: 10%;
 	left: 50%;
-    transform: translateY(-50%) translateX(-50%);
+	transform: translateY(-50%) translateX(-50%);
 	width: 100%;
 	max-width: 100vw;
 	overflow-x: hidden;
@@ -228,38 +268,4 @@
 	-moz-user-drag: none;
 	-o-user-drag: none;
 	user-drag: none;
-}
-
-.button {
-	--btn-bg: rgba(255, 255, 255, 0.05);
-	border-radius: var(--rounded-btn, 0.5rem);
-	padding-inline: 1.5rem;
-	min-height: 2.5rem;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 0.875rem;
-	line-height: 1rem;
-	background: var(--btn-bg);
-	filter: brightness(0.9);
-	transition: all 0.2s ease;
-}
-
-.button:hover {
-	filter: brightness(1);
-}
-
-.button:active {
-	transform: scale(0.98);
-}
-
-.button.primary {
-	--btn-bg: var(--color-primary);
-}
-.button.secondary {
-	--btn-bg: var(--color-secondary);
-}
-.button.accent {
-	--btn-bg: var(--color-accent);
-	color: var(--color-font);
 }

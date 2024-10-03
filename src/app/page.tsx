@@ -1,7 +1,7 @@
 import {
 	// Imaginary,
 	Hero,
-	Services,
+	PainPoints,
 	Benefits,
 } from "@/components/pages/home";
 import { CtaBanner } from "@/components/layouts";
@@ -14,7 +14,7 @@ export default function Home() {
 		<>
 			<Hero />
 			{/* <Imaginary /> */}
-			<Services />
+			<PainPoints />
 			<Benefits />
 			<CtaBanner />
 		</>

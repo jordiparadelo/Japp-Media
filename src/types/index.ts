@@ -102,3 +102,12 @@ export interface Review {
 	comment: string;
 	// Add other review properties as needed
 }
+
+export interface PainPoint {
+	id: string;
+	icon: string;
+	service: string;
+	title: string;
+	description: string;
+	image: StaticImageData | string;
+}
