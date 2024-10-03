@@ -24,3 +24,4 @@ export { default as Slider } from './Slider';
 export { default as ReviewButton } from './ReviewButton';
 export { default as ReviewsForm } from './ReviewsForm';
 export { default as Section } from './Section';
+export { default as Tabs } from './Tabs';

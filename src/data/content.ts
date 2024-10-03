@@ -108,5 +108,40 @@ export const HOME = {
                 image: '/images/image_hero-9.webp',
             },
         ]
+    },
+    offer: {
+        subtitle: 'Que ofrecemos',
+        title: 'Un servicios que se ajusta a tu negocio y reduce complicaciones.',
+        items: [
+            {
+                id: 'aumenta-tu-presencia',
+                icon: '/images/icon_offer-01.webp',
+                title: 'Aumenta tu presencia',
+                description: 'Crea o mejora tu sitio web: aumenta tu presencia, cierra mas reservas y atrae más clientes potenciales.',
+                image: '/images/service_card-01.webp',
+            },
+            {
+                id: 'mejora-tu-reputacion',
+                icon: '/images/icon_offer-02.webp',
+                title: 'Mejora la reputación',
+                description: 'Ayudamos a tu negocio a destacar mejor en Google, para que nuevos clientes contacten contigo..',
+                image: '/images/service_card-02.webp',
+            },
+            {
+                id: 'automatiza-tu-comunicacion',
+                icon: '/images/icon_offer-03.webp',
+                title: 'Automatiza tu comunicación',
+                description: 'No pierdas mas clientes, gestionamos las respuestas y comunicación de manera automática.',
+                image: '/images/service_card-03.webp',
+            },
+            {
+                id: 'agenda-mas-trabajos',
+                icon: '/images/icon_offer-04.webp',
+                title: 'Agenda más trabajos',
+                description: 'Gestiona tus agenda desde tu movil, crea recordatorios y mantente notificado.',
+                image: '/images/service_card-04.webp',
+            },
+
+        ]
     }
 }

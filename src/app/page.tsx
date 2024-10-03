@@ -3,6 +3,7 @@ import {
 	Hero,
 	PainPoints,
 	Benefits,
+	Offer,
 } from "@/components/pages/home";
 import { CtaBanner } from "@/components/layouts";
 import { getSEOConfig } from "@/data/seo";
@@ -15,6 +16,7 @@ export default function Home() {
 			<Hero />
 			{/* <Imaginary /> */}
 			<PainPoints />
+			<Offer />
 			<Benefits />
 			<CtaBanner />
 		</>

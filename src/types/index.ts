@@ -111,3 +111,16 @@ export interface PainPoint {
 	description: string;
 	image: StaticImageData | string;
 }
+
+export interface Offer {
+	id: string;
+	icon: StaticImageData | string;
+	title: string;
+	description: string;
+	image: StaticImageData | string;
+}
+
+export interface TabsContextType {
+    activeTab: number;
+    setActiveTab: (tab: number) => void;
+}
