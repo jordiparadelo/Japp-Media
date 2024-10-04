@@ -53,6 +53,10 @@
 	--font-size-h5: clamp(1.25rem, 5vw, 1.5rem);
 	--font-size-h6: clamp(1.2rem, 5vw, 1.25rem);
 
+	--font-size-sm: clamp(0.875rem, 5vw, 1rem);
+	--font-size-md: clamp(1rem, 5vw, 1.125rem);
+	--font-size-lg: clamp(1.125rem, 5vw, 1.25rem);
+
 	/* Spacing */
 	--section-block-large: 6rem;
 	--section-block-medium: 4rem;

@@ -1,35 +1,119 @@
 .section {
-    padding-block: 4rem;
-	padding-inline: 1.25rem;
+	padding-block: var(--section-block-small);
 
-	@media screen and (min-width: 768px) {
-		padding-block: 4rem;
-		padding-inline: 4rem;
+	@media (min-width: 768px) {
+		padding-block: var(--section-block-medium);
 	}
 
-	@media screen and (min-width: 1024px) {
-		padding-block: 3.25rem 7.5rem;
-	}
-
-    &_heading {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        place-items: center;
-        line-height: 1;
-        text-wrap: pretty;
-        font-weight: 500;
-        line-height: 1;
-        align-self: center;
-        max-width: 90ch;
-		text-align: center;
-    }
-
-    &_layout {
-		display: flex;
+	.layout {
+		display: grid;
+		grid-auto-flow: dense;
+		grid-template-columns: repeat(
+			auto-fit,
+			minmax(var(--container-xxsmall), 1fr)
+		);
+		flex-wrap: wrap;
 		flex-direction: column;
-		gap: 2.5rem;
+		gap: 5rem;
 		text-align: initial;
 		place-items: stretch;
+
+		> * {
+			min-width: var(--container-xxsmall);
+		}
+	}
+
+	.images {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, auto);
+		grid-auto-flow: dense;
+		gap: 0.75rem;
+		min-height: 300px;
+
+		@media (min-width: 768px) {
+			height: 1px;
+			min-height: 100%;
+		}
+
+		img {
+			object-fit: cover;
+			border-radius: var(--border-radius-md);
+			height: 1px;
+			min-height: 100%;
+			width: 100%;
+
+			&:nth-child(1) {
+				grid-area: 1/1/3/2;
+			}
+			&:nth-child(2) {
+				grid-area: 1/2/3/-1;
+			}
+			&:nth-child(3) {
+				grid-area: 3 / 1 / 3 / -1;
+			}
+		}
+	}
+
+	.content {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+
+		@media (min-width: 768px) {
+			gap: 2.5rem;
+			padding-block: 5rem;
+		}
+
+		.heading {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+
+			.subtitle {
+				font-size: 0.75rem;
+				font-weight: 400;
+				line-height: 1;
+				text-transform: uppercase;
+				letter-spacing: 0.02em;
+			}
+
+			.title {
+				font-size: var(--font-size-h2);
+				font-weight: 400;
+				line-height: 1.2;
+				letter-spacing: -0.02em;
+			}
+		}
+
+		.description {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+			font-size: clamp(1rem, 5vw, 1.25rem);
+		}
+
+		.benefits {
+			display: flex;
+			flex-direction: column;
+			gap: 0.75rem;
+
+			&_item {
+				display: flex;
+				flex-direction: row;
+				gap: 0.75rem;
+				place-items: center;
+				border-bottom: 1px solid var(--color-border);
+				font-size: clamp(1rem, 5vw, 1.25rem);
+			}
+		}
+
+		.actions {
+			padding-block: 1rem;
+			display: flex;
+			flex-direction: column;
+			place-items: flex-start;
+			gap: 0.75rem;
+		}
 	}
 }

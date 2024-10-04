@@ -5,3 +5,5 @@ export { default as HomeHeroSlider } from "./HomeHeroSlider";
 export { default as PainPointsGrid } from "./PainPointsGrid";
 export { default as Offer } from "./Offer";
 export { default as OfferTabs } from "./OfferTabs";
+export { default as WhyUs } from "./WhyUs";
+export { default as HowStart } from "./HowStart";

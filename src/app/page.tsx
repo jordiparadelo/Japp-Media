@@ -2,10 +2,10 @@ import {
 	// Imaginary,
 	Hero,
 	PainPoints,
-	Benefits,
 	Offer,
+	WhyUs,
+	HowStart
 } from "@/components/pages/home";
-import { CtaBanner } from "@/components/layouts";
 import { getSEOConfig } from "@/data/seo";
 
 export const metadata = getSEOConfig('home');
@@ -17,8 +17,9 @@ export default function Home() {
 			{/* <Imaginary /> */}
 			<PainPoints />
 			<Offer />
-			<Benefits />
-			<CtaBanner />
+			<WhyUs />
+			<HowStart />
+			{/* <CtaBanner /> */}
 		</>
 	);
 }

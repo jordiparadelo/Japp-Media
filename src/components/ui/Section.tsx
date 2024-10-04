@@ -3,7 +3,7 @@ import styles from "@/styles/Section.module.scss";
 
 interface SectionProps {
 	children: React.ReactNode;
-	id: string;
+	id?: string;
 	className?: string;
 	style?: React.CSSProperties;
 }

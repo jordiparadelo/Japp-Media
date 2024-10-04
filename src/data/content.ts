@@ -56,7 +56,7 @@ export const HOME = {
         slides: [
             {
                 id: '1',
-                title: 'Autonomo trabajando en casa',
+                title: 'Autónomo trabajando en casa',
                 imageUrl: '/images/image_hero-9.webp',
             },
             {
@@ -118,30 +118,74 @@ export const HOME = {
                 icon: '/images/icon_offer-01.webp',
                 title: 'Aumenta tu presencia',
                 description: 'Crea o mejora tu sitio web: aumenta tu presencia, cierra mas reservas y atrae más clientes potenciales.',
-                image: '/images/service_card-01.webp',
+                image: '/images/image_hero-8.webp',
             },
             {
                 id: 'mejora-tu-reputacion',
                 icon: '/images/icon_offer-02.webp',
                 title: 'Mejora la reputación',
                 description: 'Ayudamos a tu negocio a destacar mejor en Google, para que nuevos clientes contacten contigo..',
-                image: '/images/service_card-02.webp',
+                image: '/images/image_hero-7.webp',
             },
             {
                 id: 'automatiza-tu-comunicacion',
                 icon: '/images/icon_offer-03.webp',
                 title: 'Automatiza tu comunicación',
                 description: 'No pierdas mas clientes, gestionamos las respuestas y comunicación de manera automática.',
-                image: '/images/service_card-03.webp',
+                image: '/images/image_hero-6.webp',
             },
             {
                 id: 'agenda-mas-trabajos',
                 icon: '/images/icon_offer-04.webp',
                 title: 'Agenda más trabajos',
-                description: 'Gestiona tus agenda desde tu movil, crea recordatorios y mantente notificado.',
-                image: '/images/service_card-04.webp',
+                description: 'Gestiona tus agenda desde tu móvil, crea recordatorios y mantente notificado.',
+                image: '/images/image_hero-9.webp',
             },
 
+        ]
+    },
+    whyUs: {
+        subtitle: 'Por que elegirnos',
+        title: 'Nos enfocamos en negocios locales y nos adaptamos a sus necesidades.',
+        description: 'No todos los negocios necesitan un servicio integral. Quizás solo necesites facilita la comunicación, gestionar citas de clientes o mejorar reputación. ',
+        benefits: [
+            {
+                id: '1',
+                title: 'No solo mejoras, sino resultados en clientes',
+            },
+            {
+                id: '2',
+                title: 'Precios flexibles y escalables',
+            },
+            {
+                id: '3',
+                title: 'Servicio automatizado para no perder oportunidades ',
+            },
+
+        ]
+    },
+    howStart: {
+        subtitle: 'Como empezar',
+        title: 'Comencemos a mejorar tu negocio con un servicio personalizado en poco tiempo.',
+        steps: [
+            {
+                id: '1',
+                title: 'Consulta Inicial',
+                description: 'Descubrimos que servicios pueden impulsar tu negocio a cerrar mas ventas. Focalizaremos en los clientes ya establecido y en los nuevos.',
+                color: '#005A70'
+            },
+            {
+                id: '2',
+                title: 'Plan personalizado',
+                description: 'Nos ponemos en marcha e implementamos todas las herramientas que nos ayuden a conectar tu negocio con los clientes.',
+                color: '#0DDEAC'
+            },
+            {
+                id: '3',
+                title: 'Seguimiento y resultados',
+                description: 'Tardara un tiempo, pero al cabo de unos días veremos resultados, analizaremos y ajustaremos para seguir creciendo.',
+                color: '#B8E51A'
+            },
         ]
     }
 }
