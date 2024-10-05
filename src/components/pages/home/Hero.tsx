@@ -4,6 +4,7 @@ import styles from "@/styles/HomeHero.module.scss";
 import React from "react";
 import { HOME } from "@/data/content";
 import HomeHeroSlider from "./HomeHeroSlider";
+import { ROUTES } from "@/data/config";
 
 function Hero() {
 	const { hero } = HOME;
@@ -18,7 +19,7 @@ function Hero() {
 					<p className={styles.description}>{hero.description}</p>
 					<div className={styles.actions}>
 						<BookButton variant='accent' text='Impulsa tu negocio' />
-						<Button variant='secondary'>Contactar</Button>
+						<Button variant='secondary' href={ROUTES.contacto.path}>Contacta con nosotros</Button>
 					</div>
 				</div>
 				<HomeHeroSlider slides={hero.slides} />

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import LogoIcon from '@/assets/logo.svg';
+import LogoIcon from '@/assets/logo-color.svg';
 
 interface LogoProps {
   href?: string;
@@ -9,7 +9,7 @@ interface LogoProps {
 const Logo: React.FC<LogoProps> = ({ href = '/' }) => {
   return (
     <Link href={href} aria-label="Go to home page">
-      <LogoIcon style={{  height: '32px' }} />
+      <LogoIcon style={{  height: '40px' }} />
     </Link>
   );
 };

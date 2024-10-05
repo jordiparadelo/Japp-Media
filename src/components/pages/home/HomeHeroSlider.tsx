@@ -63,7 +63,7 @@ HomeHeroSlider.Slide = function Slide({ id, title, imageUrl }: Slide) {
 	const { direction } = useHeroSliderContext();
 
 	return (
-		<AnimatePresence mode='wait'>
+		<AnimatePresence mode='wait' initial={false}>
 			<motion.div
 				key={id}
 				className={styles.slide}

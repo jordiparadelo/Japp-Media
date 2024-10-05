@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -20,15 +21,16 @@ export function Button({
 	className,
 	...props
 }: Props) {
+
 	return href ? (
-		<a
+		<Link
 			className={`button ${className && className}`}
 			href={href}
 			data-Variant={variant}
 			{...(props as AnchorProps)}
 		>
 			{children}
-		</a>
+		</Link>
 	) : (
 		<button
 			className={`button ${className && className}`}

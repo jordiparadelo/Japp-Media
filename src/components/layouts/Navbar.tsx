@@ -21,36 +21,41 @@ export default function Navbar() {
 	const isMobile = useMediaQuery("(max-width: 768px)");
 
 	return (
-		<Suspense fallback={<div>Loading...</div>}>
-			<NavbarProvider>
-				{isMobile ? <MobileNavbar /> : <DesktopNavbar />}
-			</NavbarProvider>
-		</Suspense>
+		<NavbarProvider>
+			{isMobile ? <MobileNavbar /> : <DesktopNavbar />}
+		</NavbarProvider>
 	);
 }
 
 function DesktopNavbar() {
 	return (
 		<nav className={styles.navbar}>
-			<div className='container mx-auto'>
-				<div className={cn(styles.navbar_container)}>
-					<div className={styles["navbar_links-wrapper"]}>
+			<div className={cn(styles.container)}>
+				<div className={styles.layout}>
+					<div className={styles.links}>
 						<Logo />
-						<NavbarLinks />
+						<Suspense fallback={<div>Loading...</div>}>
+							<NavbarLinks />
+						</Suspense>
 					</div>
 
-					<div className={styles.navbar_actions}>
+					<div className={styles.actions}>
 						<a
-							className={styles.navbar_phone}
+							className={styles.phone}
 							href={`tel:${PERSONAL_INFO.phone}`}
 							onCopy={() => {
 								navigator.clipboard.writeText(PERSONAL_INFO.phone);
 							}}
 						>
 							<PhoneIcon className='w-[1.25em] h-[1.25em]' />
-							{formatPhoneNumber(PERSONAL_INFO.phone)}
+							<span className={styles.phone_number}>
+								{formatPhoneNumber(PERSONAL_INFO.phone)}
+							</span>
 						</a>
-						<BookButton text='Agenda una llamada' />
+						<BookButton
+							variant='secondary'
+							text='Agenda una llamada'
+						/>
 					</div>
 				</div>
 			</div>
@@ -63,17 +68,15 @@ function MobileNavbar() {
 
 	return (
 		<nav className={styles.navbar}>
-			<div className='container mx-auto'>
-				<div className={cn(styles.navbar_container)}>
-					<div className={styles["navbar_links-wrapper"]}>
-						<Logo />
-					</div>
-					<button
-						className='md:hidden'
+			<div className={cn(styles.container)}>
+				<div className={styles.layout}>
+					<Logo />
+					<Button
+						variant='secondary'
 						onClick={toggleMenu}
 					>
 						{isMenuOpen ? "Close" : "Menu"}
-					</button>
+					</Button>
 					<AnimatePresence>
 						{isMenuOpen && (
 							<motion.div
@@ -86,10 +89,13 @@ function MobileNavbar() {
 									ease: cubicBezier(0.175, 0.885, 0.32, 1.275),
 								}}
 							>
-								<NavbarLinks />
+								<Suspense fallback={<div>Loading...</div>}>
+									<NavbarLinks />
+								</Suspense>
 								<div className={styles.navbar_menu_actions}>
 									<Button href={`tel:${PERSONAL_INFO.phone}`}>
-										Contáctenos por teléfono: {formatPhoneNumber(PERSONAL_INFO.phone)}
+										Contáctenos por teléfono:{" "}
+										{formatPhoneNumber(PERSONAL_INFO.phone)}
 									</Button>
 									<BookButton
 										variant='accent'
@@ -110,14 +116,13 @@ function NavbarLinks() {
 	const isMobile = useMediaQuery("(max-width: 768px)");
 
 	return (
-		<div className={styles.navbar_links}>
-			{ROUTES.map((link) => (
+		<div className={styles.navigation}>
+			{Object.values(ROUTES).map((link) => (
 				<Link
 					key={link.name}
 					href={link.path}
-					className={cn(styles.navbar_link, {
-						[styles["navbar_link--active"]]: pathname === link.path,
-					})}
+					className={styles.link}
+					aria-current={pathname === link.path ? "page" : undefined}
 					onClick={() => {
 						if (isMobile) {
 							toggleMenu();

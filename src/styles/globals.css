@@ -159,37 +159,98 @@
 
 /* Ui */
 .button {
+	--background-button: var(--color-font-light);
 	display: inline-block;
 	padding: 1rem 2rem;
 	border-radius: var(--border-radius-button);
-	background-color: var(--color-font-light);
+	background-color: var(--background-button);
 	color: var(--color-font-dark);
 	font-weight: 500;
 	font-size: 1rem;
-	transition: all 0.3s ease-in-out;
 	min-height: 48px;
 	text-wrap: nowrap;
 	min-width: min-content;
 	text-align: center;
+
+	outline: var(--outline-width, 0px) solid rgba(#00252e, 0.5);
+	transition: all 0.3s ease;
+	position: relative;
+}
+
+.button:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: inherit;
+	border-radius: inherit;
+	z-index: -1;
+}
+
+.button:before {
+	--outline-width: 0px;
+	--rotation: 0%;
+	content: "";
+	position: absolute;
+	top: calc(var(--outline-width) * -1);
+	left: calc(var(--outline-width) * -1);
+	right: calc(var(--outline-width) * -1);
+	bottom: calc(var(--outline-width) * -1);
+	background: linear-gradient(-45deg, transparent, var(--background-button) 50%, transparent 50%);
+	background-size: 200%;
+	transition: all 0.3s ease;
+	z-index: -1;
+	border-radius: inherit;
+	animation: shimmer 3s linear infinite;
+	filter: brightness(.8);
+	mix-blend-mode: multiply;
+	opacity: .6;
+	z-index: -2;
+}
+
+@keyframes shimmer {
+	0% {
+		background-position: -200% -100%;
+	}
+	100% {
+		background-position: 200% 100%;
+	}
+}
+
+.button:hover {
+	--outline-width: 2px;
+	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+.button:hover:before {
+	--outline-width: 2px;
+}
+.button:active {
+	transform: scale(0.95);
+	z-index: 2;
+}
+.button:active:before {
+	z-index: -2;
 }
 
 .button[data-variant="primary"] {
-	background-color: var(--color-accent);
+	--background-button: var(--color-accent);
 	color: var(--color-font-dark);
 }
 
 .button [data-variant="secondary"] {
-	background-color: var(--color-font-light);
+	--background-button: var(--color-font-light);
 	color: var(--color-font-dark);
 }
 
 .button[data-variant="accent"] {
-	background-color: var(--color-accent);
+	--background-button: var(--color-accent);
 	color: var(--color-font-dark);
 }
 
 .button[data-variant="light"] {
-	background-color: var(--color-light);
+	--background-button: var(--color-light);
 	color: var(--color-font-dark);
 }
 
