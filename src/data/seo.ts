@@ -60,33 +60,33 @@ export const defaultConfig: SEOConfig = {
 const seoConfigs: Record<PageKey, SEOConfig> = {
   home: {
     ...defaultConfig,
-    title: 'Home | Your Company Name',
-    description: 'Welcome to Your Company Name - Your tagline here',
-    keywords: ['home', 'welcome', 'your company name'],
+    title: 'Japp Media | Aumenta la visibilidad de tu negocio',
+    description: 'Japp Media es una agencia que te permitirá llegar a más clientes de manera eficiente y aumentar tus ventas.',
+    keywords: ['páginas web', 'marketing digital', 'correo electrónico', 'aumentar ventas', 'automatización'],
   },
   services: {
     ...defaultConfig,
-    title: 'Our Services | Your Company Name',
-    description: 'Explore the services offered by Your Company Name',
-    keywords: ['services', 'offerings', 'solutions'],
+    title: 'Servicios | Deja que nosotros te ayudemos',
+    description: 'Explora los servicios ofrecidos por Japp Media',
+    keywords: ['páginas web', 'comunicación automatizada', 'reseña de Google', 'calendario de citas' ],
   },
   about: {
     ...defaultConfig,
-    title: 'About Us | Your Company Name',
-    description: 'Learn more about Your Company Name and our mission',
-    keywords: ['about us', 'company history', 'mission'],
+    title: 'Sobre Nosotros | La agencia Japp Media',
+    description: 'Conoce más sobre Japp Media y nuestra misión',
+    keywords: ['negocios locales', 'automatización', 'misión'],
   },
   contact: {
     ...defaultConfig,
-    title: 'Contact Us | Your Company Name',
-    description: 'Get in touch with Your Company Name',
-    keywords: ['contact', 'support', 'get in touch'],
+    title: 'Contáctenos | Empecemos a trabajar juntos',
+    description: 'Contacta con Japp Media',
+    keywords: ['contacto', 'soporte', 'agenda cita'],
   },
   'missing-calls': {
     ...defaultConfig,
     title: 'ROI Calculator | Japp Media',
-    description: 'Calculate the ROI of your missing calls',
-    keywords: ['roi', 'calculator', 'missing calls'],
+    description: 'Calcula el ROI de tus llamadas perdidas',
+    keywords: ['roi', 'calculadora', 'llamadas perdidas'],
   },
   // To add a new entry, follow this pattern:
   // newPage: {
