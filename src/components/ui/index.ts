@@ -25,3 +25,4 @@ export { default as ReviewButton } from './ReviewButton';
 export { default as ReviewsForm } from './ReviewsForm';
 export { default as Section } from './Section';
 export { default as Tabs } from './Tabs';
+export { default as ReviewPopUp } from './ReviewPopUp';

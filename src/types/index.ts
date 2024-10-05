@@ -124,3 +124,10 @@ export interface TabsContextType {
     activeTab: number;
     setActiveTab: (tab: number) => void;
 }
+
+export interface Reviews {
+	id: string;
+	name: string;
+	description: string;
+	image: StaticImageData | string;
+}

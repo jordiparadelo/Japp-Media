@@ -11,6 +11,7 @@
 		gap: 40px;
 		max-width: 100%;
 		width: 100%;
+		max-width: 100%;
 
 		> * {
 			flex-grow: 1;
@@ -32,6 +33,7 @@
 		padding-block-start: 5rem;
 		gap: 1rem;
 		text-wrap: pretty;
+		max-width: 100%;
 
 		> * {
 			width: 100%;
@@ -45,7 +47,7 @@
 	}
 
 	.title {
-		font-size: clamp(3rem, 5vw, 5.5rem);
+		font-size: clamp(3rem, 5vw, 4.25rem);
 		font-weight: 500;
 		line-height: 1.2;
 		letter-spacing: -0.02em;
@@ -61,9 +63,23 @@
 
 	.actions {
 		padding-block-start: 1.25rem;
-		display: grid;
-		grid-auto-flow: column;
-		grid-auto-columns: min-content;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
 		gap: 1.25rem;
+		max-width: 100%;
+
+		@media (max-width: 600px) {
+			> * {
+				flex-grow: 1;
+			}
+		}
+
+		@media (min-width: 768px) {
+			padding-block-start: 2.5rem;
+			display: grid;
+			grid-auto-flow: column;
+			grid-auto-columns: min-content;
+		}
 	}
 }

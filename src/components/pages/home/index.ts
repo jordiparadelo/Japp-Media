@@ -7,3 +7,4 @@ export { default as Offer } from "./Offer";
 export { default as OfferTabs } from "./OfferTabs";
 export { default as WhyUs } from "./WhyUs";
 export { default as HowStart } from "./HowStart";
+export { default as Testimonials } from "./Testimonials";

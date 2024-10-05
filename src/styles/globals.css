@@ -170,6 +170,7 @@
 	min-height: 48px;
 	text-wrap: nowrap;
 	min-width: min-content;
+	text-align: center;
 }
 
 .button[data-variant="primary"] {

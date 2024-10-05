@@ -22,15 +22,16 @@ export function Button({
 }: Props) {
 	return href ? (
 		<a
-			className={"button" + " " + className}
+			className={`button ${className && className}`}
 			href={href}
+			data-Variant={variant}
 			{...(props as AnchorProps)}
 		>
 			{children}
 		</a>
 	) : (
 		<button
-			className={"button" + " " + className}
+			className={`button ${className && className}`}
 			data-Variant={variant}
 			{...(props as ButtonProps)}
 		>

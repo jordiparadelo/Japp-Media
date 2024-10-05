@@ -1,4 +1,4 @@
-export const BASE_URL = "https://api.whatsapp.com/send?phone=5215525662566";
+export const BASE_URL = "https://japp.media/";
 
 interface SitemapType {
 	url: string;

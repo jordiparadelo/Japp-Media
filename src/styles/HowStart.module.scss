@@ -11,6 +11,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--section-block-small);
+		max-width: 100%;
 
 		@media (min-width: 768px) {
 			gap: var(--section-block-medium);
@@ -40,6 +41,7 @@
 				font-weight: 400;
 				line-height: 1.2;
 				letter-spacing: -0.02em;
+				text-wrap: balance;
 			}
 
 			.subtitle {
@@ -50,6 +52,20 @@
 				letter-spacing: 0.02em;
 			}
 		}
+
+		.actions {
+			display: none;
+
+			@media (min-width: 768px) {
+				display: flex;
+				padding-block-start: unset;
+				width: fit-content;
+
+				> * {
+					width: initial;
+				}
+			}
+		}
 	}
 
 	.steps {
@@ -58,7 +74,8 @@
 		gap: 1rem;
 
 		@media (min-width: 768px) {
-			flex-direction: row;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
 		}
 
 		.step {
@@ -69,43 +86,6 @@
 			@media (min-width: 768px) {
 				gap: 2rem;
 				flex-direction: column;
-			}
-
-			&_line {
-				display: flex;
-				flex-direction: column;
-				padding-inline: 0.25rem;
-
-				place-items: center;
-				place-content: center;
-
-				@media (min-width: 768px) {
-					padding-inline: unset;
-					flex-direction: row;
-				}
-
-				&_line {
-					--line-stroke: 4px;
-					min-width: var(--line-stroke);
-					min-height: var(--line-stroke);
-					// place-self: stretch;
-					// justify-self: stretch;
-					background-color: currentColor;
-					flex-grow: 1;
-					mask-image: linear-gradient(to bottom, transparent, black 100%);
-
-					@media (min-width: 768px) {
-						mask-image: linear-gradient(to right, transparent, black 100%);
-					}
-				}
-
-				&_dot {
-					--dot-size: 1.25rem;
-					min-width: var(--dot-size);
-					min-height: var(--dot-size);
-					background-color: currentColor;
-					border-radius: var(--border-radius-full);
-				}
 			}
 
 			&_card {
@@ -150,6 +130,70 @@
 				font-size: var(--font-size-sm);
 				line-height: 1.5;
 			}
+		}
+
+	}
+
+	.step-line {
+		display: flex;
+		flex-direction: column;
+		padding-inline: 0.25rem;
+
+		place-items: center;
+		place-content: center;
+
+		@media (min-width: 768px) {
+			padding-inline: unset;
+			flex-direction: row;
+		}
+
+		&_line {
+			--line-stroke: 4px;
+			min-width: var(--line-stroke);
+			min-height: var(--line-stroke);
+			// place-self: stretch;
+			// justify-self: stretch;
+			background-color: currentColor;
+			flex-grow: 1;
+			mask-image: linear-gradient(to bottom, transparent, black 100%);
+
+			@media (min-width: 768px) {
+				mask-image: linear-gradient(to right, transparent, black 100%);
+			}
+		}
+
+		&_dot {
+			--dot-size: 1.25rem;
+			min-width: var(--dot-size);
+			min-height: var(--dot-size);
+			background-color: currentColor;
+			border-radius: var(--border-radius-full);
+		}
+	}
+
+	.mobile-actions {
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
+		padding-block-start: 0.5rem;
+		width: 100%;
+		color: var(--color-accent);
+
+		> :first-child {
+			margin-block-end: 1.2rem;
+		}
+
+		button {
+			margin-top: 1.5rem;
+			width: 100%;
+			
+			@media (min-width: 620px) {
+				width: auto;
+			}
+		}
+
+		@media (min-width: 768px) {
+			display: none;
 		}
 	}
 }
