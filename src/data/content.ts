@@ -84,7 +84,7 @@ export const USE_CASES: UseCase[] = [
 		description: "Descripción del caso de uso 4",
 		image: "/images/image_hero-9.webp",
 		link: "/casos-de-uso/iluminacion",
-		icon: "/images/icon_offer-04.webp",
+		icon: "/icons/check.svg",
 	},
 ];
 
@@ -181,7 +181,7 @@ export const HOME = {
 			},
 			{
 				id: "agenda-mas-trabajos",
-				icon: "/images/icon_offer-04.webp",
+				icon: "/icons/check.svg",
 				title: "Agenda más trabajos",
 				description:
 					"Gestiona tus agenda desde tu móvil, crea recordatorios y mantente notificado.",

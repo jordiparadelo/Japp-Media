@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import React from "react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -26,7 +27,7 @@ export function Button({
 		<Link
 			className={`button ${className && className}`}
 			href={href}
-			data-Variant={variant}
+			data-variant={variant}
 			{...(props as AnchorProps)}
 		>
 			{children}
@@ -34,7 +35,7 @@ export function Button({
 	) : (
 		<button
 			className={`button ${className && className}`}
-			data-Variant={variant}
+			data-variant={variant}
 			{...(props as ButtonProps)}
 		>
 			{children}

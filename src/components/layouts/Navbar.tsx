@@ -9,7 +9,6 @@ import { Button, Logo, BookButton, NavbarLinks } from "@/components/ui";
 import { formatPhoneNumber } from "@/libs/utils";
 
 import { AnimatePresence, cubicBezier, motion } from "framer-motion";
-
 import { Suspense } from "react";
 
 export default function Navbar() {
