@@ -5,9 +5,8 @@ import "@/styles/globals.css";
 import { Layout } from "@/components/ui";
 import { defaultConfig } from "@/data/seo";
 
-
 export const metadata = {
-	...defaultConfig
+	...defaultConfig,
 };
 
 export const font_heading = Archivo({
