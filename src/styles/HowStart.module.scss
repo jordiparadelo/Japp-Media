@@ -1,7 +1,7 @@
 .section {
 	padding-block: var(--section-block-small);
-	background-color: #00303c;
-	color: var(--color-font-light);
+	background-color: var(--background-alternative);
+	color: var(--color-font-alternative);
 
 	@media (min-width: 768px) {
 		padding-block: var(--section-block-large);

@@ -4,37 +4,22 @@
 	top: 0;
 	left: 0;
 	right: 0;
+	width: 100%;
 	display: flex;
-	justify-content: center;
-	z-index: 100;
+	place-items: stretch;
+	place-content: center;
+	z-index: 10;
+	padding-inline: 1.25rem;
+
 
 	@media screen and (min-width: 768px) {
 		padding-block-start: 2.5em;
-		padding-inline-end: 1.25rem;
+		padding-inline: 1.25rem;
 	}
 
 	.container {
-		max-width: var(--container-lg);
 		width: 100%;
-		// border-radius: var(--border-radius-lg);
-		// background-color: var(--color-font);
-		// backdrop-filter: blur(8px);
-		// border-radius: var(--rounded-md);
-		// color: var(--color-font-contrast);
-		// display: flex;
-		// gap: 1rem;
-		// padding-block: 0.75rem;
-		// padding-inline: 1.5rem;
-		// justify-content: space-between;
-		// position: relative;
-		// min-height: 70px;
-		// position: relative;
-		// z-index: 1;
-
-		@media screen and (min-width: 768px) {
-			flex-direction: row;
-			justify-content: space-between;
-		}
+		max-width: var(--container-large);
 	}
 
 	.layout {
@@ -43,7 +28,7 @@
 		place-items: center;
 		place-content: space-between;
 		gap: 3rem;
-		padding-inline: 1.25rem;
+		padding-inline-end: 1.25rem;
 	}
 
 	.links {

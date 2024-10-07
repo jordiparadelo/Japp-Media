@@ -1,54 +1,75 @@
 .section {
-	padding-block: 7.5rem 3.25rem;
-	padding-inline: 1.25rem;
+	padding-block-start: clamp(150px, 10vw, 400px);
+	padding-block-end: var(--section-block-small);
+	background-image: linear-gradient(to top, var(--background-light-gray), transparent);
 
-	&::before {
-		top: 52% !important;
-		// height: 120% !important;
+	@media (min-width: 768px) {
+		padding-block-end: var(--section-block-large);
 	}
-
-	@media screen and (min-width: 768px) {
-		padding-inline: 4rem;
-	}
-
-	&_heading {
+	.layout {
 		display: flex;
 		flex-direction: column;
-		gap: 0.5rem;
-		place-items: center;
-		line-height: 1;
-		text-wrap: pretty;
-		font-weight: 500;
-		line-height: 1;
-		align-self: center;
-		max-width: 90ch;
-		text-align: center;
-	}
-
-	&_actions {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-
-		@media screen and (min-width: 425px) {
-			display: grid;
-			grid-auto-columns: 1fr;
-			grid-auto-flow: column;
-			place-content: center;
-			align-self: center;
+		align-items: center;
+		gap: 3rem;
+		width: 100%;
+		
+		@media (min-width: 768px) {
+			gap: 4rem;
 		}
 	}
+	.title {
+		display: inline-flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		text-align: center;
+		place-items: center;
+		place-content: center;
 
-	&_layout {
+
+		gap: 0.5rem;
+		font-size: clamp(2.125rem, 10vw, 5em);
+		font-weight: 500;
+		line-height: 1.2;
+		letter-spacing: -0.02em;
+		text-wrap: balance;
+		
+		@media (min-width: 768px) {
+			line-height: 1.15;
+			min-width: min(100vw, 1500px);
+			padding-inline: 1.25rem;
+		}
+
+		.reviewPopUp {
+			@media (max-width: 780px) {
+				display: none;
+			}
+		}
+	}
+	.description {
+		font-size: var(--font-size-sm);
+		line-height: 1.5;
+		font-size: 1.25rem;
+		text-align: center;
+		max-width: var(--container-small);
+
+	}
+	.actions {
 		display: flex;
-		flex-direction: column;
-		gap: 2.5rem;
-		text-align: initial;
-		place-items: stretch;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 1rem;
+		padding-block: 1.5rem;
 
-		@media screen and (min-width: 425px) {
-			text-align: center;
-			place-items: center;
+		@media (max-width: 520px) {
+			place-self: stretch;
+
+			> * {
+				flex-grow: 1;
+			}
+		}
+
+		@media (min-width: 768px) {
+			flex-direction: row;
 		}
 	}
 }

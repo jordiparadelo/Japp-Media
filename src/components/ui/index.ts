@@ -26,3 +26,6 @@ export { default as ReviewsForm } from './ReviewsForm';
 export { default as Section } from './Section';
 export { default as Tabs } from './Tabs';
 export { default as ReviewPopUp } from './ReviewPopUp';
+export { default as NavbarInner } from './NavbarInner';
+export { default as NavbarLinks } from './NavbarLinks';
+export { default as UseCasesGrid } from './UseCasesGrid';

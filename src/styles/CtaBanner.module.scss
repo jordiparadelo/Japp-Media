@@ -1,87 +1,50 @@
 .section {
-	padding-block: 2.5rem;
-	padding-inline: 1.25rem;
-	background-size: cover;
-	background-position: top;
-	// background-repeat: no-repeat;
-	grid-column-gap: 100px;
-	grid-row-gap: 100px;
+	padding-block: var(--section-block-small);
 
-	@media screen and (min-width: 768px) {
-		padding-block: 4rem;
-		padding-inline: 4rem;
-	}
-
-	@media screen and (min-width: 1024px) {
-		padding: 7.5rem;
-	}
-
-	&_layout {
-		display: flex;
-		flex-direction: column;
-		gap: 1.5rem;
-		margin-inline: auto;
-		max-width: 75ch;
-		text-wrap: pretty;
-	}
-	&_heading {
+	.layout {
+		border-radius: var(--border-radius-lg);
+		background-color: var(--background-alternative);
+		color: var(--color-font-alternative);
+		background-image: url("/images/bg-cta-banner.webp");
+		background-size: cover;
+		background-position: center;
 		display: flex;
 		flex-direction: column;
 		place-items: center;
-
-		&_title-wrap {
-			align-self: stretch;
-			display: flex;
-			flex-direction: column;
-			text-wrap: pretty;
-			font-size: clamp(2.5rem, 10vw, 5rem);
-			font-weight: 500;
-			line-height: 1;
-			padding-inline: 1em;
-		}
-
-		&_line {
-			display: flex;
-			flex-flow: row;
-			place-content: center;
-			place-items: center;
-			color: var(--color-font);
-
-			&:nth-child(even) {
-				align-self: flex-end;
-			}
-
-			// First Line
-			&:nth-child(1) {
-				transform: translateX(-2%);
-
-				span {
-					background: linear-gradient(
-						135deg,
-						var(--color-primary) 25%,
-						var(--color-secondary) 75%
-					);
-					-webkit-background-clip: text;
-					-webkit-text-fill-color: transparent;
-				}
-			}
-			// Second Line
-			&:nth-child(2) {
-			}
-			// Third Line
-			&:nth-child(3) {
-				gap: 0.25em;
-
-				svg {
-					transform: rotateY(0.5turn);
-					width: 1em;
-					height: 1em;
-				}
-			}
-		}
+		place-content: center;
+		padding: 2rem;
+		gap: 1rem;
+		padding-block: var(--section-block-large);
+		padding-inline: var(--section-inline-medium);
+		text-align: center;
 	}
-	&_actions {
-		padding-top: 0.75rem;
-		align-self: center;
+	.title {
+		font-size: var(--font-size-h2);
+		font-weight: 400;
+		line-height: 1.2;
+		letter-spacing: -0.02em;
+		text-wrap: balance;
+	}
+	.description {
+		font-size: var(--font-size-lg);
+	}
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 1rem;
+		padding-block-start: 2.5rem;
+
+		@media (max-width: 520px) {
+			place-self: stretch;
+
+			> * {
+				flex-grow: 1;
+			}
+		}
+
+		@media (min-width: 768px) {
+			flex-direction: row;
+		}
 	}
 }

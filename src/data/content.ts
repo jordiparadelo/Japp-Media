@@ -1,9 +1,13 @@
 // Content for the whole website
 
+import { UseCase } from "@/types";
+
 export const PERSONAL_INFO = {
 	name: "Japp Media",
-	description:
+	brief:
 		"Japp Media es una empresa de desarrollo de software y marketing digital",
+	description:
+		"En Japp Media, ayudamos a negocios locales a establecer y mejorar su presencia digital con soluciones accesibles y efectivas. Nos especializamos en el diseño de sitios web personalizables, embudos de conversión y automatización de ventas, para que puedas atraer más clientes mientras ahorras tiempo. Lo que nos distingue es que ofrecemos un servicio adaptado a las necesidades específicas de cada negocio, utilizando herramientas diseñadas para cada caso particular. Con Japp Media, tu negocio tendrá las herramientas necesarias para crecer en el mundo digital y destacar frente a la competencia.",
 	phone: "+34605163193",
 	email: "japp.agencia@gmail.com",
 	address: "Calle 123, Ciudad de México, México",
@@ -46,6 +50,41 @@ export const SERVICES = [
 		id: "agenda-clientes",
 		name: "Agenda de clientes",
 		description: "Descripción del servicio 4",
+	},
+];
+
+export const USE_CASES: UseCase[] = [
+	{
+		id: "1",
+		title: "Cómo gestionar mi inmobiliaria y automatizar mis comunicaciones",
+		description: "Descripción del caso de uso 1",
+		image: "/images/image_hero-9.webp",
+		link: "/casos-de-uso/inmobiliaria",
+		icon: "/images/icon_offer-01.webp",
+	},
+	{
+		id: "2",
+		title: "Como aumentar la reputación de mi restaurante",
+		description: "Descripción del caso de uso 2",
+		image: "/images/image_hero-9.webp",
+		link: "/casos-de-uso/restaurante",
+		icon: "/images/icon_offer-02.webp",
+	},
+	{
+		id: "3",
+		title: "Como gestionar las citas de mi salón de belleza",
+		description: "Descripción del caso de uso 3",
+		image: "/images/image_hero-9.webp",
+		link: "/casos-de-uso/salon-de-belleza",
+		icon: "/images/icon_offer-03.webp",
+	},
+	{
+		id: "4",
+		title: "Como lanzar mi primer sitio web de Iluminación",
+		description: "Descripción del caso de uso 4",
+		image: "/images/image_hero-9.webp",
+		link: "/casos-de-uso/iluminacion",
+		icon: "/images/icon_offer-04.webp",
 	},
 ];
 
@@ -225,4 +264,43 @@ export const HOME = {
 			},
 		],
 	},
+};
+export const ABOUT = {
+	hero: {
+		title:
+			"Crece y expande tu negocio sin esfuerzo, para ello nos encargamos nosotros.",
+		description:
+			"En Japp Media, nuestra misión es ayudarte a expandir más allá utilizando herramientas digitales poderosas. Asegurándonos de atraer clientes potenciales de alta calidad y convertirlos en clientes fieles.",
+	},
+	benefits: {
+		title: "Por que elegirnos",
+		description:
+			"No todos los negocios necesitan un servicio integral. Quizás solo necesites facilita la comunicación, gestionar citas de clientes o mejorar reputación. ",
+		items: [
+			{
+				id: "1",
+				icon: "/icons/phone.svg",
+				title: "Aumenta tu presencia",
+			},
+			{
+				id: "2",
+				icon: "/icons/phone.svg",
+				title: "Mejora la reputación",
+			},
+			{
+				id: "3",
+				icon: "/icons/phone.svg",
+				title: "Automatiza tu comunicación",
+			},
+		],
+	},
+	useCases: {
+		title: "Descubre como otros negocios han crecido con nosotros",
+		cases: USE_CASES
+	},
+};
+
+export const CTA_BANNER = {
+	title:
+		"Lo que necesitabas para impulsar tu negocio y no perder mas clientes.",
 };

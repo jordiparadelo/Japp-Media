@@ -1,6 +1,7 @@
 import React from "react";
-import {  CtaBanner, WhyUs } from "@/components/layouts";
-import { Hero, WhoWeHelp } from "@/components/pages/about";
+import {  CtaBanner } from "@/components/layouts";
+import { Hero, Benefits, UseCases } from "@/components/pages/about";
+import { WhyUs } from "@/components/pages/home";
 import { getSEOConfig } from "@/data/seo";
 
 export const metadata = getSEOConfig('about');
@@ -9,8 +10,9 @@ function AboutPage() {
 	return (
 		<>
 			<Hero />
+			<Benefits />
+			<UseCases/>
 			<WhyUs />
-			<WhoWeHelp />
 			<CtaBanner />
 		</>
 	);

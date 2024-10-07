@@ -38,7 +38,7 @@ interface SEOConfig {
 export const defaultConfig: SEOConfig = {
   metadataBase: new URL(BASE_URL),
   title: PERSONAL_INFO.name,
-  description: PERSONAL_INFO.description,
+  description: PERSONAL_INFO.brief,
   ogImage: '/images/default-og-image.webp',
   ogType: 'website',
   language: 'es',

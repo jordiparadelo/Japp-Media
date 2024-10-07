@@ -109,7 +109,9 @@
 	}
 
 	&[data-selected="true"] {
-		background-color: var(--color-font-light);
+		background-color: var(--background-light-gray);
+		color: var(--color-font-dark);
+		border: 1px solid var(--color-border-base);
 	}
 }
 

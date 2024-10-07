@@ -131,3 +131,12 @@ export interface Reviews {
 	description: string;
 	image: StaticImageData | string;
 }
+
+export interface UseCase {
+	id: string;
+	title: string;
+	description: string;
+	image: StaticImageData | string;
+	link: string;
+	icon: StaticImageData | string;
+}

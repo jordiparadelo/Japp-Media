@@ -2,16 +2,11 @@
 
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { NavbarProvider, useNavbar } from "@/contexts/NavbarContext";
-import { cn } from "@/libs/utils";
 import styles from "@/styles/Navbar.module.scss";
 import { PERSONAL_INFO } from "@/data/content";
-import { ROUTES } from "@/data/config";
-import ArrowRightIcon from "@/assets/icons/arrow-right.svg";
 import PhoneIcon from "@/assets/icons/phone.svg";
-import { Button, Logo, BookButton } from "@/components/ui";
+import { Button, Logo, BookButton, NavbarLinks } from "@/components/ui";
 import { formatPhoneNumber } from "@/libs/utils";
-
-import Link from "next/link";
 
 import { AnimatePresence, cubicBezier, motion } from "framer-motion";
 
@@ -21,17 +16,19 @@ export default function Navbar() {
 	const isMobile = useMediaQuery("(max-width: 768px)");
 
 	return (
+		<nav className={styles.navbar}>
+			<div className={styles.container}>
 		<NavbarProvider>
 			{isMobile ? <MobileNavbar /> : <DesktopNavbar />}
-		</NavbarProvider>
+				</NavbarProvider>
+			</div>
+		</nav>
 	);
 }
 
 function DesktopNavbar() {
 	return (
-		<nav className={styles.navbar}>
-			<div className={cn(styles.container)}>
-				<div className={styles.layout}>
+		<div className={styles.layout}>
 					<div className={styles.links}>
 						<Logo />
 						<Suspense fallback={<div>Loading...</div>}>
@@ -58,8 +55,6 @@ function DesktopNavbar() {
 						/>
 					</div>
 				</div>
-			</div>
-		</nav>
 	);
 }
 
@@ -67,9 +62,7 @@ function MobileNavbar() {
 	const { isMenuOpen, toggleMenu } = useNavbar();
 
 	return (
-		<nav className={styles.navbar}>
-			<div className={cn(styles.container)}>
-				<div className={styles.layout}>
+		<div className={styles.layout}>
 					<Logo />
 					<Button
 						variant='secondary'
@@ -106,33 +99,5 @@ function MobileNavbar() {
 						)}
 					</AnimatePresence>
 				</div>
-			</div>
-		</nav>
-	);
-}
-
-function NavbarLinks() {
-	const { pathname, toggleMenu } = useNavbar();
-	const isMobile = useMediaQuery("(max-width: 768px)");
-
-	return (
-		<div className={styles.navigation}>
-			{Object.values(ROUTES).map((link) => (
-				<Link
-					key={link.name}
-					href={link.path}
-					className={styles.link}
-					aria-current={pathname === link.path ? "page" : undefined}
-					onClick={() => {
-						if (isMobile) {
-							toggleMenu();
-						}
-					}}
-				>
-					{link.name}
-					{isMobile && <ArrowRightIcon />}
-				</Link>
-			))}
-		</div>
 	);
 }
