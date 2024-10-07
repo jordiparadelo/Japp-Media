@@ -66,7 +66,7 @@ function MobileNavbar() {
 				className='md:hidden'
 				onClick={toggleMenu}
 			>
-				{isMenuOpen ? "Close" : "Menu"}
+				{isMenuOpen ? "Cerrar" : "Menu"}
 			</button>
 			<AnimatePresence>
 				{isMenuOpen && (
@@ -85,8 +85,7 @@ function MobileNavbar() {
 						</Suspense>
 						<div className={styles.navbar_menu_actions}>
 							<Button href={`tel:${PERSONAL_INFO.phone}`}>
-								Contáctenos por teléfono:{" "}
-								{formatPhoneNumber(PERSONAL_INFO.phone)}
+								Contáctenos por teléfono
 							</Button>
 							<BookButton
 								variant='accent'

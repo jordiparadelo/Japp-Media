@@ -2,7 +2,9 @@
 import { BookButton, ContactForm } from "@/components/ui";
 import CheckIcon from "@/assets/icons/check.svg";
 import styles from "@/styles/ContactHero.module.scss";
-import { PERSONAL_INFO } from "@/libs/constants";
+import { PERSONAL_INFO } from "@/data/content";
+import { formatPhoneNumber } from "@/libs/utils";
+
 
 import React from "react";
 
@@ -53,7 +55,7 @@ function Hero() {
 									className='text-xl font-medium hover:text-[var(--color-secondary)]'
 									href={`tel:${PERSONAL_INFO.phone}`}
 								>
-									{PERSONAL_INFO.phone}
+									{formatPhoneNumber(PERSONAL_INFO.phone)}
 								</a>
 							</div>
 							<div className={styles["section_content_card"]}>
