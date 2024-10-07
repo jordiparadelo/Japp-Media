@@ -75,7 +75,7 @@
 	}
 
 	&_link {
-		&--active {
+		&[aria-current=true] {
 			color: var(--color-primary);
 		}
 	}

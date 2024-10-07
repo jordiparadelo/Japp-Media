@@ -5,13 +5,10 @@ import { NavbarProvider, useNavbar } from "@/contexts/NavbarContext";
 import { cn } from "@/libs/utils";
 import styles from "@/styles/Navbar.module.scss";
 import { PERSONAL_INFO } from "@/data/content";
-import { ROUTES } from "@/data/config";
-import ArrowRightIcon from "@/assets/icons/arrow-right.svg";
 import PhoneIcon from "@/assets/icons/phone.svg";
-import { Button, Logo, BookButton } from "@/components/ui";
+import { Button, Logo, BookButton, NavbarLinks } from "@/components/ui";
 import { formatPhoneNumber } from "@/libs/utils";
 
-import Link from "next/link";
 
 import { AnimatePresence, cubicBezier, motion } from "framer-motion";
 
@@ -36,7 +33,9 @@ function DesktopNavbar() {
 				<div className={cn(styles.navbar_container)}>
 					<div className={styles["navbar_links-wrapper"]}>
 						<Logo />
-						<NavbarLinks />
+						<Suspense fallback={<div>Loading...</div>}>
+							<NavbarLinks />
+						</Suspense>
 					</div>
 
 					<div className={styles.navbar_actions}>
@@ -86,10 +85,13 @@ function MobileNavbar() {
 									ease: cubicBezier(0.175, 0.885, 0.32, 1.275),
 								}}
 							>
-								<NavbarLinks />
+								<Suspense fallback={<div>Loading...</div>}>
+									<NavbarLinks />
+								</Suspense>
 								<div className={styles.navbar_menu_actions}>
 									<Button href={`tel:${PERSONAL_INFO.phone}`}>
-										Contáctenos por teléfono: {formatPhoneNumber(PERSONAL_INFO.phone)}
+										Contáctenos por teléfono:{" "}
+										{formatPhoneNumber(PERSONAL_INFO.phone)}
 									</Button>
 									<BookButton
 										variant='accent'
@@ -102,32 +104,5 @@ function MobileNavbar() {
 				</div>
 			</div>
 		</nav>
-	);
-}
-
-function NavbarLinks() {
-	const { pathname, toggleMenu } = useNavbar();
-	const isMobile = useMediaQuery("(max-width: 768px)");
-
-	return (
-		<div className={styles.navbar_links}>
-			{ROUTES.map((link) => (
-				<Link
-					key={link.name}
-					href={link.path}
-					className={cn(styles.navbar_link, {
-						[styles["navbar_link--active"]]: pathname === link.path,
-					})}
-					onClick={() => {
-						if (isMobile) {
-							toggleMenu();
-						}
-					}}
-				>
-					{link.name}
-					{isMobile && <ArrowRightIcon />}
-				</Link>
-			))}
-		</div>
 	);
 }
