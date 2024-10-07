@@ -9,7 +9,6 @@ import PhoneIcon from "@/assets/icons/phone.svg";
 import { Button, Logo, BookButton, NavbarLinks } from "@/components/ui";
 import { formatPhoneNumber } from "@/libs/utils";
 
-
 import { AnimatePresence, cubicBezier, motion } from "framer-motion";
 
 import { Suspense } from "react";
@@ -18,11 +17,9 @@ export default function Navbar() {
 	const isMobile = useMediaQuery("(max-width: 768px)");
 
 	return (
-		<Suspense fallback={<div>Loading...</div>}>
-			<NavbarProvider>
-				{isMobile ? <MobileNavbar /> : <DesktopNavbar />}
-			</NavbarProvider>
-		</Suspense>
+		<NavbarProvider>
+			{isMobile ? <MobileNavbar /> : <DesktopNavbar />}
+		</NavbarProvider>
 	);
 }
 
