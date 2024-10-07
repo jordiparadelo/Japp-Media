@@ -12,6 +12,7 @@ function Hero() {
 		<Section
 			id='hero'
 			className={styles.hero}
+			inViewAnimation={false}
 		>
 			<div className={styles.layout}>
 				<div className={styles.content}>

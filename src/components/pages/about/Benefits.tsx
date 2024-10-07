@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function Benefits() {
     const { benefits } = ABOUT;
   return (
-    <Section className={styles.section}>
+    <Section className={styles.section} inViewAnimation={false}>
         <div className={styles.layout}>
             <div className={styles.grid}>
                 {benefits.items.map((item) => (

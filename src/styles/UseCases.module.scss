@@ -1,6 +1,12 @@
 .section {
     padding-block: var(--section-block-small);
 
+    > * {
+        place-self: stretch;
+        align-self: stretch;
+        min-height: 100%;
+    }
+
     @media (min-width: 768px) {
         padding-block: var(--section-block-large);
     }

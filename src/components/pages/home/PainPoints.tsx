@@ -9,7 +9,7 @@ import {PainPointsGrid} from "@/components/pages/home";
 function PainPoints() {
 	const { painPoints } = HOME;
 	return (
-		<Section id='pain-points' className={styles.section}> 
+		<Section id='pain-points' className={styles.section} inViewAnimation={false}> 
 			<div className={styles.layout}>
 				<div className={styles.heading}>
 					<h2 className={styles.title}>
