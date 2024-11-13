@@ -4,6 +4,7 @@ import { cn } from "@/libs/utils";
 import "@/styles/globals.css";
 import { Layout } from "@/components/ui";
 import { defaultConfig } from "@/data/seo";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata = {
 	...defaultConfig,
@@ -41,6 +42,7 @@ export default function RootLayout({
 				<Layout>{children}</Layout>
 				<Footer />
 			</body>
+			<GoogleAnalytics gaId='G-V8KRV7J74R' />
 		</html>
 	);
 }
