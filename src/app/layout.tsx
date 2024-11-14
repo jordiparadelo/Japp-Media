@@ -1,5 +1,5 @@
 import { Archivo, Roboto_Flex } from "next/font/google";
-import { Footer, Navbar } from "@/components/layouts";
+import { Footer, Navbar } from "@/components/ui";
 import { cn } from "@/libs/utils";
 import "@/styles/globals.css";
 import { Layout } from "@/components/ui";
@@ -34,7 +34,7 @@ export default function RootLayout({
 				className={cn(
 					font_heading.variable,
 					font_body.variable,
-					`bg-background text-white flex flex-col min-h-[100vh]`
+					`bg-background flex flex-col min-h-[100vh]`
 				)}
 			>
 				<Navbar />

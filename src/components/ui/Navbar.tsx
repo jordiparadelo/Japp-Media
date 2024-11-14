@@ -1,7 +1,7 @@
 "use client";
 
 import { useMediaQuery } from "@/hooks/useMediaQuery";
-import { NavbarProvider, useNavbar } from "@/contexts/NavbarContext";
+import { NavbarProvider, useNavbar } from "@/context/navbar-provider";
 import { cn } from "@/libs/utils";
 import styles from "@/styles/Navbar.module.scss";
 import { PERSONAL_INFO } from "@/data/content";

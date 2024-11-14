@@ -1,6 +1,8 @@
 import {
 	// Imaginary,
-	Hero
+	Hero,
+	PainPoints,
+	BannerWebsite
 } from "@/components/pages/home";
 import { getSEOConfig } from "@/data/seo";
 
@@ -10,6 +12,8 @@ export default function Home() {
 	return (
 		<>
 			<Hero />
+			<PainPoints />
+			<BannerWebsite />
 		</>
 	);
 }

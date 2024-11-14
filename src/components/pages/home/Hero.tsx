@@ -28,7 +28,7 @@ export default function Hero({
 	image = heroData.image,
 }: HeroType) {
 	return (
-		<Section className='rounded-b-3xl sm:rounded-b-[60px] md:rounded-b-[120px] bg-gray-100 text-gray-900'>
+		<Section className='rounded-b-3xl sm:rounded-b-[60px] md:rounded-b-[120px] bg-gray-100 text-gray-900 bkg-gradient'> 
 			<Container
 				className='text-center gap-4 grid-flow-row'
 				grid={true}

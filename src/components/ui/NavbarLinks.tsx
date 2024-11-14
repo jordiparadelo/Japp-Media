@@ -1,6 +1,6 @@
 "use client";
 
-import { useNavbar } from '@/contexts/NavbarContext';
+import { useNavbar } from '@/context/navbar-provider';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import Link from 'next/link';
 import React, { useEffect } from 'react'
