@@ -74,7 +74,7 @@ function UserCasesTabs({ cases }: { cases: UserCase[] }) {
                 alt={caseItem?.title}
                 width={500}
                 height={500}
-                className="order-first max-h-[200px] w-full object-cover sm:order-last sm:h-auto sm:h-full sm:max-h-full"
+                className="order-first max-h-[200px] w-full object-cover sm:order-last sm:max-h-full"
               />
             </div>
           ))}

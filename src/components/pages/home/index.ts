@@ -5,3 +5,4 @@ export { default as Solutions } from "./Solutions";
 export { default as Offers } from "./Offers";
 export { default as UsersCases } from "./UsersCases";
 export { default as Pricing } from "./Pricing";
+export { default as HowItWorks } from "./HowItWorks";
