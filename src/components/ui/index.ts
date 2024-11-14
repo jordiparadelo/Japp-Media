@@ -15,4 +15,5 @@ export { default as GridSpan } from "./GridSpan";
 export { default as Footer } from "./Footer";
 export { default as Navbar } from "./Navbar";
 export { default as CustomImage } from "./CustomImage";
-export { default as SectionPill } from "./SectionPill";
+export { default as Badge } from "./Badge";
+export { default as CustomTabs } from "./Tabs";

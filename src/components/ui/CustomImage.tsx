@@ -1,8 +1,8 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 type CustomImageType = {
-	src: string;
-	alt: string;
+	src?: string;
+	alt?: string;
 	width?: number;
 	height?: number;
 	className?: string;
@@ -11,8 +11,8 @@ type CustomImageType = {
 };
 
 export default function CustomImage({
-	src,
-	alt,
+	src = "/images/default.svg",
+	alt = "Imagen por defecto",
 	width = 300,
 	height = 300,
 	className,

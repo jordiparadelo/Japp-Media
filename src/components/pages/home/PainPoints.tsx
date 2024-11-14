@@ -1,4 +1,4 @@
-import { Section, Container, SectionPill } from "@/components/ui";
+import { Section, Container, Badge } from "@/components/ui";
 import React from "react";
 
 function PainPoints() {
@@ -6,7 +6,7 @@ function PainPoints() {
 		<Section>
 			<Container className='flex flex-col  md:grid grid-cols-12 gap-6'>
 				<div className='flex flex-col gap-5 col-span-12 md:col-span-4'>
-					<SectionPill label='Como ayudamos' />
+					<Badge label='Como ayudamos' />
 					<h2 className='heading-h2'>
 						Haz crecer tu negocio con un Perfil Digital
 					</h2>

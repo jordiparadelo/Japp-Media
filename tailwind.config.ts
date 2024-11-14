@@ -1,3 +1,4 @@
+import { nextui } from "@nextui-org/theme";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -5,7 +6,8 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    './src/**/*.{js,ts,jsx,tsx,scss}',
+    "./src/**/*.{js,ts,jsx,tsx,scss}",
+    "./node_modules/@nextui-org/theme/dist/components/tabs.js",
   ],
   theme: {
     extend: {
@@ -19,7 +21,7 @@ const config: Config = {
         lightDark: "var(--bkg-light-dark)",
         radialFade: "var(--bkg-radial-fade)",
         gradientFade: "var(--bkg-gradient-fade)",
-        sectionPill: "var(--bkg-section-pill)",
+        Badge: "var(--bkg-section-pill)",
         card: "var(--bkg-card)",
       },
       fontFamily: {
@@ -37,6 +39,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [nextui()],
 };
 export default config;

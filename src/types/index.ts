@@ -102,3 +102,11 @@ export interface Review {
 	comment: string;
 	// Add other review properties as needed
 }
+
+export type UserCase = {
+    id: string;
+    title: string;
+    description: string;
+    link: string;
+    image: string ;
+  };

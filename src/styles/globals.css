@@ -3,85 +3,97 @@
 @tailwind utilities;
 
 @layer base {
-	:root {
-		--background: #FCFCFC;
-		/* Fonts */
-		--color-font: #00252e;
-		--headingFont: "Archivo";
-		--bodyFont: "Roboto Flex";
+  :root {
+    --background: #fcfcfc;
+    /* Fonts */
+    --color-font: #00252e;
+    --headingFont: "Archivo";
+    --bodyFont: "Roboto Flex";
 
-		/* Colors */
-		--color-primary: #0ddeac;
-		--color-secondary: #c5fd01;
-		--color-accent: #c5fd01;
-		--color-font-dark: #00252e;
-		--color-font-light: #f7f7f8;
-		--color-border-base: rgba(0, 37, 46, 0.1);
-		--color-border-dark: #00252e;
-		--color-border-light: #f7f7f8;
-		--color-border-accent: #0ddeac;
+    /* Colors */
+    --color-primary: #0ddeac;
+    --color-secondary: #c5fd01;
+    --color-accent: #c5fd01;
+    --color-font-dark: #00252e;
+    --color-font-light: #f7f7f8;
+    --color-border-base: rgba(0, 37, 46, 0.1);
+    --color-border-dark: #00252e;
+    --color-border-light: #f7f7f8;
+    --color-border-accent: #0ddeac;
 
-		/* Border */
-		--border-radius-sm: 0.25rem;
-		--border-radius-md: 0.75rem;
-		--border-radius-lg: 1.25rem;
-		--border-radius-full: 999px;
-		--border-radius-none: 0;
+    /* Border */
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.75rem;
+    --border-radius-lg: 1.25rem;
+    --border-radius-full: 999px;
+    --border-radius-none: 0;
 
-		/* Background */
-		--bkg-dark: #00252e;
-		--bkg-light: #fff;
-		--bkg-radial-fade: radial-gradient(circle, rgba(0, 37, 46, 0.1) 0%, rgba(0, 37, 46, 0) 70%);
-		--bkg-gradient-fade: linear-gradient(to bottom, rgba(0, 37, 46, 0.1) 0%, rgba(0, 37, 46, 0) 70%);
-		--bkg-section-pill: linear-gradient(to bottom, rgba(0, 37, 46, 0.1) 0%, #343434 100%);
-		--bkg-card: var(--bkg-light);
+    /* Background */
+    --bkg-dark: #00252e;
+    --bkg-light: #fff;
+    --bkg-radial-fade: radial-gradient(
+      circle,
+      rgba(0, 37, 46, 0.1) 0%,
+      rgba(0, 37, 46, 0) 70%
+    );
+    --bkg-gradient-fade: linear-gradient(
+      to bottom,
+      rgba(0, 37, 46, 0.1) 0%,
+      rgba(0, 37, 46, 0) 70%
+    );
+    --bkg-section-pill: linear-gradient(
+      to bottom,
+      rgba(0, 37, 46, 0.1) 0%,
+      #343434 100%
+    );
+    --bkg-card: var(--bkg-light);
 
-		/* Corners */
-		--rounded-btn: 0.5rem;
-		--rounded-sm: 0.25rem;
-		--rounded-md: 0.75rem;
-		--rounded-lg: 1.25rem;
-		--rounded: 999px;
+    /* Corners */
+    --rounded-btn: 0.5rem;
+    --rounded-sm: 0.25rem;
+    --rounded-md: 0.75rem;
+    --rounded-lg: 1.25rem;
+    --rounded: 999px;
 
-		/* Shadows */
-		--shadow-card: 0px 10px 20px 0px rgba(0, 37, 46, 0.1);
-	}
+    /* Shadows */
+    --shadow-card: 0px 10px 20px 0px rgba(0, 37, 46, 0.1);
+  }
 }
 
 @layer base {
-	body {
-		@apply bg-background text-foreground font-body font-thin;
-	}
+  body {
+    @apply bg-background font-body font-thin text-foreground;
+  }
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		@apply font-heading;
-	}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
 
-	.heading-h1 {
-		@apply text-[2.5rem] md:text-[3rem] lg:text-[4rem] leading-[1.15] font-heading;
-	}
-	.heading-h2 {
-		@apply text-[2rem] md:text-[3rem] leading-[1.25] font-heading;
-	}
-	.heading-h3 {
-		@apply text-[1.75rem] md:text-[2.5rem] leading-[1.25] font-heading;
-	}
-	.heading-h4 {
-		@apply text-[1.5rem] md:text-[2rem] leading-[1.25] font-heading;
-	}
-	.heading-h5 {
-		@apply text-[1.25rem] md:text-[1.5rem] leading-[1.25] font-heading;
-	}
-	.heading-h6 {
-		@apply text-[1.2rem] md:text-[1.25rem] leading-[1.25] font-heading;
-	}
+  .heading-h1 {
+    @apply font-heading text-[2.5rem] leading-[1.15] md:text-[3rem] lg:text-[4rem];
+  }
+  .heading-h2 {
+    @apply font-heading text-[2rem] leading-[1.25] md:text-[3rem];
+  }
+  .heading-h3 {
+    @apply font-heading text-[1.75rem] leading-[1.25] md:text-[2.5rem];
+  }
+  .heading-h4 {
+    @apply font-heading text-[1.5rem] leading-[1.25] md:text-[2rem];
+  }
+  .heading-h5 {
+    @apply font-heading text-[1.25rem] leading-[1.25] md:text-[1.5rem];
+  }
+  .heading-h6 {
+    @apply font-heading text-[1.2rem] leading-[1.25] md:text-[1.25rem];
+  }
 
-	/* .bkg-dot-pattern {
+  /* .bkg-dot-pattern {
 		@apply bg-primary;
 	}
 	.bkg-grid-pattern {
@@ -90,30 +102,78 @@
 }
 
 @layer utilities {
-	/* Hide scrollbar for Chrome, Safari and Opera */
-	.no-scrollbar::-webkit-scrollbar {
-		display: none;
-	}
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
-	/* Hide scrollbar for IE, Edge and Firefox */
-	.no-scrollbar {
-		-ms-overflow-style: none;
-		/* IE and Edge */
-		scrollbar-width: none;
-		/* Firefox */
-	}
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
 }
 
 @layer components {
-	.container {
-		@apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-	}
+  .container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
 
-	.card {
-		@apply bg-card shadow-card rounded-2xl border border-base;
-	}
+  .card {
+    @apply rounded-2xl border border-base bg-card shadow-card;
+  }
 
-	.bkg-gradient {
-		@apply bg-gradient-to-b from-slate-100 to-slate-200;
-	}
+  .bkg-gradient {
+    @apply bg-gradient-to-b from-gray-100 to-slate-200;
+  }
+
+  .offer-grid {
+    @apply grid grid-flow-row sm:col-span-10 sm:col-start-2;
+    grid-template-columns: repeat(auto-fit, minmax(25ch, 1fr));
+  }
+
+  .offer-card {
+    @apply flex flex-col items-center justify-center gap-y-1 px-4 py-10 text-center;
+  }
+  .offer-card + * {
+    @apply border-t border-base;
+  }
+
+  @media screen and (min-width: 516px) and (max-width: 882px) {
+    .offer-card {
+      @apply border-b border-t-0 border-base;
+    }
+    .offer-card:nth-last-child(-n + 2) {
+      @apply border-b-0; /* Remove border for the last two cards */
+    }
+    .offer-card:nth-child(odd) {
+      @apply border-r border-base;
+    }
+  }
+
+  @media screen and (min-width: 882px) {
+    .offer-card {
+      @apply border-t-0;
+    }
+    .offer-card:nth-child(-n + 3) {
+      @apply border-b border-base;
+    }
+    .offer-card:nth-child(2),
+    .offer-card:nth-child(5) {
+      @apply border-x border-base;
+    }
+  }
+
+  /* Tabs */
+  .tab-content {
+    @apply scrollbar-hide flex w-full min-w-[100vw] flex-row gap-4 overflow-x-auto scroll-smooth py-10 md:gap-0;
+    padding-inline: max(2.5rem, calc(calc(100vw - 1024px) / 2));
+    scroll-snap-type: x mandatory;
+  }
+
+  .tab-content > * {
+    scroll-snap-align: center;
+  }
 }

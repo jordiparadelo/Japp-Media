@@ -9,7 +9,7 @@ type SectionType = {
 export default function Section({ children, className, id }: SectionType) {
 	return (
 		<section
-			className={cn("relative py-8 md:py-12 fade-in", className)}
+			className={cn("relative py-14 md:py-12 fade-in max-w-[100vw] overflow-x-hidden", className)}
 			id={id}
 		>
 			{children}
