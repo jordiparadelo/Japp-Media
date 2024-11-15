@@ -3,7 +3,7 @@
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useContext, useRef } from "react";
-import { anim } from "@/libs/utils";
+import { anim } from "@/lib/utils";
 import { LayoutRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 // Separate animation configuration

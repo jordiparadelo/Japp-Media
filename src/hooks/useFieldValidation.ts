@@ -1,5 +1,5 @@
 import { FormFieldsType } from "@/types";
-import { baseValidationRules } from "@/libs/formValidation";
+import { baseValidationRules } from "@/lib/formValidation";
 
 import { useFormContext, RegisterOptions, UseFormRegister } from "react-hook-form";
 

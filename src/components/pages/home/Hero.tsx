@@ -28,13 +28,12 @@ export default function Hero() {
         {/* <Container className="flex flex-col place-items-center align-items-center text-center gap-4" grid={true}> */}
         <GridSpan className="col-start-2 col-end-12">
           <h1 className="heading-h1">
-            Haz crecer tu negocio con un Perfil Digital
+            {heroData.title}
           </h1>
         </GridSpan>
         <GridSpan className="col-span-full md:col-span-8 sm:col-start-2">
           <p className="text-lg">
-            Atrae más clientes y construye confianza en línea con nuestros
-            servicios personalizados de web y reputación.
+            {heroData.subtitle}
           </p>
         </GridSpan>
         <GridSpan className="grid grid-cols-12 gap-6 pt-6">
@@ -44,7 +43,7 @@ export default function Hero() {
                 <CustomImage className="h-full w-full rounded-lg bg-gray-500 object-cover" />
               </div>
               <div className="col-span-4 flex flex-col gap-6 pt-6">
-                <Button>Obtén tu Consulta Gratis</Button>
+                <Button>{heroData.cta}</Button>
                 <CustomImage className="h-full w-full rounded-lg bg-gray-500 object-cover" />
               </div>
             </div>

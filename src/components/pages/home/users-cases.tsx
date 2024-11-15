@@ -1,8 +1,6 @@
 import { Section, Container, Badge } from "@/components/ui";
-import UserCasesTabs from "@/components/tabs/UserCasesTabs";
+import { UserCasesTabs } from "@/components/tabs";
 import { UserCase } from "@/types";
-
-
 
 const usersCases: UserCase[] = [
   {

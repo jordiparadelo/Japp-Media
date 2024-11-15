@@ -1,6 +1,5 @@
-import { Section, Container, Badge } from "@/components/ui";
-import { Button } from "@nextui-org/react";
-import { cn } from "@/libs/utils";
+import { Section, Container, Badge, Button } from "@/components/ui";
+import { cn } from "@/lib/utils";
 const prices = [
   {
     title: "Plan Básico",
@@ -53,29 +52,36 @@ function Pricing() {
             Atrae más clientes y construye confianza en línea con nuestros
             servicios personalizados de web y reputación.
           </p>
-          <div className="pt-4">
-            <Button>Obtén tu Consulta Gratis</Button>
+          <div className="pt-4 w-full">
+            <Button className="w-full max-w-none self-stretch">
+              Obtén tu Consulta Gratis
+            </Button>
           </div>
         </div>
 
         <div className="flex flex-col sm:col-span-8 sm:grid sm:grid-cols-3">
           {prices.map((price, index) => (
-            <div className="flex flex-col rounded-lg">
+            <div className="flex flex-col rounded-lg" key={index}>
               <div className="price-header">
                 <div
                   className={cn(
-                    "flex flex-col items-center justify-center md:aspect-square gap-y-2 rounded-2xl bg-background p-4 text-center",
-                    index !== 1 ? "bg-slate-100 sm:bg-background" : "bkg-gradient",
+                    "flex flex-col items-center justify-center gap-y-2 rounded-2xl bg-background p-4 text-center md:aspect-square",
+                    index !== 1
+                      ? "bg-slate-100 sm:bg-background"
+                      : "bkg-gradient",
                   )}
                 >
                   <h3 className="heading-h6 font-bold">{price.title}</h3>
                   <p className="heading-h4">{price.price}</p>
-                  <Button>Agendar una cita</Button>
+                  <Button variant="secondary" size="sm">
+                    Agendar una cita
+                  </Button>
                 </div>
               </div>
               <ul className="grid-rows-auto grid h-full">
                 {price.features.map((feature, index) => (
                   <li
+                    key={index}
                     className={cn(
                       "flex items-center justify-center py-2 text-center text-sm leading-none",
                       index === 1 && "font-semibold",

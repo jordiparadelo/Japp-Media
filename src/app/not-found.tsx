@@ -11,7 +11,7 @@ export default function NotFound() {
         Lo sentimos, la página que estás buscando no existe o ha sido movida.
       </p>
       <Link href="/" passHref>
-        <Button variant="accent">Volver a la página principal</Button>
+        <Button variant="secondary">Volver a la página principal</Button>
       </Link>
     </div>
   );

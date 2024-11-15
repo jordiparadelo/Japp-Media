@@ -1,8 +1,8 @@
-export { default as Hero } from "./Hero";
-export { default as PainPoints } from "./PainPoints";
-export { default as BannerWebsite } from "./BannerWebsite";
-export { default as Solutions } from "./Solutions";
-export { default as Offers } from "./Offers";
-export { default as UsersCases } from "./UsersCases";
-export { default as Pricing } from "./Pricing";
-export { default as HowItWorks } from "./HowItWorks";
+export { default as Hero } from "./hero";
+export { default as PainPoints } from "./pain-points";
+export { default as BannerWebsite } from "./banner-website";
+export { default as Solutions } from "./solutions";
+export { default as Offers } from "./offers";
+export { default as UsersCases } from "./users-cases";
+export { default as Pricing } from "./pricing";
+export { default as HowItWorks } from "./how-it-works";

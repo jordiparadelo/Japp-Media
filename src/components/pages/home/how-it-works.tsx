@@ -1,6 +1,5 @@
 import React from "react";
-import { Section, Container, Badge, CustomImage } from "@/components/ui";
-import { Divider } from "@nextui-org/react";
+import { Section, Container, Badge, CustomImage, Button } from "@/components/ui";
 
 const steps = [
   {
@@ -32,15 +31,15 @@ const HowItWorks = () => {
             Un servicio flexible para cada negocio.
           </h2>
         </div>
-        <div className="card flex flex-col sm:col-span-10 sm:col-start-2 sm:flex-row ">
-          <div className="sm:-8 flex flex-col p-4 gap-y-2 ">
-            <ul className="flex flex-grow flex-col gap-y-3">
+        <div className="card flex flex-col overflow-hidden sm:col-span-10 sm:col-start-2 sm:grid sm:grid-cols-3 sm:flex-row">
+          <div className="sm:-8 flex flex-col gap-y-2 px-6 py-8 sm:col-span-2">
+            <ul className="flex flex-col gap-y-3 px-3">
               {steps.map((step, index) => (
                 <li
                   key={step.id}
                   className="flex w-full flex-grow flex-row gap-x-4 self-stretch"
                 >
-                  <span className="flex h-full min-w-10 flex-col items-center justify-center">
+                  <span className="flex h-full min-w-10 flex-col items-center justify-center gap-y-2">
                     <p
                       className="heading-h4 font-regular leading-none"
                       role="presentation"
@@ -59,11 +58,19 @@ const HowItWorks = () => {
                 </li>
               ))}
             </ul>
-            <div className="bkg-gradient flex flex-grow p-4 rounded-md">
-              <p>Deja que te ayudemos</p>
+            <div className="bkg-gradient flex shrink-0 rounded-md p-4 items-center gap-x-4">
+              <p className="text-sm">Deja que te ayudemos</p>
+              <Button size="sm" variant="secondary">$
+                Agendar una consulta
+              </Button>
             </div>
           </div>
-          <CustomImage alt="How it works" width={500} height={500} />
+          <CustomImage
+            alt="How it works"
+            width={500}
+            height={500}
+            className="hidden object-cover sm:block sm:h-full"
+          />
         </div>
       </Container>
     </Section>

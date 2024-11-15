@@ -1,25 +1,19 @@
 "use client";
 
 import { Tabs, Tab } from "@nextui-org/react";
-import { Key, Suspense, useEffect, useRef, useState } from "react";
+import { Key, useRef, useState } from "react";
 import { UserCase } from "@/types";
-import { CustomImage } from "../ui";
-import { cn } from "@/libs/utils";
-import { useMotionValueEvent, useScroll } from "framer-motion";
+import { CustomImage } from "@/components/ui";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 
-function UserCasesTabs({ cases }: { cases: UserCase[] }) {
+export function UserCasesTabs({ cases }: { cases: UserCase[] }) {
   const [selectedTab, setSelectedTab] = useState<number | null>(null);
   const tabContentRef = useRef<HTMLDivElement>(null);
-  const { scrollXProgress } = useScroll({
-    container: tabContentRef,
-  });
 
-  useMotionValueEvent(scrollXProgress, "change", (progress) => {
-    const casesLength = cases.length;
-    // const scrollActivePosition = latest * casesLength;
-    console.log({ progress });
-  });
+  // await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  // TODO: Add scroll navigation
 
   const handleSelectionChange = (key: Key) => {
     const tabIndexActive = cases.findIndex((caseItem) => caseItem?.id === key);
@@ -37,12 +31,11 @@ function UserCasesTabs({ cases }: { cases: UserCase[] }) {
   }
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
       <div className="flex w-full max-w-full flex-col items-center">
         <Tabs
-          aria-label="Options"
-          color="primary"
-          variant="bordered"
+          aria-label="Casos de uso"
+          color="secondary"
+          variant="solid"
           className="max-w-full"
           onSelectionChange={handleSelectionChange}
         >
@@ -74,13 +67,12 @@ function UserCasesTabs({ cases }: { cases: UserCase[] }) {
                 alt={caseItem?.title}
                 width={500}
                 height={500}
-                className="order-first max-h-[200px] w-full object-cover sm:order-last sm:max-h-full"
+                className="order-first max-h-[200px] w-full object-cover sm:order-last sm:max-h-full h-full"
               />
             </div>
           ))}
         </div>
       </div>
-    </Suspense>
   );
 }
 
