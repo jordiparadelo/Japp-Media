@@ -110,3 +110,18 @@ export type UserCase = {
     link: string;
     image: string ;
   };
+
+export type SitemapType = {
+	url: string;
+	lastModified?: string | Date | undefined;
+	changeFrequency?: "yearly" | "always" | "hourly" | "daily" | "weekly" | "monthly" | "never" | undefined
+	priority?: number | undefined
+}
+
+export type RouteType = Omit<SitemapType, 'url'> & {
+	path: string;
+	name: string;
+	url?: string; // Make url optional in RouteType
+	changeFrequency: "yearly" | "always" | "hourly" | "daily" | "weekly" | "monthly" | "never" | undefined
+	priority: number | undefined
+}

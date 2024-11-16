@@ -1,5 +1,7 @@
+"use client";
 import React, { createContext, useState, useContext, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { useMediaQuery } from 'usehooks-ts'
 
 interface NavbarContextType {
 	isMenuOpen: boolean;
@@ -16,10 +18,11 @@ export const NavbarProvider: React.FC<{ children: React.ReactNode }> = ({
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const pathname = usePathname();
 	const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+	const isMobile = useMediaQuery('(max-width: 768px)')
 
 	useEffect(() => {
 		setIsMenuOpen(false);
-	}, [pathname]);
+	}, [pathname, isMobile]);
 
 	return (
 		<NavbarContext.Provider value={{ isMenuOpen, toggleMenu, pathname, setIsMenuOpen }}>

@@ -8,14 +8,20 @@ import { navigateToElement } from "@/lib/utils";
 
 type LogoProps = {
   href?: string;
+  className?: string;
 };
 
-function Logo({ href = "/" }: LogoProps) {
+function Logo({ href = "/",  className }: LogoProps) {
   const pathname = usePathname();
   const isHome = pathname === "/";
 
   const HomeLogo = () => (
-    <div aria-label="Go to home page" role="button" onClick={() => navigateToElement(0)}>
+    <div
+      aria-label="Go to home page"
+      role="button"
+      onClick={() => navigateToElement(0)}
+      className={className}
+    >
       <LogoIcon style={{ height: "32px" }} />
     </div>
   );
@@ -23,7 +29,7 @@ function Logo({ href = "/" }: LogoProps) {
   if (isHome) return <HomeLogo />;
 
   return (
-    <Link href={href} aria-label="Go to home page">
+    <Link href={href} aria-label="Go to home page" className={className}>
       <LogoIcon style={{ height: "32px" }} />
     </Link>
   );

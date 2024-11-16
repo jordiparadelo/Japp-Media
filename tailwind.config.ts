@@ -57,16 +57,6 @@ const config: Config = {
           "5": "hsl(var(--chart-5))",
         },
       },
-      // backgroundColor: {
-      //   secondary: "var(--color-secondary)",
-      //   accent: "var(--color-accent)",
-      //   dark: "var(--bkg-dark)",
-      //   lightDark: "var(--bkg-light-dark)",
-      //   radialFade: "var(--bkg-radial-fade)",
-      //   gradientFade: "var(--bkg-gradient-fade)",
-      //   Badge: "var(--bkg-section-pill)",
-      //   card: "var(--bkg-card)",
-      // },
       fontFamily: {
         heading: ["var(--font-heading)", "system-ui", "sans-serif"],
         body: ["var(--font-body)", "ui-serif", "Georgia", "Cambria", "serif"],
@@ -84,6 +74,17 @@ const config: Config = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      height: {
+        navbar: "var(--navbar-height)",
+      },
+      fill: {
+        primary: "var(--color-primary)",
+        dark: "var(--color-font-dark)",
+        light: "var(--color-font-light)",
+      },
+      screens: {
+        xs: "480px",
       },
     },
   },

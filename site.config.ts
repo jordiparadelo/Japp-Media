@@ -1,19 +1,35 @@
+import { RouteType, SitemapType } from "@/types";
+
 export const BASE_URL = "https://api.whatsapp.com/send?phone=5215525662566";
 
-interface SitemapType {
-	url: string;
-	lastModified?: string | Date | undefined;
-	changeFrequency?: "yearly" | "always" | "hourly" | "daily" | "weekly" | "monthly" | "never" | undefined
-	priority?: number | undefined
-}
+export const WEBSITE_INFO = {
+	name: "Japp Media",
+	brief:
+		"Japp Media es una empresa de desarrollo de software y marketing digital",
+	description:
+		"En Japp Media, ayudamos a negocios locales a establecer y mejorar su presencia digital con soluciones accesibles y efectivas. Nos especializamos en el diseño de sitios web personalizables, embudos de conversión y automatización de ventas, para que puedas atraer más clientes mientras ahorras tiempo. Lo que nos distingue es que ofrecemos un servicio adaptado a las necesidades específicas de cada negocio, utilizando herramientas diseñadas para cada caso particular. Con Japp Media, tu negocio tendrá las herramientas necesarias para crecer en el mundo digital y destacar frente a la competencia.",
+	phone: "+34605163193",
+	email: "japp.agencia@gmail.com",
+	address: "Calle 123, Ciudad de México, México",
+	socialMedia: [
+		{
+			name: "Facebook",
+			icon: "facebook",
+			url: "https://www.facebook.com/juanperez",
+		},
+		{
+			name: "Instagram",
+			icon: "instagram",
+			url: "https://www.instagram.com/juanperez",
+		},
+		{
+			name: "Twitter",
+			icon: "twitter",
+			url: "https://www.twitter.com/juanperez",
+		},
+	],
+};
 
-interface RouteType extends Omit<SitemapType, 'url'> {
-	path: string;
-	name: string;
-	url?: string; // Make url optional in RouteType
-	changeFrequency: "yearly" | "always" | "hourly" | "daily" | "weekly" | "monthly" | "never" | undefined
-	priority: number | undefined
-}
 
 export const ROUTES: RouteType[] = [
 	{ path: "/", name: "Inicio", changeFrequency: "yearly", priority: 1 },
