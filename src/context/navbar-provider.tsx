@@ -8,6 +8,7 @@ interface NavbarContextType {
 	toggleMenu: () => void;
 	pathname: string;
 	setIsMenuOpen: (isMenuOpen: boolean) => void;
+	isMobile: boolean;
 }
 
 const NavbarContext = createContext<NavbarContextType | undefined>(undefined);
@@ -17,15 +18,15 @@ export const NavbarProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const pathname = usePathname();
-	const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-	const isMobile = useMediaQuery('(max-width: 768px)')
+	const toggleMenu = () => setIsMenuOpen(prev => !prev);
+	const isMobile = useMediaQuery('(max-width: 639px)')
 
 	useEffect(() => {
 		setIsMenuOpen(false);
 	}, [pathname, isMobile]);
 
 	return (
-		<NavbarContext.Provider value={{ isMenuOpen, toggleMenu, pathname, setIsMenuOpen }}>
+		<NavbarContext.Provider value={{ isMenuOpen, toggleMenu, pathname, setIsMenuOpen, isMobile }}>
 			{children}
 		</NavbarContext.Provider>
 	);

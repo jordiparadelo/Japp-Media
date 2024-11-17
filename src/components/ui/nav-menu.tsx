@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useEffect, useMemo, useRef } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import { NavLinks } from "./nav-links";
 import { ROUTES } from "site.config";
 import { EasingFunction, motion, stagger, useAnimate } from "framer-motion";
 import { Button } from "./button";
 import { WEBSITE_INFO } from "site.config";
 import { useNavbar } from "@/context/navbar-provider";
+import { useIsMounted, useEventListener, useUnmount } from "usehooks-ts";
 
 const animVariants = {
   open: { translateY: "-100%" },
@@ -21,61 +22,72 @@ type NavMenuProps = {
 const NavMenu = ({ className }: NavMenuProps) => {
   const { isMenuOpen, toggleMenu, setIsMenuOpen } = useNavbar();
   const [scope, animate] = useAnimate();
-  const hasMounted = useRef(false);
 
-  const handleAnimate = async () => {
-    animate(
-      "*",
-      {
-        opacity: isMenuOpen ? 0 : 1,
-        transform: isMenuOpen ? "translateY(-100%)" : "none",
-      },
-      {
-        delay: isMenuOpen
-          ? 0
-          : stagger(0.05, {
-              startDelay: animVariants.transition.duration,
-              ease: "easeOut",
-            }),
-        duration: isMenuOpen ? 0 : animVariants.transition.duration,
-        ease: animVariants.transition.ease as unknown as EasingFunction[],
-      },
-    );
+  const handleAnimate = useCallback(
+    async ({ showMenu = true }: { showMenu?: boolean }) => {
+      animate(
+        "*",
+        {
+          opacity: showMenu ? 0 : 1,
+          transform: showMenu ? "translateY(-100%)" : "none",
+        },
+        {
+          delay: showMenu
+            ? 0
+            : stagger(0.05, {
+                startDelay: animVariants.transition.duration,
+                ease: "easeOut",
+              }),
+          duration: showMenu ? 0 : animVariants.transition.duration,
+          ease: animVariants.transition.ease as unknown as EasingFunction[],
+        },
+      );
 
-    animate(
-      scope.current,
-      {
-        translateY: isMenuOpen ? "-100%" : "none",
-        opacity: isMenuOpen ? 0 : 1,
-      },
-      {
-        duration: animVariants.transition.duration,
-        ease: animVariants.transition.ease as unknown as EasingFunction[],
-      },
-    );
-  };
+      animate(
+        scope.current,
+        {
+          translateY: showMenu ? "-100%" : "none",
+          opacity: showMenu ? 0 : 1,
+        },
+        {
+          duration: animVariants.transition.duration,
+          ease: animVariants.transition.ease as unknown as EasingFunction[],
+        },
+      );
+    },
+    [scope, animate],
+  );
 
-  const handleOpen = () => {
+  const handleOpen = async () => {
     toggleMenu();
-    handleAnimate();
+    // if (isMounted()) handleAnimate({ showMenu: isMenuOpen });
   };
 
-  const handleEscape = useMemo(() => {
-    return (e: KeyboardEvent) => {
+  const handleEscape = useCallback(
+    (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setIsMenuOpen(false);
       }
-    };
-  }, [setIsMenuOpen, handleAnimate]);
+    },
+    [setIsMenuOpen],
+  );
+  // add event listener
+  useEventListener("keydown", handleEscape);
+  // remove event listener on unmount
+  useUnmount(() => {
+    window.removeEventListener("keydown", handleEscape);
+  });
 
-  //TODO: Fix this
-  useEffect(() => {
-    if (isMenuOpen) {
-      window.addEventListener("keydown", handleEscape);
-    } else {
-      window.removeEventListener("keydown", handleEscape);
-    }
-  }, [isMenuOpen, hasMounted]);
+  useNavAnimate(isMenuOpen, handleAnimate);
+
+  // useEffect(() => {
+  //   if (isMenuOpen) {
+  //     window.addEventListener("keydown", handleEscape);
+  //   } else {
+  //     window.removeEventListener("keydown", handleEscape);
+  //   }
+  //   if (isMounted()) handleAnimate({ showMenu: isMenuOpen });
+  // }, [isMenuOpen, handleEscape, isMounted, handleAnimate]);
 
   return (
     <menu className={className}>
@@ -113,7 +125,7 @@ const NavMenu = ({ className }: NavMenuProps) => {
 
         <div className="flex flex-col gap-4">
           <a href={`tel:${WEBSITE_INFO.phone}`}>{WEBSITE_INFO.phone}</a>
-          <div className="xs:hidden block w-full">
+          <div className="w-full">
             <Button variant="default" size="lg" className="w-full">
               Contactar un cita
             </Button>
@@ -125,3 +137,18 @@ const NavMenu = ({ className }: NavMenuProps) => {
 };
 
 export { NavMenu };
+
+function useNavAnimate(
+  state: boolean,
+  animation: (state: { showMenu: boolean }) => void,
+) {
+  const isMounted = useIsMounted();
+  const mounted = useRef(false);
+
+  useEffect(() => {
+    if (mounted.current) animation({ showMenu: !state });
+  }, [state, isMounted, animation]);
+  
+  mounted.current = isMounted();
+  return { isMounted };
+}
