@@ -4,6 +4,7 @@ import { navigateToElement, prettyString } from "@/lib/utils";
 import React, {
   Children,
   createContext,
+  useCallback,
   useContext,
   useEffect,
   useRef,
@@ -13,85 +14,94 @@ import { Tabs, Tab } from "@nextui-org/react";
 import { useIntersectionObserver } from "usehooks-ts";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 
-type SectionsNavigationProps = {
-  children: React.ReactNode;
-};
-
+// Define the context for section navigation
 const SectionNavContext = createContext<
   | {
       activeSection: string | null;
       setActiveSection: (section: string | null) => void;
       wrapperRef: React.RefObject<HTMLDivElement>;
       isNavVisible: boolean;
+      enableIntersections: boolean;
+      setEnableIntersections: (enable: boolean) => void;
     }
   | undefined
 >(undefined);
 
+// Custom hook to use the SectionNavContext
 const useSectionNavContext = () => {
   const context = useContext(SectionNavContext);
-  if (context === undefined) {
+  if (!context)
     throw new Error(
       "useSectionNavContext must be used within a SectionNavWrapper",
     );
-  }
   return context;
 };
 
-const SectionNavWrapper = ({ children }: SectionsNavigationProps) => {
-  const [activeSection, setActiveSection] = useState<string | null>(null);
+// Wrapper component for section navigation
+const SectionNavWrapper = ({ children }: { children: React.ReactNode }) => {
+  const [activeSection, setActiveSection] = useState<string | null>("precios");
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [isNavVisible, setIsNavVisible] = useState(false);
-
+  const [enableIntersections, setEnableIntersections] = useState(true);
   const { scrollYProgress } = useScroll({
     target: wrapperRef,
     offset: ["start start", "end end"],
   });
 
+  // Update navigation visibility based on scroll progress
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (latest <= 0 || latest === 1) {
-      setIsNavVisible(false);
-    } else {
-      setIsNavVisible(true);
-    }
+    setIsNavVisible(latest > 0 && latest < 1);
   });
 
-  const sectionsId = Children.map(children, (child) => {
-    const el = child as React.ReactElement;
-    return el.props.id;
-  });
+  //   const sectionsId = wrapperRef && Array.from(wrapperRef.current?.querySelectorAll("section[id]") || []).map((el) => el.id);
+  const sectionsId = Children.map(
+    children,
+    (child) => (child as React.ReactElement).props.id,
+  );
 
   return (
     <div ref={wrapperRef}>
       <SectionNavContext.Provider
-        value={{ activeSection, setActiveSection, wrapperRef, isNavVisible }}
+        value={{
+          activeSection,
+          setActiveSection,
+          wrapperRef,
+          isNavVisible,
+          enableIntersections,
+          setEnableIntersections,
+        }}
       >
-        {Children.toArray(children).map((child) => {
-          if (React.isValidElement(child)) {
-            return (
-              <SectionWrapper
-                key={child.props.id as string}
-                id={child.props.id as string}
-              >
-                {child}
-              </SectionWrapper>
-            );
-          }
-          return null;
-        })}
+        {Children.toArray(children).map((child, index) =>
+          React.isValidElement(child) ? (
+            <SectionWrapper key={index} id={child.props.id}>
+              {child}
+            </SectionWrapper>
+          ) : null,
+        )}
         {sectionsId && <SectionNav sectionsId={sectionsId} />}
       </SectionNavContext.Provider>
     </div>
   );
 };
 
-function SectionNav({ sectionsId }: { sectionsId: string[] }) {
-  const { activeSection, setActiveSection, isNavVisible } =
-    useSectionNavContext();
+// Navigation component for sections
+const SectionNav = ({ sectionsId }: { sectionsId: string[] }) => {
+  const {
+    activeSection,
+    setActiveSection,
+    isNavVisible,
+    setEnableIntersections,
+  } = useSectionNavContext();
 
-  const handleSelectionChange = (key: string) => {
-    setActiveSection(key);
-    navigateToElement(key);
-  };
+  const handleSelectionChange = useCallback(
+    (key: string) => {
+      setEnableIntersections(false);
+      setActiveSection(key);
+      navigateToElement(key, () => setEnableIntersections(true));
+    },
+    [setActiveSection, setEnableIntersections],
+  );
+
 
   return (
     <motion.nav
@@ -111,6 +121,7 @@ function SectionNav({ sectionsId }: { sectionsId: string[] }) {
         variant="solid"
         className="align-center max-w-full"
         onSelectionChange={(key) => handleSelectionChange(key as string)}
+        // onSelectionChangeEnd={() => setEnableIntersections(true)}
       >
         {sectionsId.map((id) => (
           <Tab
@@ -122,27 +133,28 @@ function SectionNav({ sectionsId }: { sectionsId: string[] }) {
       </Tabs>
     </motion.nav>
   );
-}
+};
 
-function SectionWrapper({
+// Wrapper for each section to track intersection
+const SectionWrapper = ({
   children,
   id,
 }: {
   children: React.ReactNode;
   id: string;
-}) {
+}) => {
+  const { enableIntersections } = useSectionNavContext();
   const { isIntersecting, ref: sectionRef } = useIntersectionObserver({
     threshold: 0.5,
   });
   const { setActiveSection } = useSectionNavContext();
 
   useEffect(() => {
-    if (isIntersecting) {
-      setActiveSection(id);
-    }
-  }, [isIntersecting, id, setActiveSection]);
+    // console.log({ enableIntersections });
+    if (enableIntersections && isIntersecting && id) setActiveSection(id);
+  }, [enableIntersections, isIntersecting, id, setActiveSection]);
 
   return <div ref={sectionRef}>{children}</div>;
-}
+};
 
 export { SectionNavWrapper, SectionNav, SectionWrapper };

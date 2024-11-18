@@ -20,17 +20,17 @@ export default function Home() {
       <Hero />
       <SectionNavWrapper>
         <PainPoints id="como-ayudamos" />
-        <BannerWebsite id="banner-website" />
+        <BannerWebsite />
         <Solutions id="soluciones" />
-        <div className="bkg-gradient mx-4 rounded-3xl md:rounded-[120px] md:py-0">
-          <Offers id="ofertas" />
+        <div className="bkg-gradient mx-4 rounded-3xl md:rounded-[120px] md:py-0" id="nuestros-servicios">
+          <Offers id="servicios" />
           <UsersCases id="casos-de-uso" />
         </div>
         <Pricing id="precios" />
         <HowItWorks id="como-funciona" />
       </SectionNavWrapper>
       <Pricing id="precios" />
-      <HowItWorks id="como-funciona" />
+      <HowItWorks />
     </>
   );
 }

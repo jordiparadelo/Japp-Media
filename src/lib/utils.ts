@@ -50,24 +50,34 @@ export function delay(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-export function navigateToElement(id: string | number | null) {
+export async function navigateToElement(id: string | number | null, callback?: () => void) {
   if (typeof id === "string") {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: "smooth" });
-    console.log({ element });
+    const element = document.getElementById(id) as HTMLElement;
+    const { top } = element.getBoundingClientRect();
+    const scrollTop = Math.floor(Math.abs(window.innerHeight + top));
+
+    await element?.scrollIntoView({ behavior: "smooth" });
+    // window.scrollTo(0, scrollTop);
+    // window.scrollTo({ top: scrollTop, left: 0, behavior: "smooth" });
+    console.log({ element, top, scrollTop });
   }
 
   if (typeof id === "number") {
-    window.scrollTo({
+    console.log({ id });
+    await window.scrollTo({
       top: id,
       behavior: "smooth",
     });
   }
 
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
+  if (!id) {
+    await window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
+  callback?.();
 }
 
 export function prettyString(str: string) {

@@ -152,5 +152,5 @@ export type SolutionType = {
 };
 
 export type SectionProps = {
-  id: string;
+  id?: string;
 };
