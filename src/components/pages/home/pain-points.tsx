@@ -3,7 +3,7 @@ import React from "react";
 
 function PainPoints() {
 	return (
-		<Section>
+		<Section id="como-ayudamos">
 			<Container className='flex flex-col  md:grid grid-cols-12 gap-6'>
 				<div className='flex flex-col gap-5 col-span-12 md:col-span-4'>
 					<Badge label='Como ayudamos' />

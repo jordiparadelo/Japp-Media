@@ -3,7 +3,7 @@ import { Section, Container, Badge } from "@/components/ui";
 
 function BannerWebsite() {
 	return (
-		<Section className='bkg-gradient rounded-3xl md:rounded-[80px]'>
+		<Section className='bkg-gradient rounded-3xl md:rounded-[80px]' id="crea-tu-sitio-web">
 			<Container>
 				<div className='flex flex-col gap-4 place-items-center text-center'>
 					<Badge

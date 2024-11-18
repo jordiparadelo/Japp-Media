@@ -9,7 +9,6 @@ import {
   Pricing,
   HowItWorks
 } from "@/components/pages/home";
-import { Section } from "@/components/ui";
 import { getSEOConfig } from "@/data/seo";
 
 export const metadata = getSEOConfig("home");
@@ -21,10 +20,10 @@ export default function Home() {
       <PainPoints />
       <BannerWebsite />
       <Solutions />
-      <Section className="bkg-gradient mx-4 rounded-3xl md:rounded-[120px] md:py-0">
+      <div className="bkg-gradient mx-4 rounded-3xl md:rounded-[120px] md:py-0">
         <Offers />
         <UsersCases />
-      </Section>
+      </div>
       <Pricing />
       <HowItWorks />
     </>

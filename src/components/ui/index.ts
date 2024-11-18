@@ -15,3 +15,4 @@ export { default as Badge } from "./badge";
 export { default as CustomTabs } from "./tabs";
 export { Skeleton } from "./skeleton";
 export { NavMenu } from "./nav-menu";
+export * from "./solutions-ui";

@@ -16,7 +16,6 @@ export function UserCasesTabs({ cases }: { cases: UserCase[] }) {
   const tabContentRef = useRef<HTMLDivElement>(null);
 
   const handleSelectionChange = (key: string) => {
-    console.log({key})
     const tabIndexActive = cases.findIndex((caseItem) => caseItem?.id === key);
     setSelectedTab(tabIndexActive);
     scrollToTab(tabIndexActive);

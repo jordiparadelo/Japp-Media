@@ -235,4 +235,10 @@
       transparent 100%
     );
   }
+
+  /* Solutions */
+  .solutions-sticky-image {
+    @apply grid grid-rows-3 h-full;
+    /* @apply flex h-full min-h-full flex-col justify-stretch sticky top-10; */
+  }
 }
