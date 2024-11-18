@@ -1,6 +1,6 @@
 import React from "react";
 import { Section, Container, Badge, CustomImage, Button } from "@/components/ui";
-
+import { SectionProps } from "@/types";
 const steps = [
   {
     id: 1,
@@ -21,9 +21,9 @@ const steps = [
   },
 ];
 
-const HowItWorks = () => {
+const HowItWorks = ({ id }: SectionProps) => {
   return (
-    <Section>
+    <Section id={id}>
       <Container className="flex flex-col gap-x-4 gap-y-10 sm:grid sm:grid-cols-12">
         <div className="flex flex-col items-center justify-center gap-y-4 text-center sm:col-span-8 sm:col-start-3 lg:col-span-6 lg:col-start-4">
           <Badge label="Cómo funciona" />

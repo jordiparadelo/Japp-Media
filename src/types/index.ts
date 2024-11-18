@@ -150,3 +150,7 @@ export type SolutionType = {
   description: string;
   image: string;
 };
+
+export type SectionProps = {
+  id: string;
+};

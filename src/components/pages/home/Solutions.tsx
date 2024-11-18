@@ -1,5 +1,5 @@
 import { Section, Container, SolutionsStickyImages, SolutionsList } from "@/components/ui";
-
+import { SectionProps } from "@/types";
 const solutions = [
   {
     id: "Diseño sitios web",
@@ -24,9 +24,9 @@ const solutions = [
   },
 ];
 
-function Solutions() {
+function Solutions({ id }: SectionProps) {
   return (
-    <Section id="soluciones">
+    <Section id={id}>
       <Container className="md:grid md:grid-cols-12 md:gap-6">
         <div className="hidden md:col-span-6 md:block">
           <SolutionsStickyImages images={solutions} />

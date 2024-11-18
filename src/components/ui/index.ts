@@ -16,3 +16,4 @@ export { default as CustomTabs } from "./tabs";
 export { Skeleton } from "./skeleton";
 export { NavMenu } from "./nav-menu";
 export * from "./solutions-ui";
+export { SectionNavWrapper } from "./sections-navigation";

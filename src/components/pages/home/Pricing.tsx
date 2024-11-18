@@ -1,5 +1,6 @@
 import { Section, Container, Badge, Button } from "@/components/ui";
 import { cn } from "@/lib/utils";
+import { SectionProps } from "@/types";
 const prices = [
   {
     title: "Plan Básico",
@@ -39,9 +40,9 @@ const prices = [
   },
 ];
 
-function Pricing() {
+function Pricing({ id }: SectionProps) {
   return (
-    <Section className="md:py-20">
+    <Section className="md:py-20" id={id}>
       <Container className="flex flex-col gap-x-6 gap-y-10 md:grid md:grid-cols-12">
         <div className="md:card col-span-4 flex flex-col items-center justify-center gap-y-4 p-0 text-center md:items-start md:justify-normal md:p-8 md:text-left">
           <Badge label="Precios" />

@@ -1,5 +1,5 @@
 import { Section, Container, Badge, CustomImage } from "@/components/ui";
-
+import { SectionProps } from "@/types";
 const offers = [
   {
     id: "1",
@@ -39,9 +39,9 @@ const offers = [
   },
 ];
 
-function Offers() {
+function Offers({ id }: SectionProps) {
   return (
-    <Section id="ofertas">
+    <Section id={id}>
       <Container className="flex flex-col gap-x-4 gap-y-10 sm:grid sm:grid-cols-12">
         <div className="flex flex-col items-center justify-center sm:col-span-8 sm:col-start-3 lg:col-span-6 lg:col-start-4">
           <Badge label="Ofertas" />

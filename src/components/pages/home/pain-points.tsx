@@ -1,9 +1,10 @@
 import { Section, Container, Badge } from "@/components/ui";
 import React from "react";
+import { SectionProps } from "@/types";
 
-function PainPoints() {
+function PainPoints({ id }: SectionProps) {
 	return (
-		<Section id="como-ayudamos">
+		<Section id={id}>
 			<Container className='flex flex-col  md:grid grid-cols-12 gap-6'>
 				<div className='flex flex-col gap-5 col-span-12 md:col-span-4'>
 					<Badge label='Como ayudamos' />

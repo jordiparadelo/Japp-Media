@@ -1,9 +1,10 @@
 import { Section, Container, Badge } from "@/components/ui";
 // import ReactEmojis from "@souhaildev/reactemojis";
+import { SectionProps } from "@/types";
 
-function BannerWebsite() {
+function BannerWebsite({ id }: SectionProps) {
 	return (
-		<Section className='bkg-gradient rounded-3xl md:rounded-[80px]' id="crea-tu-sitio-web">
+		<Section className='bkg-gradient rounded-3xl md:rounded-[80px]' id={id}>
 			<Container>
 				<div className='flex flex-col gap-4 place-items-center text-center'>
 					<Badge

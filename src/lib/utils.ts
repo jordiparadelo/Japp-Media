@@ -54,6 +54,7 @@ export function navigateToElement(id: string | number | null) {
   if (typeof id === "string") {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
+    console.log({ element });
   }
 
   if (typeof id === "number") {
@@ -67,4 +68,8 @@ export function navigateToElement(id: string | number | null) {
     top: 0,
     behavior: "smooth",
   });
+}
+
+export function prettyString(str: string) {
+  return str.replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
 }
