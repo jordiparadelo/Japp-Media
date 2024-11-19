@@ -1,7 +1,7 @@
 "use client";
 import React, { createContext, useState, useContext, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { useMediaQuery } from 'usehooks-ts'
+import { useMediaQuery, useEventListener } from 'usehooks-ts'
 
 interface NavbarContextType {
 	isMenuOpen: boolean;
@@ -20,6 +20,14 @@ export const NavbarProvider: React.FC<{ children: React.ReactNode }> = ({
 	const pathname = usePathname();
 	const toggleMenu = () => setIsMenuOpen(prev => !prev);
 	const isMobile = useMediaQuery('(max-width: 639px)')
+
+	const escapeKey = (event: KeyboardEvent) => {
+		if (event.key === 'Escape') {
+			setIsMenuOpen(false);
+		}
+	};
+
+	useEventListener('keydown', escapeKey);
 
 	useEffect(() => {
 		setIsMenuOpen(false);

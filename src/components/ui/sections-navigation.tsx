@@ -118,8 +118,8 @@ const SectionNav = ({ sectionsId }: { sectionsId: string[] }) => {
         aria-label="Secciones"
         color="secondary"
         selectedKey={activeSection}
-        variant="solid"
-        className="align-center max-w-full"
+        variant="light"
+        className="align-center max-w-full border backdrop-blur-sm bg-slate-50/50 rounded-lg"
         onSelectionChange={(key) => handleSelectionChange(key as string)}
         // onSelectionChangeEnd={() => setEnableIntersections(true)}
       >

@@ -18,7 +18,7 @@ function Navbar() {
 export { Navbar };
 
 function NavbarContent() {
-  const {scrollY} = useScroll();
+  const { scrollY } = useScroll();
 
   const [isVisible, setIsVisible] = useState(true);
 
@@ -26,7 +26,10 @@ function NavbarContent() {
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() as number;
-    if(latest > previous && latest > 150) {
+    
+    if (isMenuOpen) return;
+    
+    if (latest > previous && latest > 150) {
       setIsVisible(false);
     } else {
       setIsVisible(true);
@@ -35,7 +38,7 @@ function NavbarContent() {
 
   return (
     <motion.nav
-      variants = {{
+      variants={{
         visible: {
           y: 0,
         },
@@ -45,7 +48,7 @@ function NavbarContent() {
       }}
       animate={isVisible ? "visible" : "hidden"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className="sm:h-navbar fixed left-0 right-0 top-0 z-50 flex items-center justify-between border-b border-gray-200 bg-foreground/5 px-4 py-4 backdrop-blur-sm sm:px-8 md:px-12"
+      className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between border-b border-gray-200 bg-foreground/5 px-4 py-4 backdrop-blur-sm sm:h-navbar sm:px-8 md:px-12"
       data-open={isMenuOpen}
     >
       <div className="flex w-full items-center gap-4">
@@ -58,7 +61,7 @@ function NavbarContent() {
         <div className="hidden sm:block">
           <Button>Obtén tu Consulta Gratis</Button>
         </div>
-        <NavMenu className="block sm:hidden"/>
+        <NavMenu className="block sm:hidden" />
       </div>
     </motion.nav>
   );

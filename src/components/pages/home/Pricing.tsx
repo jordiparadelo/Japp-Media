@@ -43,7 +43,7 @@ const prices = [
 function Pricing({ id }: SectionProps) {
   return (
     <Section className="md:py-20" id={id}>
-      <Container className="flex flex-col gap-x-6 gap-y-10 md:grid md:grid-cols-12">
+      <Container className="flex flex-col gap-x-6 gap-y-14 md:grid md:grid-cols-12 md:gap-y-10">
         <div className="md:card col-span-4 flex flex-col items-center justify-center gap-y-4 p-0 text-center md:items-start md:justify-normal md:p-8 md:text-left">
           <Badge label="Precios" />
           <h2 className="heading-h2 md:heading-h4">
@@ -53,7 +53,7 @@ function Pricing({ id }: SectionProps) {
             Atrae más clientes y construye confianza en línea con nuestros
             servicios personalizados de web y reputación.
           </p>
-          <div className="pt-4 w-full">
+          <div className="pt-4 md:w-full">
             <Button className="w-full max-w-none self-stretch">
               Obtén tu Consulta Gratis
             </Button>
@@ -66,7 +66,7 @@ function Pricing({ id }: SectionProps) {
               <div className="price-header">
                 <div
                   className={cn(
-                    "flex flex-col items-center justify-center gap-y-2 rounded-2xl bg-background p-4 text-center md:aspect-square",
+                    "flex flex-col items-center justify-center gap-y-2 rounded-2xl bg-background p-4 text-center aspect-video md:aspect-auto",
                     index !== 1
                       ? "bg-slate-100 sm:bg-background"
                       : "bkg-gradient",
@@ -79,7 +79,7 @@ function Pricing({ id }: SectionProps) {
                   </Button>
                 </div>
               </div>
-              <ul className="grid-rows-auto grid h-full">
+              <ul className="grid-rows-auto grid h-full divide-y divide-slate-200">
                 {price.features.map((feature, index) => (
                   <li
                     key={index}

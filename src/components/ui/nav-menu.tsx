@@ -57,7 +57,7 @@ const NavMenu = ({ className }: NavMenuProps) => {
 
       <motion.div
         ref={scope}
-        className="fixed inset-0 top-0 z-[-1] flex h-[100vh] translate-y-[-100%] transform-gpu flex-col justify-between bg-foreground px-4 py-4 pb-10 pt-28 text-background sm:px-8 md:px-12"
+        className="fixed inset-0 top-0 bottom-0 z-[-1] flex h-[100dvh] translate-y-[-100%] transform-gpu flex-col justify-between bg-foreground px-4 py-4 pb-10 pt-28 text-background sm:px-8 md:px-12"
       >
         <NavLinks
           links={ROUTES}

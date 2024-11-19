@@ -172,7 +172,7 @@
   }
 
   .card {
-    @apply rounded-2xl border border-base bg-card shadow-card;
+    @apply rounded-2xl border bg-card transition-shadow duration-300 border-base hover:shadow-card;
   }
 
   .bkg-gradient {
@@ -238,7 +238,7 @@
 
   /* Solutions */
   .solutions-sticky-image {
-    @apply grid grid-rows-3 h-full;
+    @apply grid h-full grid-rows-3;
     /* @apply flex h-full min-h-full flex-col justify-stretch sticky top-10; */
   }
 }
