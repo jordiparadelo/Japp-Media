@@ -46,7 +46,7 @@ function Pricing({ id }: SectionProps) {
       <Container className="flex flex-col gap-x-6 gap-y-14 md:grid md:grid-cols-12 md:gap-y-10">
         <div className="md:card col-span-4 flex flex-col items-center justify-center gap-y-4 p-0 text-center md:items-start md:justify-normal md:p-8 md:text-left">
           <Badge label="Precios" />
-          <h2 className="heading-h2 md:heading-h4">
+          <h2 className="heading-h2 md:heading-h3">
             Con un coste accesible para tu negocio.
           </h2>
           <p>

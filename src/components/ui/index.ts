@@ -18,3 +18,5 @@ export { NavMenu } from "./nav-menu";
 export * from "./solutions-ui";
 export { SectionNavWrapper } from "./sections-navigation";
 export { PainPointsCard } from "./pain-points-ui";
+export * from "./accordion";
+export { Icon } from "./icon";

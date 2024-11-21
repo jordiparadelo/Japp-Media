@@ -1,8 +1,10 @@
-import { RouteType, SitemapType } from "@/types";
+import { RouteType, SitemapType, WebsiteInfoType } from "@/types";
+
+import { icons } from "lucide-react";
 
 export const BASE_URL = "https://api.whatsapp.com/send?phone=5215525662566";
 
-export const WEBSITE_INFO = {
+export const WEBSITE_INFO: WebsiteInfoType = {
 	name: "Japp Media",
 	brief:
 		"Japp Media es una empresa de desarrollo de software y marketing digital",
@@ -14,17 +16,20 @@ export const WEBSITE_INFO = {
 	socialMedia: [
 		{
 			name: "Facebook",
-			icon: "facebook",
+			icon: "Facebook" as keyof typeof icons,
+			// icon: "Facebook",
 			url: "https://www.facebook.com/juanperez",
 		},
 		{
 			name: "Instagram",
-			icon: "instagram",
+			icon: "Instagram",
+			// icon: "Instagram",
 			url: "https://www.instagram.com/juanperez",
 		},
 		{
 			name: "Twitter",
-			icon: "twitter",
+			icon: "Twitter",
+			// icon: "Twitter",
 			url: "https://www.twitter.com/juanperez",
 		},
 	],
@@ -54,6 +59,7 @@ export const ROUTES: RouteType[] = [
 ];
 
 export const SITEMAP_CONFIG: SitemapType[] = ROUTES.map((route) => ({
+	id: route.path,
 	url: BASE_URL + route.path,
 	lastModified: new Date(),
 	changeFrequency: route.changeFrequency,

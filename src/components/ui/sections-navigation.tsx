@@ -154,7 +154,11 @@ const SectionWrapper = ({
     if (enableIntersections && isIntersecting && id) setActiveSection(id);
   }, [enableIntersections, isIntersecting, id, setActiveSection]);
 
-  return <div ref={sectionRef}>{children}</div>;
+  return (
+    <div ref={sectionRef}>
+      {children}
+    </div>
+  );
 };
 
 export { SectionNavWrapper, SectionNav, SectionWrapper };

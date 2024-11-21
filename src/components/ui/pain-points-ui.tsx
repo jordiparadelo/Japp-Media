@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 
 type PainPointsCardProps = {
@@ -31,9 +31,11 @@ const PainPointsCard = ({
   className,
 }: PainPointsCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
-  const isTouchDevice = useMediaQuery("(pointer: coarse) and (hover: none) and (max-width: 768px)");
+  const isTouchDevice = useMediaQuery("(pointer: coarse) and (hover: none)");
 
-  console.log(isTouchDevice);
+  useEffect(() => {
+    isTouchDevice && setIsHovered(isTouchDevice);
+  }, [isTouchDevice]);
 
   return (
     <motion.figure
@@ -43,14 +45,15 @@ const PainPointsCard = ({
       variants={animations.card}
       transition={animations.transition}
       className={cn(
-        "card flex-end flex min-h-[300px] flex-col justify-end gap-4 p-5",
+        "card flex-end flex flex-col justify-end gap-4 p-5 min-h-[300px] md:min-h-0",
         className,
       )}
     >
       <h3 className="heading-h5">{title}</h3>
       <motion.p
-        initial={!isTouchDevice ? "initial" : "hover"}
-        animate={!isTouchDevice && isHovered ? "hover" : "initial"}
+        initial={!isTouchDevice ? "hover" : "initial"}
+        // initial="initial"
+        animate={isHovered ? "hover" : "initial"}
         variants={animations.description}
         transition={animations.transition}
         className="overflow-hidden text-sm"

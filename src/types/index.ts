@@ -1,3 +1,5 @@
+import { icons } from "lucide-react";
+
 import { StaticImageData } from "next/image";
 
 export type ServiceCardType = {
@@ -128,10 +130,25 @@ export type SitemapType = {
   priority?: number | undefined;
 };
 
+export type WebsiteInfoType = {
+  name: string;
+  brief: string;
+  description: string;
+  phone: string;
+  email: string;
+  address: string;
+  socialMedia: SocialMedia[];
+};
+
+export type SocialMedia = {
+  name: string;
+  icon: keyof typeof icons;
+  url: string;
+};
+
 export type RouteType = Omit<SitemapType, "url"> & {
   path: string;
   name: string;
-  url?: string; // Make url optional in RouteType
   changeFrequency:
     | "yearly"
     | "always"
