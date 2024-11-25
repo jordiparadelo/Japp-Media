@@ -171,3 +171,19 @@ export type SolutionType = {
 export type SectionProps = {
   id?: string;
 };
+
+export interface Service {
+  id: number;
+  name: string;
+  description: string;
+}
+
+export type CustomImageType = {
+	src?: string;
+	alt?: string;
+	width?: number;
+	height?: number;
+	className?: string;
+	quality?: number;
+	priority?: boolean;
+};

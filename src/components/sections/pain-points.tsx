@@ -8,12 +8,12 @@ const PAIN_POINTS = [
   {
     title: "Reseñas Negativas o Inconsistentes",
     description:
-    "Atrae más clientes y construye confianza en línea con nuestros servicios personalizados de web y reputación.",
+      "Atrae más clientes y construye confianza en línea con nuestros servicios personalizados de web y reputación.",
   },
   {
     title: "Comunicación porbre con el Cliente",
     description:
-    "Los clientes potenciales encuentran primero a tus competidores. No dejes que las oportunidades se pierdan.",
+      "Los clientes potenciales encuentran primero a tus competidores. No dejes que las oportunidades se pierdan.",
   },
   {
     title: "Baja o nula presencia en Línea",
@@ -30,11 +30,11 @@ function PainPoints({ id }: SectionProps) {
           <div className="space-y-6">
             <Badge label="Como ayudamos" />
             <h2 className="heading-h2">
-              Haz crecer tu negocio con un Perfil Digital
+              Impulsa tu negocio en línea sin esfuerzo
             </h2>
             <p>
-              Atrae más clientes y construye confianza en línea con nuestros
-              servicios personalizados de web y reputación.
+              Gestionamos tu imagen en línea, comunicación y reputación para que tu
+              solo tengas que encargarte de tus clientes.
             </p>
           </div>
           <PainPointsCard
@@ -66,4 +66,4 @@ function PainPoints({ id }: SectionProps) {
   );
 }
 
-export default PainPoints;
+export { PainPoints };

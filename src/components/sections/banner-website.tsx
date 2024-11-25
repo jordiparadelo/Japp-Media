@@ -21,4 +21,4 @@ function BannerWebsite({ id }: SectionProps) {
 	);
 }
 
-export default BannerWebsite;
+export  {BannerWebsite};

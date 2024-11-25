@@ -1,6 +1,6 @@
 import { Container, Logo, Icon } from "@/components/ui";
 import Link from "next/link";
-import { ROUTES, WEBSITE_INFO } from "site.config";
+import { ROUTES, WEBSITE_INFO } from "@/site.config";
 
 function Footer() {
   return (

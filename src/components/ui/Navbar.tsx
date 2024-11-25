@@ -2,7 +2,7 @@
 
 import { Logo, NavLinks, Button, NavMenu } from "@/components/ui";
 import { NavbarProvider, useNavbar } from "@/context/navbar-provider";
-import { ROUTES } from "@/data/config";
+import { ROUTES } from "@/site.config";
 import { useScroll, motion, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 // import { Suspense } from "react";
@@ -59,7 +59,7 @@ function NavbarContent() {
           </div>
         </div>
         <div className="hidden sm:block">
-          <Button>Obtén tu Consulta Gratis</Button>
+          <Button variant="secondary">Obtén tu Consulta Gratis</Button>
         </div>
         <NavMenu className="block sm:hidden" />
       </div>

@@ -37,4 +37,4 @@ function Solutions({ id }: SectionProps) {
   );
 }
 
-export default Solutions;
+export { Solutions};

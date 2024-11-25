@@ -71,4 +71,4 @@ function Offers({ id }: SectionProps) {
   );
 }
 
-export default Offers;
+export  {Offers};

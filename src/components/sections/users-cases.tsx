@@ -1,5 +1,5 @@
 import { Section, Container, Badge } from "@/components/ui";
-import { UserCasesTabs } from "@/components/tabs";
+import { UserCasesTabs } from "@/components/layouts";
 import { UserCase } from "@/types";
 import { SectionProps } from "@/types";
 const usersCases: UserCase[] = [
@@ -63,4 +63,4 @@ const UsersCases = ({ id }: SectionProps) => {
   );
 };
 
-export default UsersCases;
+export  {UsersCases};

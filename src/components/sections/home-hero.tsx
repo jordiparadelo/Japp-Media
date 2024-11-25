@@ -8,20 +8,22 @@ type HeroType = {
 };
 
 const heroData: HeroType = {
-  title: "Haz crecer tu negocio con un Perfil Digital",
+  title: "Aumenta tu presencia en línea, construye confianza y atrae más clientes",
   subtitle:
-    "Atrae más clientes y construye confianza en línea con nuestros servicios personalizados de web y reputación.",
+    "Mejora tu imagen en linea, atrae más clientes y cierra más ventas mejorando tu perfil presencia online.",
   cta: "Obtén tu Consulta Gratis",
   image: "/images/hero.jpg",
 };
 
-export default function Hero() {
+const HomeHero = () => {
   return (
     <Section className="bkg-gradient rounded-b-3xl bg-gray-100 text-gray-900 sm:rounded-b-[60px] md:rounded-b-[120px]">
-      <Container className="flex flex-col gap-10 sm:grid sm:grid-flow-row sm:grid-cols-12 sm:gap-4 mt-16">
-        <div className="flex flex-col gap-2 text-center sm:col-span-8 sm:col-start-3 sm:gap-6">
+      <Container className="flex flex-col gap-10 sm:grid sm:grid-flow-row sm:grid-cols-12 mt-16 lg:gap-[5vw]">
+        <div className="flex flex-col gap-4 text-center sm:col-span-12">
           <h1 className="heading-h1">{heroData.title}</h1>
-          <p className="text-lg">{heroData.subtitle}</p>
+          <p className="text-md sm:text-[max(1.125rem,1.125vw)] sm:leading-[1.25] max-w-[60ch] mx-auto">
+            {heroData.subtitle}
+          </p>
         </div>
         <div className="col-span-8 flex flex-col gap-6">
           <div className="col-span-8 grid grid-cols-8 gap-6">
@@ -49,3 +51,5 @@ export default function Hero() {
     </Section>
   );
 }
+
+export { HomeHero };

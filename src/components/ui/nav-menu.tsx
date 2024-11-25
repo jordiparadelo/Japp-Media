@@ -2,10 +2,10 @@
 
 import React, { useCallback, useEffect, useRef } from "react";
 import { NavLinks } from "./nav-links";
-import { ROUTES } from "site.config";
+import { ROUTES } from "@/site.config";
 import { EasingFunction, motion, stagger, useAnimate } from "framer-motion";
 import { Button } from "./button";
-import { WEBSITE_INFO } from "site.config";
+import { WEBSITE_INFO } from "@/site.config";
 import { useNavbar } from "@/context/navbar-provider";
 import { useIsMounted } from "usehooks-ts";
 

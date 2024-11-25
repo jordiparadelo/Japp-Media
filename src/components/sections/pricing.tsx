@@ -100,4 +100,4 @@ function Pricing({ id }: SectionProps) {
   );
 }
 
-export default Pricing;
+export  {Pricing};

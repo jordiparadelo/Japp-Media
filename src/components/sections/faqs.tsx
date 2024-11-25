@@ -10,46 +10,30 @@ import {
 } from "@/components/ui";
 import { SectionProps } from "@/types";
 
-const FAQs_DATA = [
-  {
-    id: "1",
-    question: "¿Cuánto tiempo tarda en ver resultados?",
-    answer:
-      "La mayoría de los clientes ven mejoras notables en unas pocas semanas, aunque los cambios más significativos suelen llevar unos meses.",
-  },
-  {
-    id: "2",
-    question: "¿Qué incluye la optimización del Perfil de Negocio en Google?",
-    answer:
-      "La plataforma es muy fácil de usar. Simplemente ingresa tus datos y sigue las instrucciones.",
-  },
-  {
-    id: "3",
-    question: "¿Pueden mejorar mi sitio web aunque ya esté en línea?",
-    answer:
-      "Sí, si ya tienes un sitio web, podemos integrarlo a nuestros servicios, optimizándolo y gestionando el perfil digital sin necesidad de crear uno nuevo.",
-  },
-  {
-    id: "4",
-    question: "¿Es necesario un contrato a largo plazo?",
-    answer:
-      "La plataforma es muy fácil de usar. Simplemente ingresa tus datos y sigue las instrucciones.",
-  },
-];
+interface FAQ {
+  id: string;
+  question: string;
+  answer: string;
+}
 
-const FAQs = ({ id }: SectionProps) => {
+interface FAQsProps extends SectionProps {
+  title?: string;
+  faqs: FAQ[];
+}
+
+const FAQs = ({ id, title = "Aclara tus dudas", faqs }: FAQsProps) => {
   return (
     <Section id={id}>
       <Container className="flex flex-col gap-y-8">
         <div className="flex flex-col gap-y-4">
           <Badge label="Preguntas frecuentes" />
-          <h2 className="heading-h2">Aclara tus dudas</h2>
+          <h2 className="heading-h2">{title}</h2>
         </div>
 
         <div className="md:gap-x-auto flex flex-col gap-y-4 md:grid md:grid-cols-12 md:gap-x-4">
           <div className="p-4 md:col-span-7">
             <Accordion type="single" collapsible>
-              {FAQs_DATA.map((faq) => (
+              {faqs.map((faq) => (
                 <AccordionItem key={faq.id} value={faq.id}>
                   <AccordionTrigger className="text-lg font-bold">
                     {faq.question}

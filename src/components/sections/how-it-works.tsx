@@ -77,4 +77,4 @@ const HowItWorks = ({ id }: SectionProps) => {
   );
 };
 
-export default HowItWorks;
+export  {HowItWorks};

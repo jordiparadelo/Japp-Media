@@ -50,12 +50,12 @@ export const ROUTES: RouteType[] = [
 		changeFrequency: "yearly",
 		priority: 1,
 	},
-	// {
-	// 	path: "/servicios",
-	// 	name: "Servicios",
-	// 	changeFrequency: "yearly",
-	// 	priority: 0.5,
-	// },
+	{
+		path: "/servicios",
+		name: "Servicios",
+		changeFrequency: "yearly",
+		priority: 0.5,
+	},
 ];
 
 export const SITEMAP_CONFIG: SitemapType[] = ROUTES.map((route) => ({

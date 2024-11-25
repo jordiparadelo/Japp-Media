@@ -110,6 +110,6 @@ const config: Config = {
   		}
   	}
   },
-  plugins: [nextui(), require("tailwindcss-animate")],
+  plugins: [nextui(), require("tailwindcss-animate"), require("@designbycode/tailwindcss-mask-image"),],
 };
 export default config;

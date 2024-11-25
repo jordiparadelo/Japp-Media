@@ -20,3 +20,4 @@ export { SectionNavWrapper } from "./sections-navigation";
 export { PainPointsCard } from "./pain-points-ui";
 export * from "./accordion";
 export { Icon } from "./icon";
+export { InnerSection } from "./inner-section";

@@ -1,14 +1,5 @@
+import { CustomImageType } from "@/types";
 import Image from "next/image";
-
-type CustomImageType = {
-	src?: string;
-	alt?: string;
-	width?: number;
-	height?: number;
-	className?: string;
-	quality?: number;
-	priority?: boolean;
-};
 
 export default function CustomImage({
 	src = "/images/default.svg",
