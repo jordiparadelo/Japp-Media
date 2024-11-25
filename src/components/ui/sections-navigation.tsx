@@ -105,7 +105,7 @@ const SectionNav = ({ sectionsId }: { sectionsId: string[] }) => {
 
   return (
     <motion.nav
-      className="sticky bottom-0 flex w-full max-w-full items-center justify-center overflow-hidden p-4"
+      className="fixed bottom-0 flex w-full max-w-full items-center justify-center overflow-hidden p-4"
       variants={{
         hidden: { opacity: 0, y: "100%" },
         visible: { opacity: 1, y: 0 },
@@ -150,7 +150,6 @@ const SectionWrapper = ({
   const { setActiveSection } = useSectionNavContext();
 
   useEffect(() => {
-    // console.log({ enableIntersections });
     if (enableIntersections && isIntersecting && id) setActiveSection(id);
   }, [enableIntersections, isIntersecting, id, setActiveSection]);
 

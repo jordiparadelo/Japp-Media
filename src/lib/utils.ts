@@ -53,17 +53,11 @@ export function delay(ms: number) {
 export async function navigateToElement(id: string | number | null, callback?: () => void) {
   if (typeof id === "string") {
     const element = document.getElementById(id) as HTMLElement;
-    const { top } = element.getBoundingClientRect();
-    const scrollTop = Math.floor(Math.abs(window.innerHeight + top));
 
     await element?.scrollIntoView({ behavior: "smooth" });
-    // window.scrollTo(0, scrollTop);
-    // window.scrollTo({ top: scrollTop, left: 0, behavior: "smooth" });
-    console.log({ element, top, scrollTop });
   }
 
   if (typeof id === "number") {
-    console.log({ id });
     await window.scrollTo({
       top: id,
       behavior: "smooth",

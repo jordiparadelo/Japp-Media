@@ -1,66 +1,49 @@
 import { Section, Container, Badge } from "@/components/ui";
 import React from "react";
 import { SectionProps } from "@/types";
-import { PainPointsCard } from "@/components/ui/pain-points-ui";
-import { cn } from "@/lib/utils";
+import { PainPointsList } from "@/components/layouts";
+import ReputationLottie from "@/assets/lotties/reputation.json";
 
 const PAIN_POINTS = [
   {
     title: "Reseñas Negativas o Inconsistentes",
     description:
-      "Atrae más clientes y construye confianza en línea con nuestros servicios personalizados de web y reputación.",
+      "Aumenta tu reputación en línea y destaca en las búsquedas de Google.",
+    icon: ReputationLottie,
   },
   {
-    title: "Comunicación porbre con el Cliente",
+    title: "Comunicación pobre con el Cliente",
     description:
-      "Los clientes potenciales encuentran primero a tus competidores. No dejes que las oportunidades se pierdan.",
+      "Responde de manera rápida y automática a las consultas de tus clientes.",
+    icon: ReputationLottie,
   },
   {
     title: "Baja o nula presencia en Línea",
     description:
-      " Si tu negocio no tiene una presencia en línea, no puedes esperar que los clientes te encuentren. ¿Te cuesta aparecer en Google o en mapas cuando los clientes buscan tus servicios? Una presencia en línea débil está frenando tu negocio.",
+      "Aumenta tu visibilidad en línea y llega a más clientes potenciales.",
+    icon: ReputationLottie,
   },
 ];
 
 function PainPoints({ id }: SectionProps) {
   return (
     <Section id={id}>
-      <Container className="flex grid-cols-12 flex-col gap-6 md:grid">
-        <div className="col-span-12 flex flex-col gap-y-14 md:col-span-4">
-          <div className="space-y-6">
-            <Badge label="Como ayudamos" />
-            <h2 className="heading-h2">
-              Impulsa tu negocio en línea sin esfuerzo
-            </h2>
-            <p>
-              Gestionamos tu imagen en línea, comunicación y reputación para que tu
-              solo tengas que encargarte de tus clientes.
-            </p>
-          </div>
-          <PainPointsCard
-            className="md:min-h-[300px]"
-            title={PAIN_POINTS[0].title}
-            description={PAIN_POINTS[0].description}
-          />
+      <Container className="flex grid-cols-12 flex-col gap-12 md:grid">
+        <div className="col-span-12 flex flex-col items-center justify-center gap-y-6 text-center sm:col-span-8 sm:col-start-3 lg:col-span-6 lg:col-start-4">
+          <Badge label="Como ayudamos" />
+          <h2 className="heading-h2">
+            Impulsa tu negocio en línea sin esfuerzo
+          </h2>
+          <p>
+            Gestionamos tu imagen en línea, comunicación y reputación para que
+            tu solo tengas que encargarte de tus clientes.
+          </p>
         </div>
-        {PAIN_POINTS.slice(1, 3).map(({ title, description }, index, array) => (
-          <div
-            className={cn(
-              "col-span-12 flex flex-col gap-5 md:col-span-4 md:grid md:grid-rows-3",
-              "md:pt-12",
-            )}
-            key={title}
-          >
-            <PainPointsCard
-              className={cn(
-                "md:row-end-4",
-                `md:row-start-${array.length - index}`,
-              )}
-              title={title}
-              description={description}
-            />
-          </div>
-        ))}
+
+        <PainPointsList
+          painPoints={PAIN_POINTS}
+          className="col-span-12"
+        />
       </Container>
     </Section>
   );

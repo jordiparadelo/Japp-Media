@@ -1,5 +1,5 @@
 import { getSEOConfig } from "@/seo.config";
-import { ServiceHero, ServiceNumbers, ServicesSection, ServicesPricing, WhatToExpect, FAQs, Solutions } from "@/components/sections";
+import { ServiceHero, ServiceNumbers, ServicesSection, ServicesPricing, WhatToExpect, FAQs, Solutions, HowItWorks } from "@/components/sections";
 
 export const metadata = getSEOConfig("services");
 
@@ -26,6 +26,7 @@ export default function ServicesPage() {
             <ServicesSection />
             <ServicesPricing />
             <WhatToExpect />
+            <HowItWorks id="how-it-works" />
             <FAQs id="faqs" faqs={servicesFAQs} />
         </>
     );

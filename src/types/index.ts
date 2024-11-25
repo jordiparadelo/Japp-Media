@@ -179,11 +179,22 @@ export interface Service {
 }
 
 export type CustomImageType = {
-	src?: string;
-	alt?: string;
-	width?: number;
-	height?: number;
-	className?: string;
-	quality?: number;
-	priority?: boolean;
+  src?: string;
+  alt?: string;
+  width?: number;
+  height?: number;
+  className?: string;
+  quality?: number;
+  priority?: boolean;
+};
+
+export type WorkStep = {
+  title: string;
+  description: string;
+};
+
+export type PainPoint = {
+  title: string;
+  description: string;
+  icon?: object;
 };

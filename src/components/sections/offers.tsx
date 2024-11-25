@@ -50,7 +50,7 @@ function Offers({ id }: SectionProps) {
           </h2>
         </div>
 
-        <div className="offer-grid">
+        <div className="offer-grid sm:col-start-2">
           {offers.map((offer) => (
             <div key={offer.id} className="offer-card">
               <div className="card p-1">
@@ -61,8 +61,10 @@ function Offers({ id }: SectionProps) {
                   height={40}
                 />
               </div>
-              <h3 className="heading-3">{offer.title}</h3>
-              <p className="text-center">{offer.description}</p>
+              <h3 className="heading-h6">{offer.title}</h3>
+              <p className="text-center text-sm xs:text-xs sm:text-sm lg:text-base">
+                {offer.description}
+              </p>
             </div>
           ))}
         </div>
@@ -71,4 +73,4 @@ function Offers({ id }: SectionProps) {
   );
 }
 
-export  {Offers};
+export { Offers };

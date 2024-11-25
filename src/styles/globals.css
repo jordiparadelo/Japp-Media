@@ -181,8 +181,8 @@
   }
 
   .offer-grid {
-    @apply grid grid-flow-row sm:col-span-10 sm:col-start-2;
-    grid-template-columns: repeat(auto-fit, minmax(25ch, 1fr));
+    @apply grid grid-flow-row sm:col-span-10 col-start-2 xs:grid-cols-2 lg:grid-cols-3;
+    /* grid-template-columns: repeat(auto-fit, minmax(25ch, 1fr)); */
   }
 
   .offer-card {
@@ -192,7 +192,7 @@
     @apply border-t border-base;
   }
 
-  @media screen and (min-width: 516px) and (max-width: 882px) {
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
     .offer-card {
       @apply border-b border-t-0 border-base;
     }
@@ -204,7 +204,7 @@
     }
   }
 
-  @media screen and (min-width: 882px) {
+  @media screen and (min-width: 1024px) {
     .offer-card {
       @apply border-t-0;
     }
