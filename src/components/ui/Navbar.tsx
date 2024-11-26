@@ -48,7 +48,7 @@ function NavbarContent() {
       }}
       animate={isVisible ? "visible" : "hidden"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between border-b border-gray-200 bg-foreground/5 px-4 py-4 backdrop-blur-sm sm:h-navbar sm:px-8 md:px-12"
+      className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between border-b border-gray-200 bg-slate-100/10 px-4 py-4 backdrop-blur-sm sm:h-navbar sm:px-8 md:px-12"
       data-open={isMenuOpen}
     >
       <div className="flex w-full items-center gap-4">

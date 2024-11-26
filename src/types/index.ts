@@ -198,3 +198,9 @@ export type PainPoint = {
   description: string;
   icon?: object;
 };
+
+export type FAQ = {
+  id: string;
+  question: string;
+  answer: string;
+};

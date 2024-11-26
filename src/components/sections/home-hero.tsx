@@ -17,7 +17,7 @@ const heroData: HeroType = {
 
 const HomeHero = () => {
   return (
-    <Section className="bkg-gradient rounded-b-3xl bg-gray-100 text-gray-900 sm:rounded-b-[60px] md:rounded-b-[120px]">
+    <Section className="bkg-gradient rounded-b-3xl text-gray-900 sm:rounded-b-[60px] md:rounded-b-[120px]">
       <Container className="flex flex-col gap-10 sm:grid sm:grid-flow-row sm:grid-cols-12 mt-16 lg:gap-[5vw]">
         <div className="flex flex-col gap-4 text-center sm:col-span-12">
           <h1 className="heading-h1">{heroData.title}</h1>

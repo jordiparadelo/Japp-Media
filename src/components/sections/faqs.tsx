@@ -9,12 +9,7 @@ import {
   Button,
 } from "@/components/ui";
 import { SectionProps } from "@/types";
-
-interface FAQ {
-  id: string;
-  question: string;
-  answer: string;
-}
+import { FAQ } from "@/types";
 
 interface FAQsProps extends SectionProps {
   title?: string;

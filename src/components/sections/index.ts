@@ -16,3 +16,6 @@ export { ServiceHero } from "./service-hero";
 export { ServicesSection } from "./services-section";
 export { ServicesPricing } from "./service-pricing";
 export { ServiceNumbers } from "./service-numbers";
+
+// Pricing Page
+export { PricingHero } from "./pricing-hero";

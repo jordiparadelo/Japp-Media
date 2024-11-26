@@ -33,17 +33,17 @@ function Footer() {
               <h3 className="heading-h6">Legal</h3>
               <ul className="flex flex-col gap-y-1">
                 <li>
-                  <Link href="/" className="text-sm hover:underline">
-                    Política de Privacidad
+                  <Link href="/politicas-de-privacidad" className="text-sm hover:underline">
+                    Políticas de Privacidad
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="text-sm hover:underline">
+                  <Link href="/terminos-y-condiciones" className="text-sm hover:underline">
                     Términos y Condiciones
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="text-sm hover:underline">
+                  <Link href="/politica-de-cookies" className="text-sm hover:underline">
                     Política de Cookies
                   </Link>
                 </li>

@@ -12,10 +12,11 @@ import {
 } from "@/components/sections";
 import { SectionNavWrapper } from "@/components/ui";
 import { getSEOConfig } from "@/data/seo";
+import { FAQ } from "@/types";
 
 export const metadata = getSEOConfig("home");
 
-const FAQs_DATA = [
+const FAQs_DATA: FAQ[] = [
   {
     id: "1",
     question: "¿Cuánto tiempo tarda en ver resultados?",
