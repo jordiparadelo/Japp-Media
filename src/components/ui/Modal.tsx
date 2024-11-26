@@ -59,4 +59,4 @@ function ModalInner({ children, title }: { children: React.ReactNode, title: str
   );
 }
 
-export default Modal;
+export  {Modal};
