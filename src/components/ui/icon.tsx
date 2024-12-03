@@ -1,7 +1,7 @@
 import { icons } from 'lucide-react';
 
-type IconProps = {
-  name: keyof typeof icons ;
+export type IconProps = {
+  name: keyof typeof icons;
   color?: string;
   size?: number;
 };

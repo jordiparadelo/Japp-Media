@@ -61,7 +61,7 @@ function StepsList({ steps, className }: StepsListProps) {
   }, [isMobile, width]);
 
   return (
-    <ul className={cn("flex flex-col gap-y-3 px-3 md:flex-row min-h-[300px]", className)}>
+    <ul className={cn("flex flex-col gap-y-3 px-3 lg:flex-row min-h-[400px] sm:max-w-screen-sm mx-auto", className)}>
       {steps.map((step, index) => (
         <Step
           key={step.title}

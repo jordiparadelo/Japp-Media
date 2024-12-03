@@ -1,63 +1,98 @@
-import React from "react";
+"use client";
+
 import { SolutionType } from "@/types";
 import { CustomImage, Badge } from "@/components/ui";
 import { cn } from "@/lib/utils";
+import { useScroll, motion, useTransform, MotionValue } from "framer-motion";
+import { useRef } from "react";
 
-function SolutionCard({ solution }: { solution: SolutionType }) {
+function SolutionCard({
+  solution,
+  index,
+  range,
+  targetScale,
+  progress,
+}: {
+  solution: SolutionType;
+  index: number;
+  range: number[];
+  targetScale: number;
+  progress: MotionValue<number>;
+}) {
+
+  const scale = useTransform(progress, range, [1, targetScale]);
+
   return (
-    <div className="flex flex-col gap-4 md:min-h-[50vh] md:justify-center md:py-10">
-      <Badge label={solution.id as string} />
-      <div className="aspect-[16/9] max-h-[350px] w-full md:hidden">
+    <div
+      className={cn(
+        "sticky top-0 flex h-[100vh] flex-col place-content-center",
+      )}
+    >
+      <motion.div
+        className={
+          "transform-origin-bottom relative flex min-h-[50vh] origin-center flex-col gap-4 overflow-hidden rounded-3xl  md:rounded-[40px] border border-slate-200 bg-background md:flex-row lg:gap-[2.5vw] lg:p-[2.5vw]"
+        }
+        style={{ top: `${(index + 1) * 40}px`, scale: scale }}
+      >
+        <div className="flex flex-grow basis-[50%] flex-col place-content-center gap-6 p-6 md:p-8">
+          <Badge label={solution.id as string} />
+          <CustomImage
+            src={solution.image}
+            alt={solution.title}
+            width={500}
+            height={500}
+            className="block max-h-[280px] w-full object-contain md:hidden"
+          />
+          <h3 className="heading-h3 sm:text-[3.5vw]">{solution.title}</h3>
+          <p>{solution.description}</p>
+        </div>
         <CustomImage
           src={solution.image}
           alt={solution.title}
           width={500}
           height={500}
-          className="h-full w-full rounded-2xl object-cover"
+          className="hidden h-full w-1 flex-grow basis-[50%] object-contain md:block"
         />
-      </div>
-      <h3 className="heading-h4">{solution.title}</h3>
-      <p>{solution.description}</p>
+      </motion.div>
     </div>
   );
 }
 
 function SolutionsList({ solutions }: { solutions: SolutionType[] }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
+
   return (
     <div
+      ref={containerRef}
       className={cn(
-        `flex flex-col gap-14 md:col-span-5 md:col-start-8 md:grid md:place-items-center md:justify-items-center md:gap-0`,
+        `z-1 relative col-span-12 flex flex-col`,
         `md:grid-rows-[${solutions.length}]`,
       )}
     >
-      {solutions.map((solution) => (
-        <SolutionCard key={solution.id} solution={solution} />
-      ))}
+      {solutions.map((solution, index, array) => {
+        // const targetScale = 0.5;
+        const length = array.length;
+        const targetScale = 1 - (array.length - index) * 0.05;
+        const progressByIndex = 1 / length;
+
+        return (
+          <SolutionCard
+            key={solution.id}
+            solution={solution}
+            index={index}
+            range={[index * progressByIndex, 1]}
+            targetScale={targetScale}
+            progress={scrollYProgress}
+          />
+        );
+      })}
     </div>
   );
 }
 
-// TODO: Solve stack images cards
-
-function SolutionsStickyImages({ images }: { images: SolutionType[] }) {
-  return (
-      <figure className="grid h-full grid-rows-3">
-        {images.map((image) => (
-          <div
-            className="sticky top-10 flex w-full flex-shrink-0 justify-stretch self-stretch overflow-hidden rounded-2xl"
-            key={image.id}
-          >
-            <CustomImage
-              src={image.image}
-              alt={image.title}
-              width={500}
-              height={500}
-              className="h-full w-full object-cover"
-            />
-          </div>
-        ))}
-      </figure>
-  );
-}
-
-export { SolutionCard, SolutionsList, SolutionsStickyImages };
+export { SolutionCard, SolutionsList };

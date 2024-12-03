@@ -8,7 +8,7 @@ import {
   UsersCases,
   Pricing,
   HowItWorks,
-  FAQs
+  FAQs,
 } from "@/components/sections";
 import { SectionNavWrapper } from "@/components/ui";
 import { getSEOConfig } from "@/data/seo";
@@ -47,9 +47,9 @@ export default function HomePage() {
   return (
     <>
       <HomeHero />
+      <PainPoints id="como-ayudamos" />
+      <BannerWebsite />
       <SectionNavWrapper>
-        <PainPoints id="como-ayudamos" />
-        <BannerWebsite />
         <Solutions id="soluciones" />
         <div
           className="bkg-gradient mx-4 rounded-3xl md:rounded-[120px] md:py-0"

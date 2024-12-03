@@ -8,48 +8,39 @@ type HeroType = {
 };
 
 const heroData: HeroType = {
-  title: "Aumenta tu presencia en línea, construye confianza y atrae más clientes",
+  title: "Aumenta tu presencia en línea y atrae más clientes",
   subtitle:
-    "Mejora tu imagen en linea, atrae más clientes y cierra más ventas mejorando tu perfil presencia online.",
+    "Construye confianza y atrae más clientes. Mejora tu imagen en linea, atrae más clientes y cierra más ventas mejorando tu perfil presencia online.",
   cta: "Obtén tu Consulta Gratis",
-  image: "/images/hero.jpg",
+  image: "/images/hero-image.webp",
 };
 
 const HomeHero = () => {
   return (
-    <Section className="bkg-gradient rounded-b-3xl text-gray-900 sm:rounded-b-[60px] md:rounded-b-[120px]">
-      <Container className="flex flex-col gap-10 sm:grid sm:grid-flow-row sm:grid-cols-12 mt-16 lg:gap-[5vw]">
-        <div className="flex flex-col gap-4 text-center sm:col-span-12">
+    <Section className="bkg-gradient rounded-b-3xl text-gray-900 sm:rounded-b-[60px] lg:py-[10vw] md:rounded-b-[120px]">
+      <Container className="flex flex-col gap-10 py-0 sm:flex-row sm:items-center lg:gap-[5vw] lg:px-20">
+        <div className="col flex-grow basis-[280px] flex-col gap-4">
           <h1 className="heading-h1">{heroData.title}</h1>
-          <p className="text-md sm:text-[max(1.125rem,1.125vw)] sm:leading-[1.25] max-w-[60ch] mx-auto">
-            {heroData.subtitle}
-          </p>
-        </div>
-        <div className="col-span-8 flex flex-col gap-6">
-          <div className="col-span-8 grid grid-cols-8 gap-6">
-            <div className="col-span-4">
-              <CustomImage className="h-full w-full rounded-lg bg-gray-500 object-cover" />
-            </div>
-            <div className="col-span-4 flex flex-col gap-6 pt-6">
+          <div className="wysiwyg mr-2 mt-3 lg:mr-0 xl:mt-6 xl:w-4/6">
+            <p className="text-md mx-auto max-w-[60ch] sm:text-[max(1.125rem,1.125vw)] sm:leading-[1.25]">
+              {heroData.subtitle}
+            </p>
+            <div className="pt-8">
               <Button>{heroData.cta}</Button>
-              <CustomImage className="h-full w-full rounded-lg bg-gray-500 object-cover" />
-            </div>
-          </div>
-          <div className="col-span-8 grid grid-cols-8 gap-6">
-            <div className="col-span-3">
-              <CustomImage className="h-full w-full rounded-lg bg-gray-500 object-cover" />
-            </div>
-            <div className="col-span-5 flex flex-col gap-6">
-              <CustomImage className="w-full rounded-lg bg-gray-500 object-cover" />
             </div>
           </div>
         </div>
-        <div className="col-span-4">
-          <CustomImage className="h-full w-full rounded-lg bg-gray-500 object-cover" />
+        <div className="flex min-h-full flex-grow basis-[280px] flex-col items-center justify-center self-stretch">
+          <CustomImage
+            src={heroData.image}
+            alt={heroData.title}
+            width={600}
+            height={600}
+          />
         </div>
       </Container>
     </Section>
   );
-}
+};
 
 export { HomeHero };

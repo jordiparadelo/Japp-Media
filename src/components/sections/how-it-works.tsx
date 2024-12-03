@@ -1,5 +1,3 @@
-
-
 import React, { Suspense } from "react";
 import { Section, Container, Badge } from "@/components/ui";
 import { SectionProps } from "@/types";
@@ -25,16 +23,18 @@ const steps: WorkStep[] = [
 const HowItWorks = ({ id }: SectionProps) => {
   return (
     <Section id={id}>
-      <Container className="flex flex-col gap-x-4 gap-y-10 rounded-2xl bg-foreground p-6 sm:grid sm:grid-cols-12 md:p-20 text-background ">
-        <div className="flex flex-col items-center justify-center gap-y-4 text-center sm:col-span-8 sm:col-start-3">
-          <Badge label="Cómo funciona" />
-          <h2 className="heading-h2">
-            Un servicio flexible para cada negocio.
-          </h2>
+      <Container>
+        <div className="flex flex-col gap-x-4 gap-y-10 rounded-2xl bg-foreground px-6 pb-12 pt-14 text-background sm:grid sm:grid-cols-12">
+          <div className="flex flex-col items-center justify-center gap-y-4 text-center sm:col-span-8 sm:col-start-3">
+            <Badge label="Cómo funciona" />
+            <h2 className="heading-h2">
+              Un servicio flexible para cada negocio.
+            </h2>
+          </div>
+          <Suspense fallback={<div>Loading...</div>}>
+            <StepsList steps={steps} className="col-span-12" />
+          </Suspense>
         </div>
-        <Suspense fallback={<div>Loading...</div>}>
-          <StepsList steps={steps} className="col-span-12" />
-        </Suspense>
       </Container>
     </Section>
   );

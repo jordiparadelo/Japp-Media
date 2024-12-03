@@ -34,7 +34,7 @@ function PainPoints({ id }: SectionProps) {
           <h2 className="heading-h2">
             Impulsa tu negocio en línea sin esfuerzo
           </h2>
-          <p>
+          <p className="text-md lg:text-lg">
             Gestionamos tu imagen en línea, comunicación y reputación para que
             tu solo tengas que encargarte de tus clientes.
           </p>
