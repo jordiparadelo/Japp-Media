@@ -1,7 +1,7 @@
-import React, { Suspense } from "react";
+
 import { Section, Container, Badge } from "@/components/ui";
 import { SectionProps } from "@/types";
-import { StepsList } from "@/components/layouts";
+import { Step, StepsList } from "@/components/layouts";
 import { WorkStep } from "@/types";
 const steps: WorkStep[] = [
   {
@@ -31,9 +31,14 @@ const HowItWorks = ({ id }: SectionProps) => {
               Un servicio flexible para cada negocio.
             </h2>
           </div>
-          <Suspense fallback={<div>Loading...</div>}>
-            <StepsList steps={steps} className="col-span-12" />
-          </Suspense>
+          <StepsList steps={steps} className="col-span-12">
+            {steps.map((step, index) => (
+              <Step key={index} index={index}>
+                <h3 className="heading-h3 md:heading-h5">{step.title}</h3>
+                <p className="body-p1">{step.description}</p>
+              </Step>
+            ))}
+          </StepsList>
         </div>
       </Container>
     </Section>

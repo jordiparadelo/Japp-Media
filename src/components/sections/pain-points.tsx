@@ -1,7 +1,7 @@
-import { Section, Container, Badge } from "@/components/ui";
-import React, { Suspense } from "react";
+import { Section, Container, Badge, Button } from "@/components/ui";
+import React from "react";
 import { SectionProps } from "@/types";
-import {  StepsList } from "@/components/layouts";
+import { Step, StepsList } from "@/components/layouts";
 
 const PAIN_POINTS = [
   {
@@ -36,9 +36,17 @@ function PainPoints({ id }: SectionProps) {
           </p>
         </div>
 
-        <Suspense fallback={<div>Loading...</div>}>
-            <StepsList steps={PAIN_POINTS} className="col-span-12" />
-        </Suspense>
+        <StepsList steps={PAIN_POINTS} className="col-span-12">
+          {PAIN_POINTS.map((painPoint, index) => (
+            <Step key={index} index={index}>
+              <h3 className="heading-h3 md:heading-h5">{painPoint.title}</h3>
+              <p className="body-p1">{painPoint.description}</p>
+              <div className="pt-6">
+                <Button variant="link">Learn more</Button>
+              </div>
+            </Step>
+          ))}
+        </StepsList>
 
         {/* <PainPointsList
           painPoints={PAIN_POINTS}

@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { PainPoint } from "@/types";
+import { Button } from "@/components/ui";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
@@ -81,6 +82,9 @@ function PainPointsCard({ painPoint }: { painPoint: PainPoint }) {
         >
           {painPoint.description}
         </motion.p>
+        <div className="pt-6">
+          <Button variant="link">Learn more</Button>
+        </div>
       </div>
     </motion.li>
   );

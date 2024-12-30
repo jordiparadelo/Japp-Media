@@ -1,30 +1,38 @@
 "use client";
-
+import { createContext, useContext } from "react";
 import { useInterval, useMediaQuery, useWindowSize } from "usehooks-ts";
 import { cn } from "@/lib/utils";
 import { WorkStep } from "@/types";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { Button } from "@/components/ui";
+import { useEffect, useState, ReactNode } from "react";
+
+// Create a context for the steps
+const StepsContext = createContext<
+  | {
+      activeStep: number;
+      setActiveStep: (index: number) => void;
+      handleStepChange: (event: React.MouseEvent<HTMLElement>) => void;
+    }
+  | undefined
+>(undefined);
 
 type StepsListProps = {
   steps: WorkStep[];
   className?: string;
+  duration?: number;
+  children: ReactNode; // Allow children to be passed
 };
 
 type StepProps = {
-  step: WorkStep;
-  index?: number | 1;
-  activeStep: number;
-  setActiveStep: (index: number) => void;
-  onStepChange: (event: React.MouseEvent<HTMLElement>) => void;
-  isMobile: boolean;
+  index: number;
+  children: ReactNode; // Allow children to be passed
+  className?: string;
 };
 
-function StepsList({ steps, className }: StepsListProps) {
+function StepsList({ steps, duration, className, children }: StepsListProps) {
   const [activeStep, setActiveStep] = useState<number>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
-  const delay = 5000;
+  const delay = duration || 5000;
   const isMobile = useMediaQuery("(max-width: 768px)");
   const { width } = useWindowSize();
 
@@ -45,10 +53,8 @@ function StepsList({ steps, className }: StepsListProps) {
 
   useInterval(
     () => {
-      // Your custom logic here
       setActiveStep((prev) => (prev + 1) % steps.length);
     },
-    // Delay in milliseconds or null to stop it
     isPlaying ? delay : null,
   );
 
@@ -61,24 +67,18 @@ function StepsList({ steps, className }: StepsListProps) {
   }, [isMobile, width]);
 
   return (
-    <ul
-      className={cn(
-        "col-span-12 mx-auto flex min-h-[400px] flex-col gap-y-3 px-0 sm:px-3 lg:flex-row w-full",
-        className,
-      )}
+    <StepsContext.Provider
+      value={{ activeStep, setActiveStep, handleStepChange }}
     >
-      {steps.map((step, index) => (
-        <Step
-          key={step.title}
-          step={step}
-          index={index}
-          activeStep={activeStep}
-          onStepChange={handleStepChange}
-          setActiveStep={setActiveStep}
-          isMobile={isMobile}
-        />
-      ))}
-    </ul>
+      <ul
+        className={cn(
+          "col-span-12 mx-auto flex w-full flex-col gap-y-3 px-0 sm:px-3 lg:flex-row",
+          className,
+        )}
+      >
+        {children}
+      </ul>
+    </StepsContext.Provider>
   );
 }
 
@@ -100,56 +100,37 @@ const animation = {
   transition: { duration: 0.5 },
 };
 
-function Step({
-  step,
-  index,
-  activeStep,
-  onStepChange,
-  setActiveStep,
-  isMobile,
-}: StepProps) {
-  const indexNumber = index ? index + 1 : 1;
+// Step component that uses the context
+function Step({ index, children, className }: StepProps) {
+  const context = useContext(StepsContext);
+  if (!context) {
+    throw new Error("Step must be used within a StepsList");
+  }
+
+  const isMobile = useMediaQuery("(max-width: 768px)");
+  const { activeStep, setActiveStep, handleStepChange } = context;
 
   return (
-    <motion.li
+    <motion.div
       aria-current={activeStep === index}
       data-index={index}
-      className="max-h-auto flex w-full flex-grow flex-col justify-between gap-4 rounded-2xl border-1 border-slate bg-background align-top text-foreground"
+      className={className}
       variants={animation.card}
       initial="inactive"
       animate={activeStep === index ? "active" : "inactive"}
       transition={animation.transition}
-      onMouseEnter={onStepChange}
-      onMouseLeave={onStepChange}
+      onMouseEnter={handleStepChange}
+      onMouseLeave={handleStepChange}
       onViewportEnter={() => {
         if (!isMobile) return;
         setActiveStep(index as number);
       }}
       viewport={{ margin: "-50%" }}
     >
-      <div className="flex flex-col gap-y-2 p-4 md:p-6">
-        <span className="leading-0 backdrop-blur-2 flex aspect-square flex-col items-center justify-center gap-y-2 self-start rounded-lg border-1 border-slate-700 bg-foreground p-[.75em] font-heading text-2xl text-background">
-          {indexNumber}
-        </span>
-      </div>
-      <div className="flex flex-col gap-y-2 p-4 md:p-6">
-        <h3 className="heading-h4 md:heading-h5">{step.title}</h3>
-        <motion.p
-          className="overflow-hidden text-sm"
-          variants={animation.description}
-          initial="inactive"
-          animate={activeStep === index ? "active" : "inactive"}
-          transition={animation.transition}
-        >
-          {step.description}
-        </motion.p>
-
-        <div className="pt-6">
-          <Button variant="link">Learn more</Button>
-        </div>
-      </div>
-    </motion.li>
+      {children}
+    </motion.div>
   );
 }
 
+// Export the components
 export { StepsList, Step };
