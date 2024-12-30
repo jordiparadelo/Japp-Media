@@ -7,4 +7,4 @@ function Main({ children }: { children: React.ReactNode }) {
   return <AnimatedLayout>{children}</AnimatedLayout>;
 }
 
-export { Main };
+export default Main;

@@ -41,4 +41,4 @@ function Logo({ href = "/",  className, size = "sm" }: LogoProps) {
   );
 }
 
-export { Logo };
+export default Logo;

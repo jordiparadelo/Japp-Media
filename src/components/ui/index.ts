@@ -1,7 +1,7 @@
-export {default as Button} from "./button";
-export { Main } from "./main";
-export { Modal } from "./modal";
-export { Logo } from "./logo";
+export { default as Button} from "./button";
+export { default as Main } from "./main";
+export { default as Modal } from "./modal";
+export { default as Logo } from "./logo";
 
 export { default as AnimatedLayout } from "./animated-layout";
 export { NavLinks } from "./nav-links";
