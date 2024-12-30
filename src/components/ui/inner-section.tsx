@@ -18,7 +18,7 @@ const InnerSection = ({
 }: InnerSectionProps) => {
   return (
     <Section
-      className="bkg-gradient overflow-clip rounded-b-3xl bg-gray-100 text-gray-900 sm:rounded-b-[60px] md:rounded-b-[120px] md:pb-0 md:pt-20"
+      className="bkg-gradient overflow-clip rounded-b-3xl bg-gray-100 text-gray-900 rounded-b-section md:pb-0 md:pt-20"
       id={id ? id : sectionTitle ? prettyString(sectionTitle) : undefined}
     >
       <Container className="flex flex-col items-center gap-y-14 py-16 pb-0 text-center sm:gap-y-20">

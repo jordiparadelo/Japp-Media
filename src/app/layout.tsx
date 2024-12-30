@@ -1,4 +1,5 @@
-import { Archivo, Roboto_Flex } from "next/font/google";
+import localFont from "next/font/local";
+import { Roboto_Flex } from "next/font/google";
 import { Footer, Navbar } from "@/components/ui";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
@@ -9,10 +10,9 @@ export const metadata = {
   ...defaultConfig,
 };
 
-export const font_heading = Archivo({
-  weight: ["300", "400", "600", "700"],
-  subsets: ["latin"],
-  display: "swap",
+const font_heading = localFont({
+  src: "../../public/fonts/HostGroteskVF.ttf",
+  weight: "400",
   variable: "--font-heading",
 });
 
@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
         className={cn(
           font_heading.variable,

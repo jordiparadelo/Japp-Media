@@ -9,11 +9,17 @@ import { navigateToElement } from "@/lib/utils";
 type LogoProps = {
   href?: string;
   className?: string;
+  size?: "sm" | "lg" | number;
 };
 
-function Logo({ href = "/",  className }: LogoProps) {
+function Logo({ href = "/",  className, size = "sm" }: LogoProps) {
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const LOGO_SIZES = {
+    sm: 32,
+    lg: 40,
+  }
+  const logoHeight = LOGO_SIZES[size as keyof typeof LOGO_SIZES] || size;
 
   const HomeLogo = () => (
     <div
@@ -22,7 +28,7 @@ function Logo({ href = "/",  className }: LogoProps) {
       onClick={() => navigateToElement(0)}
       className={className}
     >
-      <LogoIcon style={{ height: "32px" }} />
+      <LogoIcon style={{ height: `${logoHeight}px` }} />
     </div>
   );
 
@@ -30,7 +36,7 @@ function Logo({ href = "/",  className }: LogoProps) {
 
   return (
     <Link href={href} aria-label="Go to home page" className={className}>
-      <LogoIcon style={{ height: "32px" }} />
+      <LogoIcon style={{ height: `${logoHeight}px` }} />
     </Link>
   );
 }

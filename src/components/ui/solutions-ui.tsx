@@ -30,7 +30,7 @@ function SolutionCard({
     >
       <motion.div
         className={
-          "transform-origin-bottom relative flex min-h-[50vh] origin-center flex-col gap-4 overflow-hidden rounded-3xl  md:rounded-[40px] border border-slate-200 bg-background md:flex-row lg:gap-[2.5vw] lg:p-[2.5vw]"
+          "transform-origin-bottom relative flex min-h-[50vh] origin-center flex-col gap-4 overflow-hidden rounded-3xl  md:rounded-[40px] border border-slate-200 bg-background md:flex-row lg:gap-[2.5vw] lg:p-[2.5vw] bg-white"
         }
         style={{ top: `${(index + 1) * 40}px`, scale: scale }}
       >

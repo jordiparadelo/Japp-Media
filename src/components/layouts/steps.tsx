@@ -61,7 +61,12 @@ function StepsList({ steps, className }: StepsListProps) {
   }, [isMobile, width]);
 
   return (
-    <ul className={cn("flex flex-col gap-y-3 px-3 lg:flex-row min-h-[400px] sm:max-w-screen-sm mx-auto", className)}>
+    <ul
+      className={cn(
+        "col-span-12 mx-auto flex min-h-[400px] flex-col gap-y-3 px-0 sm:px-3 lg:flex-row w-full",
+        className,
+      )}
+    >
       {steps.map((step, index) => (
         <Step
           key={step.title}
@@ -83,7 +88,7 @@ const animation = {
     active: { opacity: 1, scale: 1 },
   },
   description: {
-    inactive: { opacity: 0, height: 0, backdropFilter: "blur(10px)", },
+    inactive: { opacity: 0, height: 0, backdropFilter: "blur(10px)" },
     active: {
       opacity: 1,
       backdropFilter: "blur(0px)",
@@ -109,7 +114,7 @@ function Step({
     <motion.li
       aria-current={activeStep === index}
       data-index={index}
-      className="flex w-full flex-grow flex-col justify-between gap-4 rounded-lg border-1 border-black bg-gradient-to-b from-gray-950 to-gray-600 align-top max-h-auto"
+      className="max-h-auto flex w-full flex-grow flex-col justify-between gap-4 rounded-2xl border-1 border-slate bg-background align-top text-foreground"
       variants={animation.card}
       initial="inactive"
       animate={activeStep === index ? "active" : "inactive"}
@@ -123,12 +128,12 @@ function Step({
       viewport={{ margin: "-50%" }}
     >
       <div className="flex flex-col gap-y-2 p-4 md:p-6">
-        <span className="leading-0 backdrop-blur-2 flex aspect-square max-h-fit flex-col items-center justify-center gap-y-2 self-start rounded-lg border-1 border-slate-700 bg-foreground p-[.75em] font-heading text-2xl">
+        <span className="leading-0 backdrop-blur-2 flex aspect-square flex-col items-center justify-center gap-y-2 self-start rounded-lg border-1 border-slate-700 bg-foreground p-[.75em] font-heading text-2xl text-background">
           {indexNumber}
         </span>
       </div>
       <div className="flex flex-col gap-y-2 p-4 md:p-6">
-        <h3 className="heading-h6">{step.title}</h3>
+        <h3 className="heading-h4 md:heading-h5">{step.title}</h3>
         <motion.p
           className="overflow-hidden text-sm"
           variants={animation.description}

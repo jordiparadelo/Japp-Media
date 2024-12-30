@@ -1,27 +1,23 @@
 import { Section, Container, Badge } from "@/components/ui";
-import React from "react";
+import React, { Suspense } from "react";
 import { SectionProps } from "@/types";
-import { PainPointsList } from "@/components/layouts";
-import ReputationLottie from "@/assets/lotties/reputation.json";
+import {  StepsList } from "@/components/layouts";
 
 const PAIN_POINTS = [
   {
     title: "Reseñas Negativas o Inconsistentes",
     description:
       "Aumenta tu reputación en línea y destaca en las búsquedas de Google.",
-    icon: ReputationLottie,
   },
   {
     title: "Comunicación pobre con el Cliente",
     description:
       "Responde de manera rápida y automática a las consultas de tus clientes.",
-    icon: ReputationLottie,
   },
   {
     title: "Baja o nula presencia en Línea",
     description:
       "Aumenta tu visibilidad en línea y llega a más clientes potenciales.",
-    icon: ReputationLottie,
   },
 ];
 
@@ -40,10 +36,14 @@ function PainPoints({ id }: SectionProps) {
           </p>
         </div>
 
-        <PainPointsList
+        <Suspense fallback={<div>Loading...</div>}>
+            <StepsList steps={PAIN_POINTS} className="col-span-12" />
+        </Suspense>
+
+        {/* <PainPointsList
           painPoints={PAIN_POINTS}
           className="col-span-12"
-        />
+        /> */}
       </Container>
     </Section>
   );

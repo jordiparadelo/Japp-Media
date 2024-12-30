@@ -71,9 +71,10 @@ const config: Config = {
   			card: 'var(--shadow-card)'
   		},
   		borderRadius: {
-  			lg: 'var(--radius)',
-  			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
+  			lg: 'var(--rounded-btn)',
+  			md: 'calc(var(--rounded-btn) - 2px)',
+  			sm: 'calc(var(--rounded-btn) - 4px)',
+			section: 'max(var(--rounded-lg), 4vw)'
   		},
   		height: {
   			navbar: 'var(--navbar-height)'

@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 120 0% 99%;
+    --background: 150 0% 99%;
     /* Fonts */
     --color-font: #00252e;
     --headingFont: "Archivo";
@@ -58,7 +58,7 @@
 
     /* Shadows */
     --shadow-card: 0px 10px 20px 0px rgba(0, 37, 46, 0.1);
-    --foreground: 120 4% 9%;
+    --foreground: 256 10% 20%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;

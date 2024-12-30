@@ -52,7 +52,7 @@ export default function HomePage() {
       <SectionNavWrapper>
         <Solutions id="soluciones" />
         <div
-          className="bkg-gradient mx-4 rounded-3xl md:rounded-[120px] md:py-0"
+          className="bkg-gradient mx-4 rounded-section md:py-0"
           id="nuestros-servicios"
         >
           <Offers id="servicios" />

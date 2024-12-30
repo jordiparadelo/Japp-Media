@@ -16,7 +16,7 @@ function PainPointsList({
   return (
     <ul
       className={cn(
-        "flex flex-col place-items-center gap-y-6 md:flex-row md:gap-x-2 mx-auto",
+        "flex w-[100vw] flex-row place-items-center gap-x-6 gap-y-6 overflow-x-auto sm:w-auto md:gap-x-2 scroll-snap-x scroll-snap-mandatory",
         className,
       )}
     >
@@ -59,10 +59,9 @@ function PainPointsCard({ painPoint }: { painPoint: PainPoint }) {
   const [isHovered, setIsHovered] = useState(false);
   const isMobile = useMediaQuery("(max-width: 768px)");
 
-
   return (
     <motion.li
-      className="flex min-h-96 max-w-96 flex-col place-items-center place-self-center rounded-3xl border border-gray-200/50 text-center transition-all duration-300 hover:border-gray-200 hover:shadow-lg sm:min-h-[max(480px,30vw)] md:flex-grow md:basis-1/3"
+      className="flex min-h-96 min-w-96 flex-col place-items-center place-self-center rounded-3xl border border-gray-200/50 bg-white text-center transition-all duration-300 hover:border-gray-200 hover:shadow-lg sm:min-h-[max(480px,30vw)] md:min-w-0 md:flex-grow md:basis-1/3 scroll-snap-center"
       onViewportEnter={() => {
         if (!isMobile) return;
 
@@ -70,7 +69,7 @@ function PainPointsCard({ painPoint }: { painPoint: PainPoint }) {
       }}
       viewport={{ margin: "-50%" }}
     >
-      <div className="flex min-h-fit flex-shrink-0 flex-col place-items-center gap-y-3 p-6">
+      <div className="flex min-h-fit flex-shrink-0 flex-col place-items-center gap-y-3 bg-white p-6">
         <h3 className="lg:heading-h5 heading-h6 max-w-[20ch]">
           {painPoint.title}
         </h3>
