@@ -19,6 +19,14 @@
 		],
 		"paths": {
 			"@/*": ["./src/*"],
+			"@/components/*": ["./src/components/*"],
+			"@/lib/*": ["./src/lib/*"],
+			"@/hooks/*": ["./src/hooks/*"],
+			"@/types/*": ["./src/types/*"],
+			"@/utils/*": ["./src/utils/*"],
+			"@/styles/*": ["./src/styles/*"],
+			"@/pages/*": ["./src/pages/*"],
+			"@/public/*": ["./public/*"],
 		},
 		"baseUrl": "."
 	},
